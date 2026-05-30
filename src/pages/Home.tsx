@@ -61,7 +61,7 @@ const Home: React.FC = () => {
             <Card.Body className="text-center">
               <Card.Title>🏥 Veterinarias</Card.Title>
               <Card.Text>
-                Lista de clínicas y hospitales cercanos.
+                Lista de establecimientos cercanos.
               </Card.Text>
               <Button variant="primary" href="/veterinarias">
                 Ver Clínicas
