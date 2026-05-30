@@ -1,0 +1,42 @@
+Dia 1 (27/5)
+Le pedimos a BackBox  IA que generara el front-ent del proyecto Vanesa. Le explicamos sobre las tacnologias (React, typescript y bootstrap) y solicitamos la incorporacion de las paginas Profesionales, Veterinarias (establecimientos), Calendario y Noticias. Para esto instalamos reactrouterdom y la navegacion funciona bien y el diseño es bastante aceptable.
+La idea del cliente es disponer de una plataforma para registrar profeecionales y establecimientos para facilitar a los usuarios la concretacion de citas, consultas y otros
+A los profecionales se les cobrara una membresia
+
+
+
+
+
+/*****************************************************************************************/
+Preguntas:
+¿A quien esta dirigido el proyecto?
+¿Quienes lo usaran y para que?
+¿Que servicios ofrecera?
+¿?
+¿?
+¿?
+¿?
+¿?
+/*****************************************************************************************/
+Ideas:
+A usuarios comunes tambien se les crobrara una membresia, porque les podemos ofrecer el servicio de almacenar la informacion de las mascotas de cada usuario (vacunas, tratamientos, citas, etc) de manera que ellos mismos al estar logueados puedan acceder a la historia clinica de sus mascotas
+
+Seccion Adopciones en NoticiasPage para publicar
+
+/*****************************************************************************************/
+Pendientes:
+Difinir servicios de membresia
+    Necesitamos saber qué o cual es la razon por la que los usuarios pagarian y ofrecerla
+Elegir un nombre y logo
+Ajustar la responsividad
+    En Sidebar necesitamos ajustar el tamaño de los links de navegacion para uqe y los iconos que se mostraran al lado
+Componente "Mi perfil"
+    En Sidebar debajo agregaremo el boton de registrar/loguear usuarios o ver el menu de que al que un usuario puede ver (calendario, edicion, deslogueo, mascotas, etc..)
+Pagina Inicio/home
+    Mejorar el tamaño y presentacion se la seccion "Explorar"
+Pagina Profesionales
+Pagina Veterinarias/establecimientos
+Pagina Noticias/eventos
+Pagina Calendario
+
+
