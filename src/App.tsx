@@ -131,6 +131,8 @@ import Veterinarias from './pages/Veterinarias';
 import Profesionales from './pages/Profesionales';
 import Calendario from './pages/Calendario';
 import Noticias from './pages/Noticias';
+import EditPage from './pages/EditPage';
+import Logreg from './pages/Logreg';
 
 function App() {
   return (
@@ -147,6 +149,8 @@ function App() {
             <Route path="/profesionales" element={<Profesionales />} />
             <Route path="/calendario" element={<Calendario />} />
             <Route path="/noticias" element={<Noticias />} />
+            <Route path="/edit" element={<EditPage />} />
+            <Route path="/logreg" element={<Logreg />} />
           </Routes>
         </div>
       </div>

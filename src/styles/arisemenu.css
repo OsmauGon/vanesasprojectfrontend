@@ -1,0 +1,10 @@
+.arisemenu {
+    transform: translateY(85%);
+    overflow: hidden;
+}
+.arisemenu-list {
+}
+.close {
+    transform: translateY(0);
+    transition: 1s;
+}

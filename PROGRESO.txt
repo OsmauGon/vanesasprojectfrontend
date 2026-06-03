@@ -38,5 +38,7 @@ Pagina Profesionales
 Pagina Veterinarias/establecimientos
 Pagina Noticias/eventos
 Pagina Calendario
+Tema membresias
+    Si el sistema se va a vender como un servicio (Saas) necesitare investigar registro de planes, suscripciones mensuales, cobros automaticos, renovaciones, cancelaciones, restricciones segun el plan, etc. Muchos dev empiezan con Mercado Pago para cobros locales y Stripe para cobros internacionales
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { UserZone } from './UserZone';
 
 const Sidebar: React.FC = () => {
   return (
@@ -63,18 +64,7 @@ const Sidebar: React.FC = () => {
           </NavLink>
         </li>
       </ul>
-      <hr />
-      <div className="dropdown">
-        <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-          <div className="rounded-circle me-2" style={{width: '32px', height: '32px', backgroundColor: '#adb5bd'}}></div>
-          <strong>Mi Perfil</strong>
-        </a>
-        <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-          <li><a className="dropdown-item" href="#">Configuración</a></li>
-          <li><hr className="dropdown-divider" /></li>
-          <li><a className="dropdown-item" href="#">Cerrar sesión</a></li>
-        </ul>
-      </div>
+      <UserZone />
     </div>
   );
 };
