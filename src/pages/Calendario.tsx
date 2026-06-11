@@ -85,7 +85,7 @@ const Calendario: React.FC = () => {
               </Row>
               
               {/* Días del mes (simulado) - Una cuadrícula simple */}
-              <div className="calendar-grid">
+              <div className="calendar-grid" style={{ height: '500px', overflow: "auto" }}>
                 {Array.from({ length: 35 }, (_, i) => {
                   const dayNumber = i - 3; // Empezando el día 1 en posición 4 (miércoles)
                   const hasEvent = citas.some(c => new Date(c.fecha).getDate() === dayNumber && dayNumber > 0);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import '../styles/arisemenu.css'
 
 type LogedUserProps = {
@@ -6,7 +6,7 @@ type LogedUserProps = {
 }
 type Props = {}
 
-const UserLoged = ({logout} : LogedUserProps) => {
+export const UserLoged = ({logout} : LogedUserProps) => { //compònente original
     return (
       <div className="dropdown">
         <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -26,15 +26,14 @@ const UserLoged2 = ({logout} : LogedUserProps) => {
     const [close,setClose] = useState<boolean>(false)
     return (
         <>
-            <hr />
               <div className={`arisemenu ${close ? 'close' : ''}`}>
                 <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                 <div className="rounded-circle me-2" style={{width: '32px', height: '32px', backgroundColor: '#adb5bd'}}></div>
                 <strong onClick={()=> setClose(!close)}>Mi Perfil</strong>
                 </a>
                 <ul className='arisemenu-list'>
-                <li><a className="dropdown-item" href="#">Configuración</a></li>
-                <li><hr className="dropdown-divider" /></li>
+                <li><a className="dropdown-item" href="/edit">Configuración</a></li>
+                <li><a className="dropdown-item" href="#">Mis Mascotas</a></li>
                 <li><a className="dropdown-item" href="#" onClick={()=> {logout(false)}}>Cerrar sesión</a></li>
                 </ul>
             </div>

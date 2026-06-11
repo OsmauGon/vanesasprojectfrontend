@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card, Carousel, Button } from 'react-bootstrap';
 
 const Home: React.FC = () => {
+  const navigate = useNavigate()
   return (
     <Container fluid className="p-4">
       {/* Bienvenido */}
       <div className="mb-5">
         <h1 className="display-4 fw-bold text-primary">Bienvenido a VetConnect</h1>
         <p className="lead text-muted">
-          Conectando a amantes de mascotas con los mejores profesionales y clínicas veterinarias.
+          Conectando a amantes de mascotas con los mejores profesionales y veterinarias.
         </p>
       </div>
 
@@ -41,56 +43,55 @@ const Home: React.FC = () => {
       </Carousel>
 
       {/* Tarjetas de Acceso Rápido */}
-      <h2 className="mb-3">Explorar</h2>
       <Row xs={1} md={2} lg={4} className="g-4">
-        <Col>
+        <Col>{/* //profesionales */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
               <Card.Title>👨‍⚕️ Veterinarios</Card.Title>
               <Card.Text>
-                Encuentra veterinarios especializados cerca de ti.
+                Profesionales especializados cerca de ti.
               </Card.Text>
-              <Button variant="primary" href="/profesionales">
+              <Button variant="primary" onClick={()=>{navigate("/profesioanles")}}>
                 Ver Profesionales
               </Button>
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col>{/* //vetes */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
               <Card.Title>🏥 Veterinarias</Card.Title>
               <Card.Text>
                 Lista de establecimientos cercanos.
               </Card.Text>
-              <Button variant="primary" href="/veterinarias">
+              <Button variant="primary" onClick={()=>{navigate("/veterinarias")}}>
                 Ver Clínicas
               </Button>
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col>{/* //noticias */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
-              <Card.Title>📅 Citas</Card.Title>
+              <Card.Title>📰<br></br> Noticias</Card.Title>
               <Card.Text>
-                Gestiona las citas y vacunas de tus mascotas.
+                Tips, consejos y noticias del mundo animal.
               </Card.Text>
-              <Button variant="primary" href="/calendario">
-                Ver Calendario
+              <Button variant="primary" onClick={()=>{navigate("/noticias")}}>
+                Ver Noticias
               </Button>
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col>{/* //calendario */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
-              <Card.Title>📰 Noticias</Card.Title>
+              <Card.Title>📅 Calendario</Card.Title>
               <Card.Text>
-                Tips, consejos y noticias del mundo animal.
+                Gestiona las citas y vacunas de tus mascotas.
               </Card.Text>
-              <Button variant="primary" href="/noticias">
-                Ver Noticias
+              <Button variant="primary" onClick={()=>{navigate("/calendario")}}>
+                Ver Calendario
               </Button>
             </Card.Body>
           </Card>

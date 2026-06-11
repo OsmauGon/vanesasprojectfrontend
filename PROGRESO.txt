@@ -12,7 +12,7 @@ Preguntas:
 ¿A quien esta dirigido el proyecto?
 ¿Quienes lo usaran y para que?
 ¿Que servicios ofrecera?
-¿?
+¿Que nombre tiene el proyecto? (redvet veterinet)
 ¿?
 ¿?
 ¿?
@@ -36,9 +36,27 @@ Pagina Inicio/home
     Mejorar el tamaño y presentacion se la seccion "Explorar"
 Pagina Profesionales
 Pagina Veterinarias/establecimientos
+
+    si hace internacion(boolean), antencion 24hs (urgencias)(boolean), quirofano(boolean), laboratorio(boolean)
 Pagina Noticias/eventos
 Pagina Calendario
+castracion municipal
+eventos de concientizacion
+expos
 Tema membresias
     Si el sistema se va a vender como un servicio (Saas) necesitare investigar registro de planes, suscripciones mensuales, cobros automaticos, renovaciones, cancelaciones, restricciones segun el plan, etc. Muchos dev empiezan con Mercado Pago para cobros locales y Stripe para cobros internacionales
 
 
+
+
+
+
+
+
+
+
+
+
+Crear una seccion BLOG 
+La seccion es visible para los usuarios, pero solo los profesinales pueden hacer las notas. No se necesita un formualrio, la nota se manda por documenta a los admin que verifican y aprueban
+    Postear escritos (no noticias) de los proesionales. ""
