@@ -43,7 +43,7 @@ const UserLoged2 = ({logout} : LogedUserProps) => {
 }
 
 
-export const UserZone = (props: Props) => {
+export const UserZone = () => {
     const [user,setUser] = useState<boolean>(false)
   return (
     <>{user ? <UserLoged2 logout={setUser}/> 
