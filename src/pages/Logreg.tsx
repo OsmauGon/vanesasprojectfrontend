@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const Logreg = (props: Props) => {
+const Logreg = () => {
   return (
     <div>Logreg</div>
   )

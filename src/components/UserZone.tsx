@@ -4,7 +4,6 @@ import '../styles/arisemenu.css'
 type LogedUserProps = {
     logout: (val:false) => void;
 }
-type Props = {}
 
 export const UserLoged = ({logout} : LogedUserProps) => { //compònente original
     return (

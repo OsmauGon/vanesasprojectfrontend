@@ -1,8 +1,6 @@
-import React from 'react'
 
-type Props = {}
 
-const EditPage = (props: Props) => {
+const EditPage = () => {
   return (
     <div>EditPage</div>
   )
