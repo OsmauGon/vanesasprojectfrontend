@@ -47,7 +47,7 @@ export const UserZone = () => {
   return (
     <>{user ? <UserLoged2 logout={setUser}/> 
             : <button 
-                className='btn btn-primary' 
+                className='btn boton1' 
                 onClick={()=>{setUser(true)}}
                 >Ingresar
                 </button>

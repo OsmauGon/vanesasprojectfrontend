@@ -7,8 +7,9 @@ const Home: React.FC = () => {
   return (
     <Container fluid className="p-4">
       {/* Bienvenido */}
+      <button className="btn boton2">botoncito</button>
       <div className="mb-5">
-        <h1 className="display-4 fw-bold text-primary">Bienvenido a VetConnect</h1>
+        <h1 className="display-4 fw-bold ">Bienvenido a VetConnect</h1>
         <p className="lead text-muted">
           Conectando a amantes de mascotas con los mejores profesionales y veterinarias.
         </p>

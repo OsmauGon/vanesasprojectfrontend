@@ -33,7 +33,7 @@ const Profesionales: React.FC = () => {
   return (
     <Container className="py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="text-primary">Profesionales</h1>
+        <h1 >Profesionales</h1>
         <Badge bg="secondary" pill>{filteredProfesionales.length} disponibles</Badge>
       </div>
 
@@ -77,6 +77,7 @@ const Profesionales: React.FC = () => {
                   <Button 
                     variant={prof.disponible ? "primary" : "secondary"}
                     disabled={!prof.disponible}
+                    className='boton1'
                   >
                     {prof.disponible ? "Ver Contacto" : "No Disponible"}
                   </Button>

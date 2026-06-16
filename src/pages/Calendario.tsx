@@ -34,8 +34,8 @@ const Calendario: React.FC = () => {
   return (
     <Container className="py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="text-primary">Calendario de Citas</h1>
-        <Button variant="primary" onClick={() => setShowModal(true)}>
+        <h1 >Calendario de Citas</h1>
+        <Button variant="primary" className='boton1' onClick={() => setShowModal(true)}>
           + Nueva Cita
         </Button>
       </div>
@@ -44,7 +44,7 @@ const Calendario: React.FC = () => {
         {/* Vista de listado de citas próximas */}
         <Col md={4} className="mb-4">
           <Card className="shadow-sm">
-            <Card.Header className="bg-primary text-white">
+            <Card.Header className="bg-primary text-white fondovioletaclaro">
               <strong>Próximas Citas</strong>
             </Card.Header>
             <ListGroup variant="flush">

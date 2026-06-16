@@ -33,7 +33,7 @@ const Veterinarias: React.FC = () => {
   return (
     <Container className="py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="text-primary">Veterinarias</h1>
+        <h1 >Veterinarias</h1>
         <Badge bg="secondary" pill>{filteredEstablecimientos.length} disponibles</Badge>
       </div>
 
@@ -77,6 +77,7 @@ const Veterinarias: React.FC = () => {
                   <Button 
                     variant={prof.disponible ? "primary" : "secondary"}
                     disabled={!prof.disponible}
+                    className='boton1'
                   >
                     {prof.disponible ? "Visitar" : "No Disponible"}
                   </Button>

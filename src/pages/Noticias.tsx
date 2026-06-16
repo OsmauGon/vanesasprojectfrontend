@@ -118,7 +118,7 @@ const Noticias: React.FC = () => {
 
   return (
     <Container className="py-5">
-      <h2 className="mb-4">Noticias y Blog</h2>
+      <h1 >Noticias</h1>
 
       <Row>
         {/* Main Content */}
@@ -267,7 +267,7 @@ const Noticias: React.FC = () => {
           </Card>
 
           {/* Suscripción */}
-          <Card className="shadow-sm bg-primary text-white">
+          <Card className="shadow-sm bg-primary text-white fondovioletaclaro">
             <Card.Body className="text-center">
               <h5>Suscríbete al Newsletter</h5>
               <p className="small">Recibe las últimas noticias en tu correo.</p>
@@ -277,7 +277,7 @@ const Noticias: React.FC = () => {
                   placeholder="Tu correo electrónico" 
                   className="mb-2"
                 />
-                <Button variant="light" className="w-100">Suscribirse</Button>
+                <Button variant="light" className="w-100 boton3">Suscribirse</Button>
               </Form>
             </Card.Body>
           </Card>

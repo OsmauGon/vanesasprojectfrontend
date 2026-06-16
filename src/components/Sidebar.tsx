@@ -16,7 +16,7 @@ const Sidebar: React.FC = () => {
     >
       {/* Logo del Proyecto */}
       <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <span className="fs-4 fw-bold">VetConnect</span>
+        <span className="fs-4 fw-bold nav-title">VetConnect</span>
       </a>
       <hr />
 
@@ -61,6 +61,14 @@ const Sidebar: React.FC = () => {
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
             Noticias
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink 
+            to="/blogs" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
+          >
+            Blogs
           </NavLink>
         </li>
       </ul>

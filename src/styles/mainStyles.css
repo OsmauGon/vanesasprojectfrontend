@@ -1,0 +1,55 @@
+#root{
+    --oscuro: rgb(49,38,42);
+    --violeta: rgb(127,105,154);
+    --violetaClaro: rgb(176,161,190);
+    --blanco:  rgb(236,235,231);
+    --gris: rgb(141,144,153)
+
+}
+.fondovioletaclaro{
+    background-color: var(--violetaClaro) !important;
+}
+h1,h2,.nav-title{
+    text-align: start;
+    color: var(--violeta);
+}
+.active{
+    background-color: var(--violeta) !important;
+}
+.boton1{
+    color: var(--blanco);
+    font-weight: 400;
+    background-color: var(--violetaClaro);
+    border-color: var(--violetaClaro) !important;
+}
+.boton2{
+    color: var(--violetaClaro);
+    background-color: transparent;
+    background-image: none;
+    border-color: var(--violetaClaro);
+}
+.boton3{
+    color: black;
+    font-weight: 400;
+    background-color: var(--blanco);
+    border-color: var(--blanco) !important;
+}
+
+
+
+.boton1:hover{
+    background-color: var(--violeta);
+    color: var(--blanco);
+    transition: .5s;
+}
+.boton2:hover{
+    color: var(--blanco);
+    background-color: var(--violetaClaro);
+    transition: .5s;
+}
+.boton3:hover{
+    background-color: var(--gris);
+    border-color: var(--gris) !important;
+    color: var(--blanco);
+    transition: .5s;
+}
