@@ -144,7 +144,7 @@ function App() {
         <Sidebar />
 
         {/* Contenido Principal */}
-        <div className="flex-grow-1" style={{ marginLeft: '250px' }}>
+        <div className="contenido flex-grow-1" style={{ marginLeft: '250px' }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/veterinarias" element={<Veterinarias />} />

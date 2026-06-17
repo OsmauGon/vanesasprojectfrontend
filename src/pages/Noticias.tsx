@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Badge, Form, Button, Pagination } from 'react-bootstrap';
+import { ModalDEnoticia } from '../components/modales/ModalDEnoticia';
 
 interface Noticia {
   id: number;
@@ -87,7 +88,8 @@ const Noticias: React.FC = () => {
   const [busqueda, setBusqueda] = useState<string>("");
   const [paginaActual, setPaginaActual] = useState<number>(1);
   const noticiasPorPagina = 4;
-
+  const [showModal, setShowModal] = useState(false);
+  
   const categorias = ["todos", "Salud", "Comunidad", "Cuidados", "Tendencias", "Negocio"];
 
   const noticiasFiltradas = noticiasData.filter((noticia) => {
@@ -141,7 +143,12 @@ const Noticias: React.FC = () => {
                   <small className="text-muted">
                     Por <strong>{noticiaDestacada.autor}</strong> • {noticiaDestacada.fecha}
                   </small>
-                  <Button variant="outline-primary" size="sm">Leer más</Button>
+                  <Button 
+                    variant="outline-primary" 
+                    className='boton2' size="sm" 
+                    onClick={() => setShowModal(true)}
+                    >Leer más
+                  </Button>
                 </div>
               </Card.Body>
             </Card>
@@ -161,6 +168,7 @@ const Noticias: React.FC = () => {
                 <Button
                   key={cat}
                   variant={categoriaFiltro === cat ? "primary" : "outline-primary"}
+                  className={categoriaFiltro === cat ? "boton1" : "boton2"}
                   size="sm"
                   onClick={() => {
                     setCategoriaFiltro(cat);
@@ -201,7 +209,13 @@ const Noticias: React.FC = () => {
                           </Card.Text>
                           <div className="d-flex justify-content-between align-items-center mt-2">
                             <small className="text-muted">Por {noticia.autor}</small>
-                            <Button variant="link" size="sm" className="p-0">Leer más →</Button>
+                            <Button 
+                              variant="link" 
+                              size="sm" 
+                              className="p-0"
+                              onClick={() => setShowModal(true)}
+                              >Leer más →
+                            </Button>
                           </div>
                         </Card.Body>
                       </Col>
@@ -283,6 +297,8 @@ const Noticias: React.FC = () => {
           </Card>
         </Col>
       </Row>
+      <ModalDEnoticia show={showModal} hide={() => setShowModal(false)} />
+          
     </Container>
   );
 };

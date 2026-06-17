@@ -7,7 +7,6 @@ const Home: React.FC = () => {
   return (
     <Container fluid className="p-4">
       {/* Bienvenido */}
-      <button className="btn boton2">botoncito</button>
       <div className="mb-5">
         <h1 className="display-4 fw-bold ">Bienvenido a VetConnect</h1>
         <p className="lead text-muted">
@@ -52,7 +51,7 @@ const Home: React.FC = () => {
               <Card.Text>
                 Profesionales especializados cerca de ti.
               </Card.Text>
-              <Button variant="primary" onClick={()=>{navigate("/profesioanles")}}>
+              <Button variant="primary" className='boton1' onClick={()=>{navigate("/profesioanles")}}>
                 Ver Profesionales
               </Button>
             </Card.Body>
@@ -65,7 +64,7 @@ const Home: React.FC = () => {
               <Card.Text>
                 Lista de establecimientos cercanos.
               </Card.Text>
-              <Button variant="primary" onClick={()=>{navigate("/veterinarias")}}>
+              <Button variant="primary" className='boton1' onClick={()=>{navigate("/veterinarias")}}>
                 Ver Clínicas
               </Button>
             </Card.Body>
@@ -78,7 +77,7 @@ const Home: React.FC = () => {
               <Card.Text>
                 Tips, consejos y noticias del mundo animal.
               </Card.Text>
-              <Button variant="primary" onClick={()=>{navigate("/noticias")}}>
+              <Button variant="primary" className='boton1' onClick={()=>{navigate("/noticias")}}>
                 Ver Noticias
               </Button>
             </Card.Body>
@@ -91,7 +90,7 @@ const Home: React.FC = () => {
               <Card.Text>
                 Gestiona las citas y vacunas de tus mascotas.
               </Card.Text>
-              <Button variant="primary" onClick={()=>{navigate("/calendario")}}>
+              <Button variant="primary" className='boton1' onClick={()=>{navigate("/calendario")}}>
                 Ver Calendario
               </Button>
             </Card.Body>

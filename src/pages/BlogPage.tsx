@@ -293,6 +293,7 @@ const BlogPagee: React.FC = () => {
               <div className="state-filter mt-3 d-flex justify-content-center gap-2">
                 <Button
                   variant={stateFilter === 'all' ? 'primary' : 'outline-primary'}
+                  className={stateFilter === 'all' ? 'boton1' : 'boton2'}
                   size="sm"
                   onClick={() => setStateFilter('all')}
                 >
@@ -300,6 +301,7 @@ const BlogPagee: React.FC = () => {
                 </Button>
                 <Button
                   variant={stateFilter === 'able' ? 'success' : 'outline-success'}
+                  className={stateFilter === 'able' ? 'boton1' : 'boton2'}
                   size="sm"
                   onClick={() => setStateFilter('able')}
                 >
@@ -307,6 +309,7 @@ const BlogPagee: React.FC = () => {
                 </Button>
                 <Button
                   variant={stateFilter === 'standby' ? 'warning' : 'outline-warning'}
+                  className={stateFilter === 'standby' ? 'warning' : 'outline-warning'}
                   size="sm"
                   onClick={() => setStateFilter('standby')}
                 >

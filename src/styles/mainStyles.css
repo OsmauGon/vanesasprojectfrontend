@@ -9,9 +9,17 @@
 .fondovioletaclaro{
     background-color: var(--violetaClaro) !important;
 }
+body{
+    
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
 h1,h2,.nav-title{
     text-align: start;
     color: var(--violeta);
+}
+
+.contenido{
+    
 }
 .active{
     background-color: var(--violeta) !important;

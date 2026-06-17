@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Badge, Form, InputGroup, Button } from 'react-bootstrap';
+import { ModalDEestablecimiento } from '../components/modales/ModalDEestablecimiento';
 
 interface Establecimiento {
   id: number;
@@ -23,7 +24,8 @@ const establecimientosData: Establecimiento[] = [
 
 const Veterinarias: React.FC = () => {
   const [busqueda, setBusqueda] = useState("");
-
+  const [showModal, setShowModal] = useState(false);
+  
   const filteredEstablecimientos = establecimientosData.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
     p.especialidad.toLowerCase().includes(busqueda.toLowerCase()) ||
@@ -78,6 +80,7 @@ const Veterinarias: React.FC = () => {
                     variant={prof.disponible ? "primary" : "secondary"}
                     disabled={!prof.disponible}
                     className='boton1'
+                    onClick={() => setShowModal(true)}
                   >
                     {prof.disponible ? "Visitar" : "No Disponible"}
                   </Button>
@@ -93,6 +96,8 @@ const Veterinarias: React.FC = () => {
           <h3 className="text-muted">No se encontraron Veterinarias</h3>
         </div>
       )}
+      <ModalDEestablecimiento show={showModal} hide={() => setShowModal(false)} />
+          
     </Container>
   );
 };

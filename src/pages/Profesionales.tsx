@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Badge, Form, InputGroup, Button } from 'react-bootstrap';
+import { ModalDEprofesional } from '../components/modales/ModalDEprofesional';
 
 interface Profesional {
   id: number;
@@ -23,7 +24,8 @@ const profesionalesData: Profesional[] = [
 
 const Profesionales: React.FC = () => {
   const [busqueda, setBusqueda] = useState("");
-
+  const [showModal, setShowModal] = useState(false);
+  
   const filteredProfesionales = profesionalesData.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
     p.especialidad.toLowerCase().includes(busqueda.toLowerCase()) ||
@@ -78,6 +80,7 @@ const Profesionales: React.FC = () => {
                     variant={prof.disponible ? "primary" : "secondary"}
                     disabled={!prof.disponible}
                     className='boton1'
+                    onClick={() => setShowModal(true)}
                   >
                     {prof.disponible ? "Ver Contacto" : "No Disponible"}
                   </Button>
@@ -93,6 +96,8 @@ const Profesionales: React.FC = () => {
           <h3 className="text-muted">No se encontraron profesionales</h3>
         </div>
       )}
+      <ModalDEprofesional show={showModal} hide={() => setShowModal(false)} />
+          
     </Container>
   );
 };

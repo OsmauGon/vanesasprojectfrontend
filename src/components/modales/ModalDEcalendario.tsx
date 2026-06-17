@@ -5,7 +5,7 @@ type ModalProps = {
     hide: (val: boolean) => void
 }
 
-export const ModalDEnoticia = (props: ModalProps) => {
+export const ModalDEcalendario = (props: ModalProps) => {
   return (
     <Modal show={props.show} onHide={() => props.hide(false)}>
         <Modal.Header closeButton>
