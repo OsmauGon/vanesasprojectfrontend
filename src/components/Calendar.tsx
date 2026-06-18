@@ -2,7 +2,7 @@
 import {Row, Col, Card, Button} from 'react-bootstrap';
 import type { Cita } from '../pages/Calendario';
 import React, { useState, useMemo } from 'react';
-import '../styles/calendar.css';
+import '../styles/calendarComponent.css';
 type Props = {
     citas: Cita[]
 }
