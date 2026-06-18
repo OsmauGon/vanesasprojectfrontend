@@ -104,7 +104,7 @@ const Calendar: React.FC<CalendarProps> = ({ citas, onDateClick }) => {
     const diasEnMes = ultimoDia.getDate();
     const diaInicio = primerDia.getDay(); // 0 = Domingo, 1 = Lunes, etc.
 
-    const dias = [];
+    //const dias = [];
     const diasSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
 
     // Encabezados de días de la semana
