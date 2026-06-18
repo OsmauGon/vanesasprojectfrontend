@@ -1,35 +1,97 @@
 
-import { Button, Modal, Form } from 'react-bootstrap';
+import { Button, Modal} from 'react-bootstrap';
+import type { Establecimiento } from '../../pages/Veterinarias';
+import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 type ModalProps = {
+    obj: Establecimiento | null;
     show: boolean;
     hide: (val: boolean) => void
 }
 
 export const ModalDEestablecimiento = (props: ModalProps) => {
+  const abrirWhatsApp = () => {
+    if (props.obj?.telefono) {
+      const telefonoLimpio = props.obj.telefono.replace(/\s/g, '').replace(/-/g, '');
+      const telefonoCompleto = telefonoLimpio.startsWith('+') 
+        ? telefonoLimpio 
+        : `+54${telefonoLimpio}`;
+      
+      window.open(`https://wa.me/${telefonoCompleto}`, '_blank');
+    }
+  };
+
+  // Función para abrir Email
+  const abrirEmail = () => {
+    if (props.obj?.email) {
+      window.open(`mailto:${props.obj.email}`, '_blank');
+    }
+  };
+
+  // Función para abrir Ubicación en Google Maps
+  const abrirUbicacion = () => {
+    let url = 'https://www.google.com/maps/search/?api=1&';
+    
+    if (props.obj?.latitud && props.obj?.longitud) {
+      // Si tenemos coordenadas exactas
+      url += `query=${props.obj.latitud},${props.obj.longitud}`;
+    } else if (props.obj?.ubicacion) {
+      // Si tenemos dirección, la codificamos para URL
+      url += `query=${encodeURIComponent(props.obj.ubicacion)}`;
+    } else {
+      // Si no hay datos, usar el nombre como búsqueda
+      url += `query=${encodeURIComponent(props.obj?.nombre || 'Veterinaria')}`;
+    }
+    
+    window.open(url, '_blank');
+  };
+
   return (
     <Modal show={props.show} onHide={() => props.hide(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Agendar Nueva Cita</Modal.Title>
+          <Modal.Title>{props.obj?.nombre}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>Título de la Cita</Form.Label>
-              <Form.Control type="text" placeholder="Ej: Revisión" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Fecha</Form.Label>
-              <Form.Control type="date" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Hora</Form.Label>
-              <Form.Control type="time" />
-            </Form.Group>
-          </Form>
+          {props.obj && (
+            <div>
+              <h6>Información del establecimiento</h6>
+              <pre style={{ background: '#f8f9fa', padding: '10px', borderRadius: '4px' }}>
+                {JSON.stringify(props.obj, null, 2)}
+              </pre>
+            </div>
+          )}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => props.hide(false)}>Cancelar</Button>
-          <Button variant="primary" onClick={() => props.hide(false)}>Guardar</Button>
+            <Button 
+            variant="success" 
+            onClick={abrirWhatsApp}
+            disabled={!props.obj?.telefono}
+            className="d-flex align-items-center gap-2"
+          >
+            <FaWhatsapp size={20} />
+            WhatsApp
+          </Button>
+          
+          {/* Botón Email */}
+          <Button 
+            variant="primary" 
+            onClick={abrirEmail}
+            disabled={!props.obj?.email}
+            className="d-flex align-items-center gap-2"
+          >
+            <FaEnvelope size={20} />
+            Email
+          </Button>
+          
+          {/* Botón Ubicación */}
+          <Button 
+            variant="danger" 
+            onClick={abrirUbicacion}
+            disabled={!props.obj?.ubicacion && !props.obj?.latitud && !props.obj?.longitud}
+            className="d-flex align-items-center gap-2"
+          >
+            <FaMapMarkerAlt size={20} />
+            Ubicación
+          </Button>
         </Modal.Footer>
       </Modal>
   )

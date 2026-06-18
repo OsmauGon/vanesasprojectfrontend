@@ -129,16 +129,11 @@ export const BlogPage = () => {
 
 // BlogPage.tsx
 import React, { useState, useMemo } from 'react';
-import { Container, Row, Col, Card, Button, Badge, InputGroup, Form, Dropdown } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Badge, InputGroup, Form } from 'react-bootstrap';
 import { 
   FaDownload, 
   FaPlay, 
-  FaImage, 
   FaSearch, 
-  FaFilter, 
-  FaEye, 
-  FaThumbsUp,
-  FaCalendarAlt,
   FaUserMd
 } from 'react-icons/fa';
 import '../styles/blogPage.css';

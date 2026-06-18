@@ -134,7 +134,7 @@ import Calendario from './pages/Calendario';
 import Noticias from './pages/Noticias';
 import EditPage from './pages/EditPage';
 import Logreg from './pages/Logreg';
-import BlogPagee, { BlogPage } from './pages/BlogPage';
+import BlogPagee from './pages/BlogPage';
 
 function App() {
   return (

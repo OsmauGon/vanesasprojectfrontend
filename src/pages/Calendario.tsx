@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, ListGroup, Badge, Button, Modal, Form } from 'react-bootstrap';
+import { Container, Row, Button} from 'react-bootstrap';
 import { ModalDEcalendario } from '../components/modales/ModalDEcalendario';
 import Calendar from '../components/Calendar';
+import DatesList from '../components/DatesList';
 
 export interface Cita {
   id: number;
@@ -14,23 +15,19 @@ export interface Cita {
 
 // Datos de ejemplo (días del mes actual simulados)
 const citasIniciales: Cita[] = [
-  { id: 1, titulo: "Revisión General", fecha: "2024-01-15", hora: "10:00", tipo: "consulta", profesional: "Dr. Juan Pérez" },
-  { id: 2, titulo: "Vacuna Antirrábica", fecha: "2024-01-15", hora: "11:30", tipo: "vacuna", profesional: "Dra. María González" },
-  { id: 3, titulo: "Limpieza Dental", fecha: "2024-01-20", hora: "14:00", tipo: "cirujia", profesional: "Dr. Carlos López" },
-  { id: 4, titulo: "Chequeo Mensual", fecha: "2024-01-25", hora: "09:00", tipo: "consulta", profesional: "Dr. Roberto Sánchez" },
+  { id: 1, titulo: "Revisión General", fecha: "2026-01-15", hora: "10:00", tipo: "consulta", profesional: "Dr. Juan Pérez" },
+  { id: 2, titulo: "Vacuna Antirrábica", fecha: "2026-02-15", hora: "11:30", tipo: "vacuna", profesional: "Dra. María González" },
+  { id: 3, titulo: "Limpieza Dental", fecha: "2026-03-20", hora: "14:00", tipo: "cirujia", profesional: "Dr. Carlos López" },
+  { id: 4, titulo: "Chequeo Mensual", fecha: "2026-04-25", hora: "09:00", tipo: "consulta", profesional: "Dr. Roberto Sánchez" },
 ];
 
 const Calendario: React.FC = () => {
   const [citas] = useState<Cita[]>(citasIniciales);
   const [showModal, setShowModal] = useState(false);
 
-  const getBadgeColor = (tipo: string) => {
-    switch (tipo) {
-      case 'consulta': return 'primary';
-      case 'vacuna': return 'success';
-      case 'cirujia': return 'danger';
-      default: return 'secondary';
-    }
+   const handleDateClick = (fecha: string) => {
+    const citasDelDia = citas.filter(cita => cita.fecha === fecha);
+    console.log(`📅 Citas para ${fecha}:`, citasDelDia);
   };
 
   return (
@@ -44,36 +41,12 @@ const Calendario: React.FC = () => {
 
       <Row>
         {/* Vista de listado de citas próximas */}
-        <Col md={4} className="mb-4">
-          <Card className="shadow-sm">
-            <Card.Header className="bg-primary text-white fondovioletaclaro">
-              <strong>Próximas Citas</strong>
-            </Card.Header>
-            <ListGroup variant="flush">
-              {citas.length > 0 ? (
-                citas.map((cita) => (
-                  <ListGroup.Item key={cita.id} action>
-                    <div className="d-flex w-100 justify-content-between align-items-start">
-                      <h6 className="mb-1">{cita.titulo}</h6>
-                      <Badge bg={getBadgeColor(cita.tipo)}>{cita.tipo}</Badge>
-                    </div>
-                    <small className="text-muted">
-                      📅 {cita.fecha} a las {cita.hora}
-                    </small><br />
-                    <small className="text-muted">
-                      👨‍⚕️ {cita.profesional}
-                    </small>
-                  </ListGroup.Item>
-                ))
-              ) : (
-                <ListGroup.Item>No hay citas programadas</ListGroup.Item>
-              )}
-            </ListGroup>
-          </Card>
-        </Col>
+        <DatesList citas={citas}/>
 
         {/* Calendario Visual (mes de ejemplo) */}
-        <Calendar citas={citas}/>
+        <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+          <Calendar citas={citas} onDateClick={handleDateClick} />
+        </div>
       </Row>
 
       {/* Modal de nueva cita (Placeholder) */}

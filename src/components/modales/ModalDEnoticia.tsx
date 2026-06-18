@@ -1,5 +1,5 @@
 
-import { Button, Modal, Form } from 'react-bootstrap';
+import { Button, Modal} from 'react-bootstrap';
 type ModalProps = {
     show: boolean;
     hide: (val: boolean) => void
@@ -12,7 +12,7 @@ export const ModalDEnoticia = (props: ModalProps) => {
           <Modal.Title>Agendar Nueva Cita</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          {/* <Form>
             <Form.Group className="mb-3">
               <Form.Label>Título de la Cita</Form.Label>
               <Form.Control type="text" placeholder="Ej: Revisión" />
@@ -25,7 +25,8 @@ export const ModalDEnoticia = (props: ModalProps) => {
               <Form.Label>Hora</Form.Label>
               <Form.Control type="time" />
             </Form.Group>
-          </Form>
+          </Form> */}
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, saepe molestias illo natus numquam commodi enim facere quos dolores voluptate pariatur exercitationem odio distinctio ducimus adipisci iusto inventore. Ipsam, est!
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => props.hide(false)}>Cancelar</Button>

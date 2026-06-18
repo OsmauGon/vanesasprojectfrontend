@@ -2,28 +2,50 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Badge, Form, InputGroup, Button } from 'react-bootstrap';
 import { ModalDEestablecimiento } from '../components/modales/ModalDEestablecimiento';
 
-interface Establecimiento {
+export interface Establecimiento {
   id: number;
   nombre: string;
   especialidad: string;
-  ubicacion: string;
   rating: number;
   disponible: boolean;
   imagen: string;
+    telefono?: string;
+    email?: string;
+    ubicacion: string;
+    latitud?: number;
+    longitud?: number;
+    horario?: string;
+    especialidades?: string[]
 }
 
 // Datos de ejemplo
+/* const establecimiento :Establecimiento = {
+  id: 0,
+  rating: 0,
+  disponible: true,
+  imagen: "******************",
+    nombre: 'Veterinaria San Martín',
+    telefono: '3511234567',
+    email: 'info@veterinariasanmartin.com',
+    ubicacion: 'Av. San Martín 1234, Córdoba, Argentina',
+    latitud: -31.4201,
+    longitud: -64.1888,
+    horario: 'Lunes a Sábado 8:00 - 20:00',
+    especialidad: "cirujia",
+    especialidades: ['Perros', 'Gatos', 'Exóticos']
+  }; */
 const establecimientosData: Establecimiento[] = [
-  { id: 1, nombre: "El club de las mascotas", especialidad: "Medicina General", ubicacion: "Santiago del Estero 1234", rating: 4.8, disponible: true, imagen: "img/elclub.jpg" },
-  { id: 2, nombre: "Animales Sueltos", especialidad: "Cirugía Veterinaria", ubicacion: "Las Condes 5678", rating: 4.9, disponible: true, imagen: "img/animalessueltos.jpg" },
-  { id: 3, nombre: "All Pets", especialidad: "Odontología", ubicacion: "Providencia 9101", rating: 4.6, disponible: false, imagen: "img/allpets.png" },
-  { id: 4, nombre: "Kidogo", especialidad: "Medicina General", ubicacion: "Ñuñoa 1121", rating: 4.7, disponible: true, imagen: "img/kidogo.jpg" },
-  { id: 5, nombre: "Maule Sur", especialidad: "Dermatología", ubicacion: "Vitacura 3141", rating: 4.9, disponible: true, imagen: "img/maulesur.png" },
-  { id: 6, nombre: "Vet-Can", especialidad: "Cardiología", ubicacion: "Gascon 5161", rating: 4.8, disponible: false, imagen: "img/vetcan.png" },
+  { id: 1, nombre: "El club de las mascotas", especialidad: "Medicina General", ubicacion: "Santiago del Estero 1234", rating: 4.8, disponible: true, imagen: "img/elclub.jpg", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
+  { id: 2, nombre: "Animales Sueltos", especialidad: "Cirugía Veterinaria", ubicacion: "Las Condes 5678", rating: 4.9, disponible: true, imagen: "img/animalessueltos.jpg", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
+  { id: 3, nombre: "All Pets", especialidad: "Odontología", ubicacion: "Providencia 9101", rating: 4.6, disponible: false, imagen: "img/allpets.png", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
+  { id: 4, nombre: "Kidogo", especialidad: "Medicina General", ubicacion: "Ñuñoa 1121", rating: 4.7, disponible: true, imagen: "img/kidogo.jpg", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
+  { id: 5, nombre: "Maule Sur", especialidad: "Dermatología", ubicacion: "Vitacura 3141", rating: 4.9, disponible: true, imagen: "img/maulesur.png", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
+  { id: 6, nombre: "Vet-Can", especialidad: "Cardiología", ubicacion: "Gascon 5161", rating: 4.8, disponible: false, imagen: "img/vetcan.png", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
 ];
 
 const Veterinarias: React.FC = () => {
   const [busqueda, setBusqueda] = useState("");
+  const [selectedPlace,setSelectedPlace] = useState<Establecimiento | null>(null)
   const [showModal, setShowModal] = useState(false);
   
   const filteredEstablecimientos = establecimientosData.filter(p => 
@@ -80,7 +102,7 @@ const Veterinarias: React.FC = () => {
                     variant={prof.disponible ? "primary" : "secondary"}
                     disabled={!prof.disponible}
                     className='boton1'
-                    onClick={() => setShowModal(true)}
+                    onClick={() => {setShowModal(true); setSelectedPlace(prof)}}
                   >
                     {prof.disponible ? "Visitar" : "No Disponible"}
                   </Button>
@@ -96,7 +118,7 @@ const Veterinarias: React.FC = () => {
           <h3 className="text-muted">No se encontraron Veterinarias</h3>
         </div>
       )}
-      <ModalDEestablecimiento show={showModal} hide={() => setShowModal(false)} />
+      <ModalDEestablecimiento show={showModal} hide={() => setShowModal(false)} obj={selectedPlace}/>
           
     </Container>
   );
