@@ -50,31 +50,7 @@ const Calendario: React.FC = () => {
       </Row>
 
       {/* Modal de nueva cita (Placeholder) */}
-      {/* <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>Agendar Nueva Cita</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>Título de la Cita</Form.Label>
-              <Form.Control type="text" placeholder="Ej: Revisión" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Fecha</Form.Label>
-              <Form.Control type="date" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Hora</Form.Label>
-              <Form.Control type="time" />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>Cancelar</Button>
-          <Button variant="primary" onClick={() => setShowModal(false)}>Guardar</Button>
-        </Modal.Footer>
-      </Modal> */}
+      
       <ModalDEcalendario show={showModal} hide={() => setShowModal(false)} />
     </Container>
   );

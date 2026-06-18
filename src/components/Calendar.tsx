@@ -1,6 +1,8 @@
 
 import {Row, Col, Card, Button} from 'react-bootstrap';
 import type { Cita } from '../pages/Calendario';
+import React, { useState, useMemo } from 'react';
+import '../styles/calendar.css';
 type Props = {
     citas: Cita[]
 }
@@ -47,24 +49,6 @@ export const CalendarOriginal = (props: Props) => {
             </Col>
   )
 }
-
-
-{/*
-  Hola bot, para la mision de hoy debemos crear un componente de react para mi pagina de veterinarias. El componente padre pasara por medio de props una lista de "citas" que deben verse marcadas en el componente Calendar. Sabemos qie la lista de "citas" tiene el siguiente tipado: 
-  export interface Cita {
-  id: number;
-  titulo: string;
-  fecha: string;
-  hora: string;
-  tipo: 'consulta' | 'vacuna' | 'cirujia';
-  profesional: string;
-  }
-  El componente Calendar debera mostrar la cuadricula de dias marcando los dias correspondientes con las "citas" de la lista. El usuario debera poder navegar entre los meses de modo que podra ver los meses proximos y los pasados siempre dentro del mismo año
-   */}
-   // Calendar.tsx
-import React, { useState, useMemo } from 'react';
-import '../styles/calendar.css';
-
 
 
 interface CalendarProps {
