@@ -1,0 +1,22 @@
+@import './mainStyles.css';
+
+.date-list{
+    border-radius: 10px;
+    overflow: hidden;
+    width: 30%;
+    min-width: 300px;
+    margin: auto;
+}
+.date-list-title{
+    background-color: var(--violeta);
+    color: var(--blanco);
+    border-radius: 5px 5px 0 0;
+}
+.date-list-content{
+    
+    border: 2px solid var(--violeta);
+    
+    border-radius: 0 0 5px 5px;
+    height: 400px;
+    overflow: auto;
+}

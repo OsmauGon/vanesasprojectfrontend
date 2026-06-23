@@ -1,19 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { UserZone } from './UserZone';
+import '../styles/sidebar.css'
+import { FaUserDoctor } from "react-icons/fa6";
+import { FaHome } from "react-icons/fa";
+import { FaHospitalAlt } from "react-icons/fa";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { FaRegNewspaper } from "react-icons/fa6";
+import { FaBlog } from "react-icons/fa";
+
+//https://react-icons.github.io/react-icons/
 
 const Sidebar: React.FC = () => {
   return (
     <div 
-      className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" 
-      style={{ 
-        width: '250px', // Ancho fijo necesario
-        height: '100vh', // Ocupa todo el alto
-        position: 'fixed', // Fija la sidebar para que no se mueva al hacer scroll
-        top: 0,
-        left: 0
-      }}
-    >
+      className="sidebar p-3  bg-dark">
       {/* Logo del Proyecto */}
       <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <span className="fs-4 fw-bold nav-title">VetConnect</span>
@@ -28,7 +29,8 @@ const Sidebar: React.FC = () => {
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
             end
           >
-            Inicio
+            <FaHome />
+            <b>Inicio</b>
           </NavLink>
         </li>
         <li className="nav-item">
@@ -36,7 +38,8 @@ const Sidebar: React.FC = () => {
             to="/profesionales" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            Profesionales
+            <FaUserDoctor />
+            <b>Profesionales</b>
           </NavLink>
         </li>
         <li className="nav-item">
@@ -44,7 +47,8 @@ const Sidebar: React.FC = () => {
             to="/veterinarias" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            Veterinarias
+            <FaHospitalAlt />
+            <b>Veterinarias</b>
           </NavLink>
         </li>
         <li className="nav-item">
@@ -52,7 +56,8 @@ const Sidebar: React.FC = () => {
             to="/calendario" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            Calendario
+            <FaRegCalendarAlt />
+            <b>Calendario</b>
           </NavLink>
         </li>
         <li className="nav-item">
@@ -60,7 +65,8 @@ const Sidebar: React.FC = () => {
             to="/noticias" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            Noticias
+            <FaRegNewspaper />
+            <b>Noticias</b>
           </NavLink>
         </li>
         <li className="nav-item">
@@ -68,7 +74,8 @@ const Sidebar: React.FC = () => {
             to="/blogs" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            Blogs
+            <FaBlog />
+            <b>Blog</b>
           </NavLink>
         </li>
       </ul>

@@ -1,0 +1,68 @@
+@import './mainStyles.css';
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 250px;/* // Ancho fijo necesario */
+    height: 100vh;/* , // Ocupa todo el alto */
+    position: fixed;/* , // Fija la sidebar para  que no se mueva al hacer scroll*/
+    top: 0;
+    left: 0;
+}
+
+.sidebar li svg{
+  display: none;
+}
+/*
+.sidebar a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .sidebar{
+    width: 165px;
+  }
+  .sidebar a{
+    width: 145px;
+    }
+}
+@media (max-width: 420px) {
+   .sidebar{
+    width: 80px;
+  }
+  .sidebar a{
+    width: 50px;
+    }
+.sidebar a b, .sidebar span{
+    display: none;
+}
+}
+*/

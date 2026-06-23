@@ -9,7 +9,7 @@
 .fondovioletaclaro{
     background-color: var(--violetaClaro) !important;
 }
-body{
+html{
     
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
@@ -19,7 +19,6 @@ h1,h2,.nav-title{
 }
 
 .contenido{
-    
 }
 .active{
     background-color: var(--violeta) !important;

@@ -47,7 +47,7 @@ const Home: React.FC = () => {
         <Col>{/* //profesionales */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
-              <Card.Title>👨‍⚕️ Veterinarios</Card.Title>
+              <Card.Title>👨‍⚕️ Profesionales</Card.Title>
               <Card.Text>
                 Profesionales especializados cerca de ti.
               </Card.Text>
