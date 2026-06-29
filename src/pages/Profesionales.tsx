@@ -7,6 +7,7 @@ export interface Profesional {
   id: number;
   nombre: string;
   especialidad: string;
+  practicas?: string[];//especies, practicas, conocimientos
   ubicacion: string;
   rating: number;
   disponible: boolean;
@@ -19,12 +20,12 @@ export interface Profesional {
 
 // Datos de ejemplo
 const profesionalesData: Profesional[] = [
-  { id: 1, nombre: "Dr. Juan Pérez", especialidad: "Medicina General", ubicacion: "Santiago del Estero 1234", rating: 4.8, disponible: true, imagen: "https://randomuser.me/api/portraits/men/32.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com" },
-  { id: 2, nombre: "Dra. María González", especialidad: "Cirugía Veterinaria", ubicacion: "Las Condes 5678", rating: 4.9, disponible: true, imagen: "https://randomuser.me/api/portraits/women/44.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com" },
-  { id: 3, nombre: "Dr. Carlos López", especialidad: "Odontología", ubicacion: "Providencia 9101", rating: 4.6, disponible: false, imagen: "https://randomuser.me/api/portraits/men/64.jpg", telefono: "1234567891011", hacedomicilio: false, email: "emailfalso@gmail.com" },
-  { id: 4, nombre: "Dra. Ana Martínez", especialidad: "Medicina General", ubicacion: "Ñuñoa 1121", rating: 4.7, disponible: true, imagen: "https://randomuser.me/api/portraits/women/68.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com" },
-  { id: 5, nombre: "Dr. Roberto Sánchez", especialidad: "Dermatología", ubicacion: "Vitacura 3141", rating: 4.9, disponible: true, imagen: "https://randomuser.me/api/portraits/men/85.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com" },
-  { id: 6, nombre: "Dra. Laura Torres", especialidad: "Cardiología", ubicacion: "Gascon 5161", rating: 4.8, disponible: false, imagen: "https://randomuser.me/api/portraits/women/12.jpg", telefono: "1234567891011", hacedomicilio: false, email: "emailfalso@gmail.com" },
+  { id: 1, nombre: "Dr. Juan Pérez", especialidad: "Medicina General", ubicacion: "Santiago del Estero 1234", rating: 4.8, disponible: true, imagen: "https://randomuser.me/api/portraits/men/32.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com", practicas: ["Perros","Gatos","Loros"] },
+  { id: 2, nombre: "Dra. María González", especialidad: "Cirugía Veterinaria", ubicacion: "Las Condes 5678", rating: 4.9, disponible: true, imagen: "https://randomuser.me/api/portraits/women/44.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com", practicas: ["Perros","Gatos","Loros"] },
+  { id: 3, nombre: "Dr. Carlos López", especialidad: "Odontología", ubicacion: "Providencia 9101", rating: 4.6, disponible: false, imagen: "https://randomuser.me/api/portraits/men/64.jpg", telefono: "1234567891011", hacedomicilio: false, email: "emailfalso@gmail.com", practicas: ["Perros","Gatos","Loros"] },
+  { id: 4, nombre: "Dra. Ana Martínez", especialidad: "Medicina General", ubicacion: "Ñuñoa 1121", rating: 4.7, disponible: true, imagen: "https://randomuser.me/api/portraits/women/68.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com", practicas: ["Perros","Gatos","Loros"] },
+  { id: 5, nombre: "Dr. Roberto Sánchez", especialidad: "Dermatología", ubicacion: "Vitacura 3141", rating: 4.9, disponible: true, imagen: "https://randomuser.me/api/portraits/men/85.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com", practicas: ["Perros","Gatos","Loros"] },
+  { id: 6, nombre: "Dra. Laura Torres", especialidad: "Cardiología", ubicacion: "Gascon 5161", rating: 4.8, disponible: false, imagen: "https://randomuser.me/api/portraits/women/12.jpg", telefono: "1234567891011", hacedomicilio: false, email: "emailfalso@gmail.com", practicas: ["Perros","Gatos","Loros"] },
 ];
 
 const Profesionales: React.FC = () => {
@@ -165,10 +166,6 @@ export const Profesionales2: React.FC = () => {
                   </div>
                 </div>
                 
-                <Card.Text>
-                  <strong>📍 Ubicación:</strong> {prof.ubicacion}<br />
-                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
-                </Card.Text>
 
                 <div className="d-grid gap-2">
                   <Button 

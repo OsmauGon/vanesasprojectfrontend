@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { UserZone } from './UserZone';
 import '../styles/sidebar.css'
@@ -12,11 +12,12 @@ import { FaBlog } from "react-icons/fa";
 //https://react-icons.github.io/react-icons/
 
 const Sidebar: React.FC = () => {
+  const [loginButton] = useState<boolean>(false)
   return (
     <div 
       className="sidebar p-3  bg-dark">
       {/* Logo del Proyecto */}
-      <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <a href="/" className="page-title d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <span className="fs-4 fw-bold nav-title">VetConnect</span>
       </a>
       <hr />
@@ -79,7 +80,7 @@ const Sidebar: React.FC = () => {
           </NavLink>
         </li>
       </ul>
-      <UserZone />
+      {loginButton && <UserZone />}
     </div>
   );
 };

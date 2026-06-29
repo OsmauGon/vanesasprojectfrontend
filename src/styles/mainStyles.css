@@ -19,6 +19,7 @@ h1,h2,.nav-title{
 }
 
 .contenido{
+    margin-left: 250px;
 }
 .active{
     background-color: var(--violeta) !important;
@@ -59,4 +60,33 @@ h1,h2,.nav-title{
     border-color: var(--gris) !important;
     color: var(--blanco);
     transition: .5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+  .contenido{
+    margin-left: 165px;
+  }
+  
+}
+@media (max-width: 450px) {
+  .contenido{
+    margin-left: 100px;
+  }
 }

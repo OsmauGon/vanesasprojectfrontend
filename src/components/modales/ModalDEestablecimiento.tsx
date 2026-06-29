@@ -53,9 +53,14 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
         <Modal.Body>
           {props.obj && (
             <div>
-              <h6>Información del establecimiento</h6>
               <pre style={{ background: '#f8f9fa', padding: '10px', borderRadius: '4px' }}>
-                {JSON.stringify(props.obj, null, 2)}
+                
+                <p>Horario: {props.obj.horario}</p>
+                <p>Ubicacion: {props.obj.ubicacion}</p>
+                {props.obj.urgencias  && <p>"Disponible para urgencias"</p>}
+                <p>Especialidades: {props.obj.especialidades?.join('-')}</p>
+                <p>Profesionales: {props.obj.profesionalesVinculados?.join('-')}</p>
+                {/* <img src={props.obj.imagen} alt={props.obj.nombre} /> */}
               </pre>
             </div>
           )}

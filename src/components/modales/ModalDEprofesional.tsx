@@ -1,5 +1,5 @@
 
-import { Button, Modal} from 'react-bootstrap';
+import { Button, Card, Modal} from 'react-bootstrap';
 import type { Profesional } from '../../pages/Profesionales';
 import { FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 type ModalProps = {
@@ -36,7 +36,14 @@ export const ModalDEprofesional = (props: ModalProps) => {
           <Modal.Title>{props.obj?.nombre}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {JSON.stringify(props.obj)}
+                <p>Especialidad: {props.obj?.especialidad}</p>
+                <p>Practicas: {props.obj?.practicas?.join(' - ')}</p>
+                                <Card.Text>
+                                  <strong>📍 Ubicación:</strong> {props.obj?.ubicacion}<br />
+                                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                                </Card.Text>
+                {props.obj?.hacedomicilio  && <p>"Hace visitas a domicilio"</p>}
+                {/* <img src={props.obj.imagen} alt={props.obj.nombre} /> */}
         </Modal.Body>
         <Modal.Footer>
           <Button 

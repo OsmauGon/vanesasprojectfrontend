@@ -18,7 +18,9 @@ export interface Establecimiento {
   latitud?: number;
   longitud?: number;
   horario?: string;
-  especialidades?: string[]
+  especialidades?: string[];
+  profesionalesVinculados?: string[];
+
 }
 
 // Datos de ejemplo

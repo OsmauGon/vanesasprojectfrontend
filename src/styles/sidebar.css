@@ -66,3 +66,22 @@
 }
 }
 */
+@media (max-width: 600px) {
+  .sidebar{
+    width: 160px;
+  }
+}
+@media (max-width: 450px) {
+  .sidebar{
+    width: 80px;
+  }
+  .sidebar span{
+    display: none;
+  }
+  .sidebar a b{
+    display: none;
+  }
+  .sidebar a svg{
+    display: block;
+  }
+}

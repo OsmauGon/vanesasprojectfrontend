@@ -20,7 +20,7 @@ function App() {
         <Sidebar />
 
         {/* Contenido Principal */}
-        <div className="contenido flex-grow-1" style={{ marginLeft: '250px' }}>
+        <div className="contenido flex-grow-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/veterinarias" element={<Veterinarias />} />
