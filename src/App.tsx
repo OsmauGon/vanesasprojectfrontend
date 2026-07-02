@@ -11,6 +11,7 @@ import Noticias from './pages/Noticias';
 import EditPage from './pages/EditPage';
 import Logreg from './pages/Logreg';
 import BlogPagee from './pages/BlogPage';
+import MissingPostsPage from './pages/Extraviados';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/blogs" element={<BlogPagee />} />
             <Route path="/edit" element={<EditPage />} />
             <Route path="/logreg" element={<Logreg />} />
+            <Route path="/extraviados" element={<MissingPostsPage />} />
           </Routes>
         </div>
       </div>

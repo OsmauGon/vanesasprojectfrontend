@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { UserZone } from './UserZone';
 import '../styles/sidebar.css'
 import { FaUserDoctor } from "react-icons/fa6";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaSearch } from "react-icons/fa";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaRegNewspaper } from "react-icons/fa6";
@@ -77,6 +77,15 @@ const Sidebar: React.FC = () => {
           >
             <FaBlog />
             <b>Blog</b>
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink 
+            to="/extraviados" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
+          >
+            <FaSearch />
+            <b>Extraviados</b>
           </NavLink>
         </li>
       </ul>
