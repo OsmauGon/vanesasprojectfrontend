@@ -1,0 +1,14 @@
+.switches-container{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+
+}
+.form-switch{
+   border-radius: 0.375rem;
+   flex-direction: row-reverse;
+   display:flex;
+   justify-content: center;
+   flex-basis: 400px;
+   gap: 50px
+}

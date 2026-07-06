@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/mainStyles.css'
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home'; // Assumiendo que tienes una página de inicio
-import Veterinarias from './pages/Veterinarias';
-import Profesionales from './pages/Profesionales';
+import { Veterinarias2 } from './pages/Veterinarias';
+import { Profesionales2 } from './pages/Profesionales';
 import Calendario from './pages/Calendario';
 import Noticias from './pages/Noticias';
 import EditPage from './pages/EditPage';
@@ -24,8 +24,8 @@ function App() {
         <div className="contenido flex-grow-1">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/veterinarias" element={<Veterinarias />} />
-            <Route path="/profesionales" element={<Profesionales />} />
+            <Route path="/veterinarias" element={<Veterinarias2 />} />
+            <Route path="/profesionales" element={<Profesionales2 />} />
             <Route path="/calendario" element={<Calendario />} />
             <Route path="/noticias" element={<Noticias />} />
             <Route path="/blogs" element={<BlogPagee />} />

@@ -1,9 +1,9 @@
 
-import { Button, Modal} from 'react-bootstrap';
-import type { Establecimiento } from '../../pages/Veterinarias';
+import { Badge, Button, Card, Modal} from 'react-bootstrap';
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import type { Establishment } from '../../types/establishment-type';
 type ModalProps = {
-    obj: Establecimiento | null;
+    obj: Establishment | null;
     show: boolean;
     hide: (val: boolean) => void
 }
@@ -11,7 +11,7 @@ type ModalProps = {
 export const ModalDEestablecimiento = (props: ModalProps) => {
   const abrirWhatsApp = () => {
     if (props.obj?.telefono) {
-      const telefonoLimpio = props.obj.telefono.replace(/\s/g, '').replace(/-/g, '');
+      const telefonoLimpio = props.obj.telefono[0].replace(/\s/g, '').replace(/-/g, '');
       const telefonoCompleto = telefonoLimpio.startsWith('+') 
         ? telefonoLimpio 
         : `+54${telefonoLimpio}`;
@@ -50,21 +50,31 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
         <Modal.Header closeButton>
           <Modal.Title>{props.obj?.nombre}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          {props.obj && (
-            <div>
-              <pre style={{ background: '#f8f9fa', padding: '10px', borderRadius: '4px' }}>
+         <Modal.Body>
+                <Card.Text>
+                  <strong>📍 Especialidad:</strong> {props.obj?.especialidades?.join(' - ')}<br />
+                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                </Card.Text>
+                <Card.Text>
+                  <strong>📍 Teléfono:</strong> {props.obj?.telefono.join(' - ')}<br />
+                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                </Card.Text>
+                <Card.Text>
+                  <strong>📍 Ubicación:</strong> {props.obj?.ubicacion}<br />
+                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                </Card.Text>
+                <Card.Text>
+                  <strong>📍 Horario:</strong> {props.obj?.horario}<br />
+                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                </Card.Text>
                 
-                <p>Horario: {props.obj.horario}</p>
-                <p>Ubicacion: {props.obj.ubicacion}</p>
-                {props.obj.urgencias  && <p>"Disponible para urgencias"</p>}
-                <p>Especialidades: {props.obj.especialidades?.join('-')}</p>
-                <p>Profesionales: {props.obj.profesionalesVinculados?.join('-')}</p>
+                {props.obj?.haceurgencias  && <Badge bg="secondary" pill>Atiende urgenicas</Badge>}
+                {props.obj?.tienelaboratorio  && <Badge bg="secondary" pill>Tiene Laboratorio</Badge>}
+                {props.obj?.tienepeluqueria  && <Badge bg="secondary" pill>Tiene Peluqueria</Badge>}
+                {props.obj?.tienepetshop  && <Badge bg="secondary" pill>Tiene Petshop</Badge>}
+                {props.obj?.tienequirofano  && <Badge bg="secondary" pill>Tiene Quirofano</Badge>}
                 {/* <img src={props.obj.imagen} alt={props.obj.nombre} /> */}
-              </pre>
-            </div>
-          )}
-        </Modal.Body>
+          </Modal.Body>
         <Modal.Footer>
             <Button 
             variant="success" 

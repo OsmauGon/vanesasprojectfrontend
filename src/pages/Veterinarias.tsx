@@ -1,61 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Badge, Form, InputGroup, Button } from 'react-bootstrap';
 import { ModalDEestablecimiento } from '../components/modales/ModalDEestablecimiento';
 import SwitchExample from '../components/SwitchExample';
+import type { Establishment } from '../types/establishment-type';
+import { useEstablishments } from '../hooks/useEstablishmentData';
 
-export interface Establecimiento {
-  id: number;
-  nombre: string;
-  especialidad: string;
-  rating: number;
-  disponible: boolean;
-  imagen: string;
 
-  urgencias?: boolean;
-  telefono?: string;
-  email?: string;
-  ubicacion: string;
-  latitud?: number;
-  longitud?: number;
-  horario?: string;
-  especialidades?: string[];
-  profesionalesVinculados?: string[];
 
-}
-
-// Datos de ejemplo
-/* const establecimiento :Establecimiento = {
-  id: 0,
-  rating: 0,
-  disponible: true,
-  imagen: "******************",
-    nombre: 'Veterinaria San Martín',
-    telefono: '3511234567',
-    email: 'info@veterinariasanmartin.com',
-    ubicacion: 'Av. San Martín 1234, Córdoba, Argentina',
-    latitud: -31.4201,
-    longitud: -64.1888,
-    horario: 'Lunes a Sábado 8:00 - 20:00',
-    especialidad: "cirujia",
-    especialidades: ['Perros', 'Gatos', 'Exóticos']
-  }; */
-const establecimientosData: Establecimiento[] = [
-  { id: 1, nombre: "El club de las mascotas", especialidad: "Medicina General", ubicacion: "Santiago del Estero 1234", rating: 4.8, disponible: true, imagen: "img/elclub.jpg", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
-  { id: 2, nombre: "Animales Sueltos", especialidad: "Cirugía Veterinaria", ubicacion: "Las Condes 5678", rating: 4.9, disponible: true, imagen: "img/animalessueltos.jpg", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
-  { id: 3, nombre: "All Pets", especialidad: "Odontología", ubicacion: "Providencia 9101", rating: 4.6, disponible: false, imagen: "img/allpets.png", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
-  { id: 4, nombre: "Kidogo", especialidad: "Medicina General", ubicacion: "Ñuñoa 1121", rating: 4.7, disponible: true, imagen: "img/kidogo.jpg", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
-  { id: 5, nombre: "Maule Sur", especialidad: "Dermatología", ubicacion: "Vitacura 3141", rating: 4.9, disponible: true, imagen: "img/maulesur.png", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
-  { id: 6, nombre: "Vet-Can", especialidad: "Cardiología", ubicacion: "Gascon 5161", rating: 4.8, disponible: false, imagen: "img/vetcan.png", telefono:"1234567891011", email: "emailfalsogmail.com", latitud: 123456789, longitud: 123456789 },
-];
-
-const Veterinarias: React.FC = () => {
+export const VeterinariasOriginal: React.FC = () => {
+  
+    const { data } = useEstablishments();
   const [busqueda, setBusqueda] = useState("");
-  const [selectedPlace,setSelectedPlace] = useState<Establecimiento | null>(null)
+  const [selectedPlace,setSelectedPlace] = useState<Establishment | null>(null)
   const [showModal, setShowModal] = useState(false);
   
-  const filteredEstablecimientos = establecimientosData.filter(p => 
+  const filteredEstablecimientos = data.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.especialidad.toLowerCase().includes(busqueda.toLowerCase()) ||
+    p.especialidades.includes(busqueda.toLowerCase()) ||
     p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
   );
 
@@ -93,7 +54,7 @@ const Veterinarias: React.FC = () => {
                   />
                   <div>
                     <Card.Title className="mb-0">{prof.nombre}</Card.Title>
-                    <small className="text-muted">{prof.especialidad}</small>
+                    <small className="text-muted">{prof.especialidades[0]}</small>
                   </div>
                 </div>
                 
@@ -128,15 +89,107 @@ const Veterinarias: React.FC = () => {
     </Container>
   );
 };
+
+
+
+
+
+
+type EstablishmentCardType = {
+  info: Establishment, 
+  setShowModal: (val :boolean) => void, 
+  setSelectedProf: (establecimiento: Establishment) => void
+}
+const EstablishmentCard = (info: EstablishmentCardType)=>{
+  return (
+    <Col key={info.info.id}>
+            <Card className="h-100 shadow-sm hover-card">
+              <Card.Body>
+                <div className="d-flex align-items-center mb-3">
+                  <img 
+                    src={info.info.imagen} 
+                    alt={info.info.nombre}
+                    className="rounded-circle me-3"
+                    style={{ width: '60px', height: '60px', objectFit: 'cover' }}
+                  />
+                  <div>
+                    <Card.Title className="mb-0">{info.info.nombre}</Card.Title>
+                    <small className="text-muted">{info.info.especialidades[0]}</small>
+                  </div>
+                </div>
+                
+
+                <div className="d-grid gap-2">
+                  <Button 
+                    variant={info.info.disponible ? "primary" : "secondary"}
+                    disabled={!info.info.disponible}
+                    className='boton1'
+                    onClick={() => {info.setShowModal(true); info.setSelectedProf(info.info)}}
+                  >
+                    {info.info.disponible ? "Ver Contacto" : "No Disponible"}
+                  </Button>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+  )
+}
 export const Veterinarias2: React.FC = () => {
+    const { data, error} = useEstablishments();
+    const [establecimientos,setEstablecimientos] = useState<Establishment[]>([])
   const [busqueda, setBusqueda] = useState("");
-  const [selectedPlace,setSelectedPlace] = useState<Establecimiento | null>(null)
+  const [selectedPlace,setSelectedPlace] = useState<Establishment | null>(null)
   const [showModal, setShowModal] = useState(false);
   const [urgencias,seturgencias] = useState<boolean>(false)
+  const [laboratorio,setLaboratorio] = useState<boolean>(false)
+  const [quirofano,setQuirofano] = useState<boolean>(false)
+  const [peluqueria,setPeluqueria] = useState<boolean>(false)
+  const [petshop,setPetshop] = useState<boolean>(false)
   
-  const filteredEstablecimientos = establecimientosData.filter(p => 
+  const switches = [ 
+  {
+    etiqueta: "Hace urgencias",
+    estado: urgencias,
+    accion: seturgencias
+  }, 
+  {
+    etiqueta: "Tiene laboratorio",
+    estado: laboratorio,
+    accion: setLaboratorio
+  }, 
+  {
+    etiqueta: "Tiene quirofano",
+    estado: quirofano,
+    accion: setQuirofano
+  }, 
+  {
+    etiqueta: "Tiene peluqueria",
+    estado: peluqueria,
+    accion: setPeluqueria
+  }, 
+  {
+    etiqueta: "Tiene petshop",
+    estado: petshop,
+    accion: setPetshop
+  },
+  ]
+   
+  useEffect(()=>{
+    const filtradoDEnombres = data.filter(p => p.nombre.toLowerCase().includes(busqueda.toLowerCase()));
+    const filtradoDEubicacion = filtradoDEnombres.filter(p => p.nombre.toLowerCase().includes(busqueda.toLowerCase()));
+    const filtradoDEurgencias = urgencias ? filtradoDEubicacion.filter(p => p.haceurgencias === urgencias) : filtradoDEubicacion
+    const filtradoDElaboratorio = laboratorio ? filtradoDEurgencias.filter(p => p.tienelaboratorio === laboratorio) : filtradoDEurgencias
+    const filtradoDEpeluqueria = peluqueria ? filtradoDElaboratorio.filter(p => p.tienepeluqueria === peluqueria) : filtradoDElaboratorio
+    const filtradoDEpetshop = petshop ? filtradoDEpeluqueria.filter(p => p.tienepetshop === petshop) : filtradoDEpeluqueria
+    const filtradoDEquirofano = quirofano ? filtradoDEpetshop.filter(p => p.tienequirofano === quirofano) : filtradoDEpetshop
+    
+    setEstablecimientos(filtradoDEquirofano)
+
+  },[data,busqueda,urgencias,laboratorio,peluqueria,petshop,quirofano])
+
+  const filteredEstablecimientos = data.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.especialidad.toLowerCase().includes(busqueda.toLowerCase()) ||
+    //p.especialidad.toLowerCase().includes(busqueda.toLowerCase()) ||
     p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
   );
 
@@ -150,53 +203,25 @@ export const Veterinarias2: React.FC = () => {
       {/* Buscador */}
       <InputGroup className="mb-4">
         <Form.Control
-          placeholder="Buscar por nombre, especialidad o ubicación..."
+          placeholder="Buscar por nombre, ubicación..."
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
         />
         <Button variant="outline-secondary">
           🔍
         </Button>
-        <SwitchExample etiqueta={'A urgencias'} activo={urgencias} setActivo={seturgencias} />
       </InputGroup>
+        <SwitchExample switches={switches}/>
+        {/* <SwitchExample etiqueta={'Hace urgencias'} activo={urgencias} setActivo={seturgencias} />
+        <SwitchExample etiqueta={'Tiene laboratorio'} activo={laboratorio} setActivo={setLaboratorio} />
+        <SwitchExample etiqueta={'Tiene peluqueria'} activo={peluqueria} setActivo={setPeluqueria} />
+        <SwitchExample etiqueta={'Tiene petshop'} activo={petshop} setActivo={setPetshop} /> */}
 
       {/* Grid de Veterinarias */}
+            {error && <p>Lo siguientes perfiles son falsos e inventados</p>}
       <Row xs={1} md={2} lg={3} className="g-4">
-        {filteredEstablecimientos.map((prof) => (
-          <Col key={prof.id}>
-            <Card className="h-100 shadow-sm hover-card">
-              <Card.Body>
-                <div className="d-flex align-items-center mb-3">
-                  <img 
-                    src={prof.imagen} 
-                    alt={prof.nombre}
-                    className="rounded-circle me-3"
-                    style={{ width: '60px', height: '60px', objectFit: 'cover' }}
-                  />
-                  <div>
-                    <Card.Title className="mb-0">{prof.nombre}</Card.Title>
-                    <small className="text-muted">{prof.especialidad}</small>
-                  </div>
-                </div>
-                
-                <Card.Text>
-                  <strong>📍 Ubicación:</strong> {prof.ubicacion}<br />
-                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
-                </Card.Text>
-
-                <div className="d-grid gap-2">
-                  <Button 
-                    variant={prof.disponible ? "primary" : "secondary"}
-                    disabled={!prof.disponible}
-                    className='boton1'
-                    onClick={() => {setShowModal(true); setSelectedPlace(prof)}}
-                  >
-                    {prof.disponible ? "Visitar" : "No Disponible"}
-                  </Button>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+        {establecimientos.map((establecimiento) => (
+          <EstablishmentCard key={establecimiento.id} info={establecimiento} setShowModal={setShowModal} setSelectedProf={setSelectedPlace}/>
         ))}
       </Row>
 
@@ -211,4 +236,4 @@ export const Veterinarias2: React.FC = () => {
   );
 };
 
-export default Veterinarias;
+export default Veterinarias2;

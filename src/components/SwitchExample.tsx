@@ -1,28 +1,32 @@
 import Form from 'react-bootstrap/Form';
+import '../styles/switch-style.css'
 
 type SwitchSettings ={
     etiqueta: string;
-    activo: boolean;
-    setActivo: (val: boolean) => void
+    estado: boolean;
+    accion: (val: boolean) => void
+}
+type SeveralSwitches = {
+  switches: SwitchSettings[]
 }
 
-function SwitchExample(props :SwitchSettings) {
+function SwitchExample(switches: SeveralSwitches) {
   return (
-    <Form>
-      <Form.Check // prettier-ignore
-        type="switch"
-        id="custom-switch"
-        label={props.etiqueta}
-        onChange={()=> {props.setActivo(!props.activo); console.log(props.activo)}}
-      />
-      {/* <Form.Check // prettier-ignore
-        disabled
-        type="switch"
-        label="disabled switch"
-        id="disabled-custom-switch"
-      /> */}
+    <Form className='switches-container'>
+      {switches.switches.map(i=> (
+              <Form.Check // prettier-ignore
+              key={i.etiqueta}
+                type="switch"
+                className="custom-switch"
+                label={i.etiqueta}
+                onChange={()=> {i.accion(!i.estado);}}
+              />
+      ))
+    }
     </Form>
   );
 }
+
+
 
 export default SwitchExample;

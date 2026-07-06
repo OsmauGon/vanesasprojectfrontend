@@ -1,6 +1,7 @@
 // src/hooks/useMissingPosts.ts
 import { useState, useEffect } from 'react';
 import type { MissingPost } from '../types/missingpost-type';
+import { extraviadosGet } from '../backend-endpoints';
 
 
 interface UseMissingPostsReturn {
@@ -59,7 +60,7 @@ export const useMissingPosts = (): UseMissingPostsReturn => {
     
     try {
       // 👇 Cambiá esta URL por tu endpoint real
-      const response = await fetch('https://api.tuveterinaria.com/missing-posts');
+      const response = await fetch(extraviadosGet);
       
       if (!response.ok) {
         throw new Error(`Error ${response.status}: ${response.statusText}`);

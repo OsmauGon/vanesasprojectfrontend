@@ -1,6 +1,6 @@
 
-import { Button, Card, Modal} from 'react-bootstrap';
-import type { Profesional } from '../../pages/Profesionales';
+import { Button, Card, Modal, Badge} from 'react-bootstrap';
+import type { Profesional } from '../../types/usertype';
 import { FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 type ModalProps = {
     obj: Profesional | null;
@@ -35,16 +35,29 @@ export const ModalDEprofesional = (props: ModalProps) => {
         <Modal.Header closeButton>
           <Modal.Title>{props.obj?.nombre}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-                <p>Especialidad: {props.obj?.especialidad}</p>
-                <p>Practicas: {props.obj?.practicas?.join(' - ')}</p>
-                                <Card.Text>
-                                  <strong>📍 Ubicación:</strong> {props.obj?.ubicacion}<br />
-                                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
-                                </Card.Text>
-                {props.obj?.hacedomicilio  && <p>"Hace visitas a domicilio"</p>}
+          <Modal.Body>
+                <Card.Text>
+                  <strong>📍 Especialidad:</strong> {props.obj?.especialidad}<br />
+                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                </Card.Text>
+                <Card.Text>
+                  <strong>📍 Practicas:</strong> {props.obj?.practicas?.join(' - ')}<br />
+                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                </Card.Text>
+                <Card.Text>
+                  <strong>📍 Teléfono:</strong> {props.obj?.telefono}<br />
+                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                </Card.Text>
+                
+                <Card.Text>
+                  <strong>📍 Ubicación:</strong> {props.obj?.ubicacion}<br />
+                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                </Card.Text>
+                
+                {props.obj?.hacedomicilio  && <Badge bg="secondary" pill>Visita los domicilios</Badge>
+                }
                 {/* <img src={props.obj.imagen} alt={props.obj.nombre} /> */}
-        </Modal.Body>
+          </Modal.Body>
         <Modal.Footer>
           <Button 
           variant="success" 
