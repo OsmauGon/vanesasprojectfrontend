@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     <Container fluid className="p-4">
       {/* Bienvenido */}
       <div className="mb-5">
-        <h1 className="display-4 fw-bold ">Bienvenido a VetConnect</h1>
+        <h1 className="display-4 fw-bold ">Bienvenido a Veteri.net</h1>
         <p className="lead text-muted">
           Conectando a amantes de mascotas con los mejores profesionales y veterinarias.
         </p>
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
                 Lista de establecimientos cercanos.
               </Card.Text>
               <Button variant="primary" className='boton1' onClick={()=>{navigate("/veterinarias")}}>
-                Ver Clínicas
+                Ver <br/>Clínicas
               </Button>
             </Card.Body>
           </Card>
@@ -73,12 +73,12 @@ const Home: React.FC = () => {
         <Col>{/* //noticias */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
-              <Card.Title>📰<br></br> Noticias</Card.Title>
+              <Card.Title>📰<br></br> Perdidos/Encontrados</Card.Title>
               <Card.Text>
-                Tips, consejos y noticias del mundo animal.
+                Publicaciónes de mascostas extraviadas.
               </Card.Text>
-              <Button variant="primary" className='boton1' onClick={()=>{navigate("/noticias")}}>
-                Ver Noticias
+              <Button variant="primary" className='boton1' onClick={()=>{navigate("/extraviados")}}>
+                Ver <br/>Perdidos / Encontrados
               </Button>
             </Card.Body>
           </Card>

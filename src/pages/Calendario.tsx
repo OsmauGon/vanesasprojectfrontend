@@ -34,9 +34,12 @@ const Calendario: React.FC = () => {
     <Container className="py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1 >Calendario de Citas</h1>
-        <Button variant="primary" className='boton1' onClick={() => setShowModal(true)}>
-          + Nueva Cita
-        </Button>
+        {false && <Button variant="primary" 
+                    className='boton1' 
+                    onClick={() => setShowModal(true)}>
+                    + Nueva Cita
+                  </Button>
+        }
       </div>
 
       <Row>

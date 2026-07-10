@@ -59,7 +59,7 @@ export const VeterinariasOriginal: React.FC = () => {
                 </div>
                 
                 <Card.Text>
-                  <strong>📍 Ubicación:</strong> {prof.ubicacion}<br />
+                  <strong>🐾 Ubicación:</strong> {prof.ubicacion}<br />
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
 
@@ -148,27 +148,27 @@ export const Veterinarias2: React.FC = () => {
   
   const switches = [ 
   {
-    etiqueta: "Hace urgencias",
+    etiqueta: "Urgencias",
     estado: urgencias,
     accion: seturgencias
   }, 
   {
-    etiqueta: "Tiene laboratorio",
+    etiqueta: "Laboratorio",
     estado: laboratorio,
     accion: setLaboratorio
   }, 
   {
-    etiqueta: "Tiene quirofano",
+    etiqueta: "Quirofano",
     estado: quirofano,
     accion: setQuirofano
   }, 
   {
-    etiqueta: "Tiene peluqueria",
+    etiqueta: "Peluqueria",
     estado: peluqueria,
     accion: setPeluqueria
   }, 
   {
-    etiqueta: "Tiene petshop",
+    etiqueta: "Petshop",
     estado: petshop,
     accion: setPetshop
   },

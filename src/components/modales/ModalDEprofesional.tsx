@@ -2,6 +2,7 @@
 import { Button, Card, Modal, Badge} from 'react-bootstrap';
 import type { Profesional } from '../../types/usertype';
 import { FaEnvelope, FaWhatsapp } from 'react-icons/fa';
+import { useState } from 'react';
 type ModalProps = {
     obj: Profesional | null;
     show: boolean;
@@ -10,6 +11,7 @@ type ModalProps = {
 
 
 export const ModalDEprofesional = (props: ModalProps) => {
+  const [masEspecialidades,setMasEspecialidades] = useState<boolean>(true)
    const abrirWhatsApp = () => {
     if (props.obj?.telefono) {
       // Limpiar el número (eliminar espacios, guiones, etc.)
@@ -37,20 +39,17 @@ export const ModalDEprofesional = (props: ModalProps) => {
         </Modal.Header>
           <Modal.Body>
                 <Card.Text>
-                  <strong>📍 Especialidad:</strong> {props.obj?.especialidad}<br />
+                  <strong>🐾 Especialidades:</strong> {masEspecialidades ? props.obj?.especialidad : props.obj?.practicas?.join(' - ')} <button onClick={()=> setMasEspecialidades(!masEspecialidades)}>{masEspecialidades ? "ver más" : "ver menos"}</button><br />
+                  
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
                 <Card.Text>
-                  <strong>📍 Practicas:</strong> {props.obj?.practicas?.join(' - ')}<br />
-                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
-                </Card.Text>
-                <Card.Text>
-                  <strong>📍 Teléfono:</strong> {props.obj?.telefono}<br />
+                  <strong>🐾 Teléfono:</strong> {props.obj?.telefono}<br />
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
                 
                 <Card.Text>
-                  <strong>📍 Ubicación:</strong> {props.obj?.ubicacion}<br />
+                  <strong>🐾 Ubicación:</strong> {props.obj?.ubicacion}<br />
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
                 

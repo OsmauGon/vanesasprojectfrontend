@@ -10,9 +10,17 @@
     top: 0;
     left: 0;
 }
+.sidebar span{
+  margin: auto;
+}
 
 .sidebar li svg{
   display: none;
+}
+.media-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 /*
 .sidebar a{
@@ -83,5 +91,8 @@
   }
   .sidebar a svg{
     display: block;
+  }
+  .sidebar .media-buttons{
+    flex-direction: column;
   }
 }

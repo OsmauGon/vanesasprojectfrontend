@@ -53,6 +53,26 @@ Tema membresias
 
 
 
+El proyecto Veteri.net.ar (dominio ya registrado por mi cliente) va a estar compuesto de las siguientes partes
+1) 2 frontends (o paginas web): uno cuya funcion sera recibir a los visitantes y mostrar los recursos del proyecto (profesionales, establecimientos, noticias, etc.) y un segundo de uso solo de administradores (designados por el cliente) para realizar la creacion, lectura, modificacion y/o eliminacion de los recursos del proyecto
+2) 1 backend (sistema administrador de recurso) cuya funcion es administrar y proveer de recursos del proyecto a la pagina de manera independiente
+3) El registro de un servicio de dominio y un servicio almacenador de archivos
+
+
+Los 2 Front-ends
+Uno de ellos es el sitio publico que visitaran los usuarios. Su funcion sera mostrar en paginas separadas los Objetos del Proyecto y para esto debe consumir la API del backend. Se desarrollara con el framework ReactJS y se desplegara en la plataforma Vercel
+El segundo sera una aplicacion web independiente destinada unicamente a los administradores (designados por el cliente). Su funciona sera la de iniciar sesion (para verificar permisos) y realizar la creacion, lectura, modificacion y/o eliminacion de los Objetos del proyecto. 
+Se decidio mantener separados ambos frontends para que la edicion del la pagina publica no afecte el funcionamiento interior del proyecto desplegado.
+
+El Back-end
+Es el sistema administrador de recursos del proyecto. Su funcion es la de autenticar y autorizar administradores, llevar a cabo el CRUD de recursos, conectar la base de datos, subir y gestionar archivos (imagenes y docuemntos) y brindar los recursos a ambos Front-ends. Sera desplegado en la plataforma Railway
+
+Servicions Externos
+*Dominio: es la direccion de URL que permitira a los usuarios visitar la pagina de manera publica. El cliente opto por NIC.argentina para registrar un dominio que sera veteri.net.ar
+*FileSystem: es el servicio qie alojara las imagenes y documentos que la pagina de usuarios mostrara, cada imagem o docuemnto tendra una URL almacenada en la base de datos segun corresponda su objeto
+
+
+
 
 
 

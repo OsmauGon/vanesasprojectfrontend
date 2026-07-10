@@ -60,7 +60,7 @@ const MissingPostCard = ({ post }: { post: MissingPost }) => {
       <Card.Body className="d-flex flex-column">
         {/* <Card.Title>{post.title}</Card.Title>
         <Card.Text className="text-muted small">
-          📍 {post.location}
+          🐾 {post.location}
         </Card.Text> */}
         <Button 
           variant="warning" 

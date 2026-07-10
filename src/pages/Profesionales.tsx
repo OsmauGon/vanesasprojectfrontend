@@ -58,7 +58,7 @@ export const ProfesionalesOriginal: React.FC = () => {
                 </div>
                 
                 <Card.Text>
-                  <strong>📍 Ubicación:</strong> {prof.ubicacion}<br />
+                  <strong>🐾 Ubicación:</strong> {prof.ubicacion}<br />
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
 

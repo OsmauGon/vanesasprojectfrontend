@@ -61,6 +61,18 @@ h1,h2,.nav-title{
     color: var(--blanco);
     transition: .5s;
 }
+.modal-body h5{
+    text-align: center;
+}
+.modal-body button{
+    border: none;
+    outline: none;
+    background-color: rgb(127,105,154);
+    color: white;
+    font-size: 12px;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
 
 
 

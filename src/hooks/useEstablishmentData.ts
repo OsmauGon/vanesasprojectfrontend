@@ -39,13 +39,15 @@ export const fakeEstablishments: Establishment[] = [
    profesionalesVinculados: ["Juan Perez","Sebastian Stan","Idris Elba"],
    horario: "07 a 18",
    tienequirofano: true,
+   tienelaboratorio: true,
+   tieneinternacion: true,
    //otro atributo
      },
   { id: 3,
     nombre: "All Pets",
     especialidades: ["Odontología"],
     ubicacion: "Providencia 9101",
-    disponible: false,
+    disponible: true,
     imagen: "img/allpets.png",
     telefono:["1234567891011"],
     email: "emailfalsogmail.com",
@@ -71,6 +73,7 @@ export const fakeEstablishments: Establishment[] = [
    profesionalesVinculados: ["Juan Perez","Sebastian Stan","Idris Elba"],
    horario: "07 a 18",
    tienepeluqueria: true,
+   tienepetshop: true,
    //otro atributo
      },
   { id: 5,
@@ -87,6 +90,7 @@ export const fakeEstablishments: Establishment[] = [
    profesionalesVinculados: ["Juan Perez","Sebastian Stan","Idris Elba"],
    horario: "07 a 18",
    tienelaboratorio: true,
+   tienepetshop: true,
    //otro atributo
      },
   { id: 6,
@@ -102,6 +106,7 @@ export const fakeEstablishments: Establishment[] = [
     profesionalesVinculados: ["John Wick", "Cindy Campbell", "Pedro Pascal"], 
     horario: "07 a 18",
     haceurgencias: true,
+    tienelaboratorio: true
     //otro atributo
     },
     

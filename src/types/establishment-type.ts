@@ -39,6 +39,7 @@ export interface Establishment {
   longitud: number;
 
     servicios?: EstablishmentService;
+    serviciosNOfiltrables?: string[]
   tienequirofano?: boolean;// pa servicios
   tienelaboratorio?: boolean;// pa servicios
   tieneinternacion?: boolean;// pa servicios

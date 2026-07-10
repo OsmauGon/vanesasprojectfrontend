@@ -52,27 +52,26 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
         </Modal.Header>
          <Modal.Body>
                 <Card.Text>
-                  <strong>📍 Especialidad:</strong> {props.obj?.especialidades?.join(' - ')}<br />
-                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                  <strong>🐾 Especialidad:</strong> {props.obj?.especialidades?.join(' - ')}<br />
                 </Card.Text>
                 <Card.Text>
-                  <strong>📍 Teléfono:</strong> {props.obj?.telefono.join(' - ')}<br />
-                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                  <strong>🐾 Teléfono:</strong> {props.obj?.telefono.join(' - ')}<br />
                 </Card.Text>
                 <Card.Text>
-                  <strong>📍 Ubicación:</strong> {props.obj?.ubicacion}<br />
-                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                  <strong>🐾 Ubicación:</strong> {props.obj?.ubicacion}<br />
                 </Card.Text>
                 <Card.Text>
-                  <strong>📍 Horario:</strong> {props.obj?.horario}<br />
-                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                  <strong>🐾 Horario:</strong> {props.obj?.horario}<br />
                 </Card.Text>
-                
-                {props.obj?.haceurgencias  && <Badge bg="secondary" pill>Atiende urgenicas</Badge>}
-                {props.obj?.tienelaboratorio  && <Badge bg="secondary" pill>Tiene Laboratorio</Badge>}
-                {props.obj?.tienepeluqueria  && <Badge bg="secondary" pill>Tiene Peluqueria</Badge>}
-                {props.obj?.tienepetshop  && <Badge bg="secondary" pill>Tiene Petshop</Badge>}
-                {props.obj?.tienequirofano  && <Badge bg="secondary" pill>Tiene Quirofano</Badge>}
+                <Card.Text>
+                  <strong>🐾 Profesionales:</strong> {props.obj?.profesionalesVinculados.join(' - ')}<br />
+                </Card.Text>
+                {(props.obj?.haceurgencias  || props.obj?.tienelaboratorio || props.obj?.tienequirofano  || props.obj?.tienepeluqueria || props.obj?.tienepetshop   ) && <h5>Servicios</h5>}
+                {props.obj?.haceurgencias  && <Badge bg="secondary" pill>Atiende Urgenicas </Badge>}
+                {props.obj?.tienelaboratorio  && <Badge bg="secondary" pill>Tiene Laboratorio </Badge>}
+                {props.obj?.tienepeluqueria  && <Badge bg="secondary" pill>Tiene Peluqueria </Badge>}
+                {props.obj?.tienepetshop  && <Badge bg="secondary" pill>Tiene Petshop </Badge>}
+                {props.obj?.tienequirofano  && <Badge bg="secondary" pill>Tiene Quirofano </Badge>}
                 {/* <img src={props.obj.imagen} alt={props.obj.nombre} /> */}
           </Modal.Body>
         <Modal.Footer>
