@@ -6,6 +6,7 @@
     flex-shrink: 0;
     width: 250px;/* // Ancho fijo necesario */
     height: 100vh;/* , // Ocupa todo el alto */
+    height: 100%;/* , // Ocupa todo el alto */
     position: fixed;/* , // Fija la sidebar para  que no se mueva al hacer scroll*/
     top: 0;
     left: 0;
