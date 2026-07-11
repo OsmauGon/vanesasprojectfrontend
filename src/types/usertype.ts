@@ -12,6 +12,17 @@ type UserContact = {
   state: string;
   country: string;
 }
+export const posiblesservicios: string[] = [
+  "Clínica médica",
+  "Clinica quirúrgica de tejidos blandos",
+  "Cirugia cardiotoraxica",
+  "Cirugía laparoscópica",
+  "Laboratorio de análisis clinicos",
+  "Diagnóstico por imágenes ( rx y ecografía)",
+  "Medicina felina",
+  "Banco de Sangre y medicina transfusional",
+  "Farmacia veterinaria"
+]
 export interface Profesional {
   id: number;
   nombre: string;// nombre del profesional

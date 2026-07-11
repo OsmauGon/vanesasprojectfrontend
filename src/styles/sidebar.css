@@ -18,6 +18,9 @@
 .sidebar li svg{
   display: none;
 }
+.link-buttons{
+  margin-bottom: auto;
+}
 .media-buttons{
   display: flex;
   justify-content: center;
@@ -78,7 +81,12 @@
 @media (max-width: 600px) {
   .sidebar{
     width: 160px;
+    justify-content: flex-start;
   }
+  .link-buttons{
+    margin-bottom: 100px;
+  }
+
 }
 @media (max-width: 450px) {
   .sidebar{
@@ -94,6 +102,7 @@
     display: block;
   }
   .sidebar .media-buttons{
+
     flex-direction: column;
   }
 }

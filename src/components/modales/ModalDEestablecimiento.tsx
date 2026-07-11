@@ -67,11 +67,14 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
                   <strong>🐾 Profesionales:</strong> {props.obj?.profesionalesVinculados.join(' - ')}<br />
                 </Card.Text>
                 {(props.obj?.haceurgencias  || props.obj?.tienelaboratorio || props.obj?.tienequirofano  || props.obj?.tienepeluqueria || props.obj?.tienepetshop   ) && <h5>Servicios</h5>}
+                <div className="d-flex justify-content-center gap-2 flex-wrap">
                 {props.obj?.haceurgencias  && <Badge bg="secondary" pill>Atiende Urgenicas </Badge>}
                 {props.obj?.tienelaboratorio  && <Badge bg="secondary" pill>Tiene Laboratorio </Badge>}
                 {props.obj?.tienepeluqueria  && <Badge bg="secondary" pill>Tiene Peluqueria </Badge>}
                 {props.obj?.tienepetshop  && <Badge bg="secondary" pill>Tiene Petshop </Badge>}
                 {props.obj?.tienequirofano  && <Badge bg="secondary" pill>Tiene Quirofano </Badge>}
+                </div>
+                {props.obj?.serviciosNOfiltrables && <p>{props.obj?.serviciosNOfiltrables?.join(' - ')}</p>}
                 {/* <img src={props.obj.imagen} alt={props.obj.nombre} /> */}
           </Modal.Body>
         <Modal.Footer>

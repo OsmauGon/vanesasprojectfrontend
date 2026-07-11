@@ -20,22 +20,21 @@ import { FaBlog } from "react-icons/fa";
 const Sidebar: React.FC = () => {
   const [loginButton] = useState<boolean>(false)
   return (
-    <div 
-      className="sidebar p-3  bg-dark">
+    <div className="sidebar p-3  bg-dark">
       {/* Logo del Proyecto */}
       <a href="/" className="page-title d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <span className="fs-4 fw-bold nav-title">Veteri.net</span>
       </a>
 
       {/* Links de Navegación */}
-      <ul className="nav nav-pills flex-column mb-auto">
+      <ul className="link-buttons nav nav-pills flex-column">
         <li className="nav-item">
           <NavLink 
             to="/" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
             end
           >
-            <FaHome />
+            <FaHome size={20}/>
             <b>Inicio</b>
           </NavLink>
         </li>
@@ -44,7 +43,7 @@ const Sidebar: React.FC = () => {
             to="/veterinarias" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            <FaHospitalAlt />
+            <FaHospitalAlt size={20}/>
             <b>Veterinarias</b>
           </NavLink>
         </li>
@@ -53,7 +52,7 @@ const Sidebar: React.FC = () => {
             to="/profesionales" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            <FaUserDoctor />
+            <FaUserDoctor size={20}/>
             <b>Profesionales</b>
           </NavLink>
         </li>
@@ -62,7 +61,7 @@ const Sidebar: React.FC = () => {
             to="/calendario" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            <FaRegCalendarAlt />
+            <FaRegCalendarAlt size={20}/>
             <b>Calendario</b>
           </NavLink>
         </li>
@@ -71,7 +70,7 @@ const Sidebar: React.FC = () => {
             to="/noticias" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            <FaRegNewspaper />
+            <FaRegNewspaper size={20}/>
             <b>Noticias</b>
           </NavLink>
         </li> */}
@@ -80,7 +79,7 @@ const Sidebar: React.FC = () => {
             to="/blogs" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            <FaBlog />
+            <FaBlog size={20}/>
             <b>Blog</b>
           </NavLink>
         </li>
@@ -89,7 +88,7 @@ const Sidebar: React.FC = () => {
             to="/extraviados" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
-            <FaSearch />
+            <FaSearch size={20}/>
             <b>Perdidos / Encontrados</b>
           </NavLink>
         </li>
@@ -113,7 +112,7 @@ const Sidebar: React.FC = () => {
         >
           <FaEnvelope size={40} color='rgb(127,105,154)'/>
         </Link>
-        </div>
+      </div>
     </div>
   );
 };

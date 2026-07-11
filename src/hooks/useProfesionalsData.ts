@@ -10,12 +10,84 @@ interface UseProfesionalReturn {
 }
 
 export const fakeProfesionals: Profesional[] =[
-    { id: 1, nombre: "Dr. Juan Pérez", especialidad: "Medicina General", ubicacion: "Santiago del Estero 1234", rating: 4.8, disponible: true, imagen: "https://randomuser.me/api/portraits/men/32.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com", practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"] },
-  { id: 2, nombre: "Dra. María González", especialidad: "Cirugía Veterinaria", ubicacion: "Las Condes 5678", rating: 4.9, disponible: true, imagen: "https://randomuser.me/api/portraits/women/44.jpg", telefono: "1234567891011", hacedomicilio: true, email: "emailfalso@gmail.com", practicas: ["Cirugia Veterinaria","Cardiologia","Medicina General","Odontologia","Dermatologia","Perros","Gatos","Loros"] },
-  { id: 3, nombre: "Dr. Carlos López", especialidad: "Odontología", ubicacion: "Providencia 9101", rating: 4.6, disponible: false, imagen: "https://randomuser.me/api/portraits/men/64.jpg", telefono: "1234567891011", hacedomicilio: false, email: "emailfalso@gmail.com", practicas: ["Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Medicina General","Perros","Gatos","Loros"] },
-  { id: 4, nombre: "Dra. Ana Martínez", especialidad: "Medicina General", ubicacion: "Ñuñoa 1121", rating: 4.7, disponible: true, imagen: "https://randomuser.me/api/portraits/women/68.jpg", telefono: "1234567891011", hacedomicilio: false, email: "emailfalso@gmail.com", practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"] },
-  { id: 5, nombre: "Dr. Roberto Sánchez", especialidad: "Dermatología", ubicacion: "Vitacura 3141", rating: 4.9, disponible: true, imagen: "https://randomuser.me/api/portraits/men/85.jpg", telefono: "1234567891011", hacedomicilio: false, email: "emailfalso@gmail.com", practicas: ["Dermatologia","Medicina General","Odontologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"] },
-  { id: 6, nombre: "Dra. Laura Torres", especialidad: "Cardiología", ubicacion: "Gascon 5161", rating: 4.8, disponible: false, imagen: "https://randomuser.me/api/portraits/women/12.jpg", telefono: "1234567891011", hacedomicilio: false, email: "emailfalso@gmail.com", practicas: ["Cardiologia","Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Perros","Gatos","Loros"] },
+    { id: 1, 
+      nombre: "Dr. Juan Pérez", 
+      especialidad: "Medicina General", 
+      ubicacion: "Santiago del Estero 1234", 
+      rating: 4.8, 
+      disponible: true, 
+      imagen: "https://randomuser.me/api/portraits/men/32.jpg", 
+      telefono: "1234567891011", 
+      hacedomicilio: true, 
+      email: "emailfalso@gmail.com", 
+      practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"] 
+    },
+
+  { id: 2, 
+    nombre: "Dra. María González", 
+    especialidad: "Cirugía Veterinaria", 
+    ubicacion: "Las Condes 5678", 
+    rating: 4.9, 
+    disponible: true, 
+    imagen: "https://randomuser.me/api/portraits/women/44.jpg", 
+    telefono: "1234567891011", 
+    hacedomicilio: true, 
+    email: "emailfalso@gmail.com", 
+    practicas: ["Cirugia Veterinaria","Cardiologia","Medicina General","Odontologia","Dermatologia","Perros","Gatos","Loros"] 
+  },
+
+  { id: 3, 
+    nombre: "Dr. Carlos López", 
+    especialidad: "Odontología", 
+    ubicacion: "Providencia 9101", 
+    rating: 4.6, 
+    disponible: false, 
+    imagen: "https://randomuser.me/api/portraits/men/64.jpg", 
+    telefono: "1234567891011", 
+    hacedomicilio: false, 
+    email: "emailfalso@gmail.com", 
+    practicas: ["Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Medicina General","Perros","Gatos","Loros"] 
+  },
+
+  { id: 4, 
+    nombre: "Dra. Ana Martínez", 
+    especialidad: "Medicina General", 
+    ubicacion: "Ñuñoa 1121", 
+    rating: 4.7, 
+    disponible: true, 
+    imagen: "https://randomuser.me/api/portraits/women/68.jpg", 
+    telefono: "1234567891011", 
+    hacedomicilio: false, 
+    email: "emailfalso@gmail.com", 
+    practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"] 
+  },
+
+  { id: 5, 
+    nombre: "Dr. Roberto Sánchez", 
+    especialidad: "Dermatología", 
+    ubicacion: "Vitacura 3141", 
+    rating: 4.9, 
+    disponible: true, 
+    imagen: "https://randomuser.me/api/portraits/men/85.jpg", 
+    telefono: "1234567891011", 
+    hacedomicilio: false, 
+    email: "emailfalso@gmail.com", 
+    practicas: ["Dermatologia","Medicina General","Odontologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"] 
+  },
+
+  { id: 6, 
+    nombre: "Dra. Laura Torres", 
+    especialidad: "Cardiología", 
+    ubicacion: "Gascon 5161", 
+    rating: 4.8, 
+    disponible: false, 
+    imagen: "https://randomuser.me/api/portraits/women/12.jpg", 
+    telefono: "1234567891011", 
+    hacedomicilio: false, 
+    email: "emailfalso@gmail.com", 
+    practicas: ["Cardiologia","Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Perros","Gatos","Loros"] 
+  },
+
 ];
 
 export const useProfesionals = (): UseProfesionalReturn =>{
@@ -48,7 +120,7 @@ export const useProfesionals = (): UseProfesionalReturn =>{
     
       useEffect(() => {
         fetchPosts();
-      }, []);
+      },[]);
     
       return { data, isLoading, error, refetch: fetchPosts };
     };

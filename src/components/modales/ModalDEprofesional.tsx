@@ -12,7 +12,7 @@ type ModalProps = {
 
 export const ModalDEprofesional = (props: ModalProps) => {
   const [masEspecialidades,setMasEspecialidades] = useState<boolean>(true)
-   const abrirWhatsApp = () => {
+  const abrirWhatsApp = () => {
     if (props.obj?.telefono) {
       // Limpiar el número (eliminar espacios, guiones, etc.)
       const telefonoLimpio = props.obj.telefono.replace(/\s/g, '').replace(/-/g, '');
