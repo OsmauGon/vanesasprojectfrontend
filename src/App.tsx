@@ -7,7 +7,7 @@ import Home from './pages/Home'; // Assumiendo que tienes una página de inicio
 import { Veterinarias2 } from './pages/Veterinarias';
 import { Profesionales2 } from './pages/Profesionales';
 import Calendario from './pages/Calendario';
-import Noticias from './pages/Noticias';
+//import Noticias from './pages/Noticias';
 import EditPage from './pages/EditPage';
 import Logreg from './pages/Logreg';
 import BlogPagee from './pages/BlogPage';
@@ -27,7 +27,7 @@ function App() {
             <Route path="/veterinarias" element={<Veterinarias2 />} />
             <Route path="/profesionales" element={<Profesionales2 />} />
             <Route path="/calendario" element={<Calendario />} />
-            <Route path="/noticias" element={<Noticias />} />
+            {/* <Route path="/noticias" element={<Noticias />} /> */}
             <Route path="/blogs" element={<BlogPagee />} />
             <Route path="/edit" element={<EditPage />} />
             <Route path="/logreg" element={<Logreg />} />

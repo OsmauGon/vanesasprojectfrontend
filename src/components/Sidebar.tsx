@@ -6,8 +6,8 @@ import { FaEnvelope, FaInstagram, FaUserDoctor } from "react-icons/fa6";
 import { FaHome, FaSearch } from "react-icons/fa";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import { FaRegNewspaper } from "react-icons/fa6";
-import { FaBlog } from "react-icons/fa";
+//import { FaRegNewspaper } from "react-icons/fa6";
+import { FaBlog } from "react-icons/fa";  
 
 //https://react-icons.github.io/react-icons/
 // Función para abrir Email
@@ -66,7 +66,7 @@ const Sidebar: React.FC = () => {
             <b>Calendario</b>
           </NavLink>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <NavLink 
             to="/noticias" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
@@ -74,7 +74,7 @@ const Sidebar: React.FC = () => {
             <FaRegNewspaper />
             <b>Noticias</b>
           </NavLink>
-        </li>
+        </li> */}
         <li className="nav-item">
           <NavLink 
             to="/blogs" 
