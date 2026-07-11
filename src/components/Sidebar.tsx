@@ -8,7 +8,6 @@ import { FaHospitalAlt } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaRegNewspaper } from "react-icons/fa6";
 import { FaBlog } from "react-icons/fa";
-import { Button } from 'react-bootstrap';
 
 //https://react-icons.github.io/react-icons/
 // Función para abrir Email
