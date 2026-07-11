@@ -23,7 +23,11 @@ const Sidebar: React.FC = () => {
     <div className="sidebar p-3  bg-dark">
       {/* Logo del Proyecto */}
       <a href="/" className="page-title d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <img src="veterinet-icon.webp" alt="" />
         <span className="fs-4 fw-bold nav-title">Veteri.net</span>
+      </a>
+      <a href="/" className="page-icon d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <img src="veterinet-icon.webp" alt="" />
       </a>
 
       {/* Links de Navegación */}

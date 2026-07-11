@@ -3,6 +3,8 @@
 .sidebar{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
     flex-shrink: 0;
     width: 250px;/* // Ancho fijo necesario */
     height: 100vh;/* , // Ocupa todo el alto */
@@ -10,6 +12,19 @@
     position: fixed;/* , // Fija la sidebar para  que no se mueva al hacer scroll*/
     top: 0;
     left: 0;
+}
+.page-title span{
+  margin: 0 auto
+}
+.page-title img {
+  width: 30px;
+  
+  margin-right: 10px;
+}
+.page-icon img {
+  width: 50px;
+  margin: 0 auto;
+  display: none;
 }
 .sidebar span{
   margin: auto;
@@ -84,7 +99,7 @@
     justify-content: flex-start;
   }
   .link-buttons{
-    margin-bottom: 100px;
+    margin-bottom: 200px;
   }
 
 }
@@ -94,6 +109,12 @@
   }
   .sidebar span{
     display: none;
+  }
+  .page-title img{
+    display: none;
+  }
+  .page-icon img{
+    display: block;
   }
   .sidebar a b{
     display: none;
