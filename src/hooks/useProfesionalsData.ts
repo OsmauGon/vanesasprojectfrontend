@@ -10,6 +10,20 @@ interface UseProfesionalReturn {
 }
 
 export const fakeProfesionals: Profesional[] =[
+  { 
+      id: 100, 
+      nombre: "Dra Ana Paula Carou", 
+      especialidad: "Medicina Felina", 
+      ubicacion: "San Juan 2684", 
+      rating: 4.8, 
+      disponible: true, 
+      imagen: "img/anapaula.jpeg", 
+      telefono: "2234386829", 
+      hacedomicilio: false, 
+      email: undefined,
+      practicas: ["Medicina Felina","Medicina interna de pequeños animales","Gatos"],
+      horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
+    },
     { id: 1, 
       nombre: "Dr. Juan Pérez", 
       especialidad: "Medicina General", 
@@ -19,8 +33,9 @@ export const fakeProfesionals: Profesional[] =[
       imagen: "https://randomuser.me/api/portraits/men/32.jpg", 
       telefono: "1234567891011", 
       hacedomicilio: true, 
-      email: "emailfalso@gmail.com", 
-      practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"] 
+      email: "emailfalso@gmail.com",
+      practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"],
+      horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
     },
 
   { id: 2, 
@@ -33,7 +48,8 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: true, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Cirugia Veterinaria","Cardiologia","Medicina General","Odontologia","Dermatologia","Perros","Gatos","Loros"] 
+    practicas: ["Cirugia Veterinaria","Cardiologia","Medicina General","Odontologia","Dermatologia","Perros","Gatos","Loros"],
+    horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
   },
 
   { id: 3, 
@@ -46,7 +62,8 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: false, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Medicina General","Perros","Gatos","Loros"] 
+    practicas: ["Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Medicina General","Perros","Gatos","Loros"],
+    horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13" 
   },
 
   { id: 4, 
@@ -59,7 +76,8 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: false, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"] 
+    practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"],
+    horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
   },
 
   { id: 5, 
@@ -72,7 +90,8 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: false, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Dermatologia","Medicina General","Odontologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"] 
+    practicas: ["Dermatologia","Medicina General","Odontologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"],
+    horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
   },
 
   { id: 6, 
@@ -85,7 +104,8 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: false, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Cardiologia","Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Perros","Gatos","Loros"] 
+    practicas: ["Cardiologia","Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Perros","Gatos","Loros"],
+    horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
   },
 
 ];
@@ -120,7 +140,8 @@ export const useProfesionals = (): UseProfesionalReturn =>{
     
       useEffect(() => {
         fetchPosts();
-      },[]);
+ 
+ horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"     },[]);
     
       return { data, isLoading, error, refetch: fetchPosts };
     };

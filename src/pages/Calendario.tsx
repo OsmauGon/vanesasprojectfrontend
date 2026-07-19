@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Container, Row, Button} from 'react-bootstrap';
 import { ModalDEcalendario } from '../components/modales/ModalDEcalendario';
 import Calendar from '../components/Calendar';
-import DatesList from '../components/DatesList';
+import DatesList2, {DatesList} from '../components/DatesList';
+import type { Event } from '../types/calendar-type';
+import { useEvents } from '../hooks/useCalendarData';
 
 export interface Cita {
   id: number;
@@ -21,7 +23,7 @@ const citasIniciales: Cita[] = [
   { id: 4, titulo: "Chequeo Mensual", fecha: "2026-04-25", hora: "09:00", tipo: "consulta", profesional: "Dr. Roberto Sánchez" },
 ];
 
-const Calendario: React.FC = () => {
+export const CalendarioOriginal: React.FC = () => {
   const [citas] = useState<Cita[]>(citasIniciales);
   const [showModal, setShowModal] = useState(false);
 
@@ -54,7 +56,47 @@ const Calendario: React.FC = () => {
 
       {/* Modal de nueva cita (Placeholder) */}
       
-      <ModalDEcalendario show={showModal} hide={() => setShowModal(false)} />
+      <ModalDEcalendario show={showModal} hide={() => setShowModal(false)} obj={null}/>
+    </Container>
+  );
+};
+const Calendario: React.FC = () => {
+  const { data, error } = useEvents();
+  const [citas] = useState<Cita[]>(citasIniciales);
+  const [selectedEvent,setSelectedEvent] = useState<Event | null>(null)
+  const [showModal, setShowModal] = useState(false);
+    
+  const handleDateClick = (fecha: string) => { //esta funcion debe llamar al modal
+    setSelectedEvent(data[0])
+    const citasDelDia = citas.filter(cita => cita.fecha === fecha);
+    console.log(`📅 Citas para ${fecha}:`, citasDelDia);
+  };
+
+  return (
+    <Container className="py-4">
+      {error && <p>Lo siguientes perfiles son falsos e inventados</p>}
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h1 >Calendario de Citas</h1>
+        {false && <Button variant="primary" 
+                    className='boton1' 
+                    onClick={() => setShowModal(true)}>
+                    + Nueva Cita
+                  </Button>
+        }
+      </div>
+
+      <Row>
+        {/* Vista de listado de citas próximas */}
+        <DatesList2 eventos={data}/>
+
+        {/* Calendario Visual (mes de ejemplo) */}
+        <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+          <Calendar citas={citas} onDateClick={handleDateClick} />
+        </div>
+      </Row>
+
+      {/* Modal eventos (Placeholder) */}
+      <ModalDEcalendario show={showModal} hide={() => setShowModal(false)} obj={selectedEvent} />
     </Container>
   );
 };

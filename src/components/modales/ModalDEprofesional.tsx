@@ -53,6 +53,11 @@ export const ModalDEprofesional = (props: ModalProps) => {
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
                 
+                <Card.Text>
+                  <strong>🐾 Atencion:</strong> {props.obj?.horarioDEcontacto}<br />
+                  {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
+                </Card.Text>
+                
                 {props.obj?.hacedomicilio  && <Badge bg="secondary" pill>Visita los domicilios</Badge>
                 }
                 {/* <img src={props.obj.imagen} alt={props.obj.nombre} /> */}
@@ -68,7 +73,9 @@ export const ModalDEprofesional = (props: ModalProps) => {
         </Button>
         
         <Button 
-          variant="primary" 
+          disabled={props.obj?.email ? true : false}
+          variant={props.obj?.email ? "primary" : "secondary"} 
+          title={props.obj?.email ? "Enviar Correo" : "No disponible"}
           onClick={abrirEmail}
           className="d-flex align-items-center gap-2"
         >

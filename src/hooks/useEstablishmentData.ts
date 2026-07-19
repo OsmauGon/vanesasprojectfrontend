@@ -11,7 +11,35 @@ interface UseEstablishmentReturn {
 
 
 export const fakeEstablishments: Establishment[] = [
-  { id: 1,
+  { 
+    id: 100,
+    nombre: "Animal care",
+    especialidades: ["Medicina Felina"],
+    ubicacion: "San Juan 2684",
+    disponible: true,
+    imagen: "img/localanapaula",
+    telefono:["2234386829"],
+    email: undefined,
+    latitud: -37.999198,
+    longitud: -57.569344,
+    profesionalesVinculados: ["Ana Paula Carou"],
+    horario: "07 a 18",
+    tienelaboratorio: true,
+    tienepetshop: true,
+    tienepeluqueria: true,
+    tienequirofano: true,
+    serviciosNOfiltrables: [
+      "Internacion",
+      "Medicina Felina",
+      "Clinica quirúrgica de tejidos blandos",
+      "Medicina interna de pequeños animales",
+      "Castracion",
+      "Farmacia veterinaria"
+    ]
+    //otro atributo
+ },
+  { 
+    id: 1,
     nombre: "El club de las mascotas",
     especialidades: ["Medicina General"],
     ubicacion: "Santiago del Estero 1234",
@@ -40,7 +68,8 @@ export const fakeEstablishments: Establishment[] = [
     ]
     //otro atributo
  },
-  { id: 2,
+  { 
+    id: 2,
     nombre: "Animales Sueltos",
     especialidades: ["Cirugía Veterinaria"],
     ubicacion: "Las Condes 5678",
@@ -134,7 +163,8 @@ export const fakeEstablishments: Establishment[] = [
     ]
    //otro atributo
      },
-  { id: 6,
+  { 
+    id: 6,
     nombre: "Vet-Can",
     especialidades: ["Cardiología"],
     ubicacion: "Gascon 5161",

@@ -31,8 +31,9 @@ export interface Profesional {
   imagen: string;// url de la foto de perfil
   ubicacion: string;//contacto
   telefono: string;//contacto
-  email: string;//contacto
+  email?: string;//contacto
   hacedomicilio: boolean;// para filtrar si hace visitas a domicilio
+  horarioDEcontacto: string;
 
   contacto?: UserContact;
   rating?: number;

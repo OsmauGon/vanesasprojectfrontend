@@ -34,7 +34,7 @@ export interface Establishment {
     contacto?: EstablishmentContact
   ubicacion: string;//contacto
   telefono: string[];//contacto
-  email: string;//contacto
+  email?: string;//contacto
   latitud: number;
   longitud: number;
 

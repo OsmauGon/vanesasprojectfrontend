@@ -1,8 +1,10 @@
 
 import { Button, Modal, Form } from 'react-bootstrap';
+import type { Event } from '../../types/calendar-type';
 type ModalProps = {
     show: boolean;
     hide: (val: boolean) => void
+    obj: Event | null
 }
 
 export const ModalDEcalendario = (props: ModalProps) => {

@@ -136,7 +136,7 @@ export const Profesionales2: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [domicilio,setDomicilio] = useState<boolean>(false)
   
-  useEffect(()=>{
+  useEffect(()=>{//borrar
     console.log("el useState camibio a ", "cargamos a los profesionales")
   },[domicilio])
   
@@ -177,7 +177,7 @@ export const Profesionales2: React.FC = () => {
       </InputGroup>
       
         
-                <SwitchExample switches={switches}/>  
+      <SwitchExample switches={switches}/>  
       {/* Grid de Profesionales */}
       {error && <p>Lo siguientes perfiles son falsos e inventados</p>}
       <Row xs={1} md={2} lg={3} className="g-4">
