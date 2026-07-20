@@ -17,7 +17,7 @@ export const fakeEstablishments: Establishment[] = [
     especialidades: ["Medicina Felina"],
     ubicacion: "San Juan 2684",
     disponible: true,
-    imagen: "img/localanapaula",
+    imagen: "img/localanapaula.png",
     telefono:["2234386829"],
     email: undefined,
     latitud: -37.999198,

@@ -76,10 +76,17 @@ const MissingPostCard = ({ post }: { post: MissingPost }) => {
 // MissingPostsPage.tsx
 import { useMissingPosts } from '../hooks/useMissingPosts';
 import type { MissingPost } from '../types/missingpost-type';
+import { useState } from 'react';
+import { ProjectSelect } from '../components/SelectComps';
 
+const explicaciones :string[] = [
+  "Acontinuacion se mostraran los posteos de mascotas que se encuentran extraviadas",
+  "Acontinuacion se mostraran los posteos de mascotas que han siso encontradas",
+  "Acontinuacion se mostraran los posteos de mascotas que necesitan una familia",
+]
 const MissingPostsPage = () => {
   const { data, isLoading, error } = useMissingPosts();
-
+  const [page,setPage] = useState<number >(0)
   if (isLoading) return <Spinner animation="border" />;
   /* if (error) return <Alert variant="danger">Error al cargar</Alert>; */
 
@@ -87,8 +94,10 @@ const MissingPostsPage = () => {
     <Container className="py-4">
       <h1 className="mb-4">📢 Página de extraviados</h1>
         {error && <p>Lo siguientes posteos son falsos</p>}
+        
+      <ProjectSelect setPage={setPage} explicacion={explicaciones[page / 3]}/>
       <Row xs={1} sm={2} md={3} lg={4} className="g-4">
-        {data?.map((post: MissingPost) => (
+        {data?.filter(item => item.tipo === page/3).map((post: MissingPost) => (
           <Col key={post.id}>
             <MissingPostCard post={post} />
           </Col>

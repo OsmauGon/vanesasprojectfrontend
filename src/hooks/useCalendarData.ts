@@ -1,36 +1,65 @@
 import { useState, useEffect } from 'react';
-import type { Event } from '../types/calendar-type';
+import type { Event2 } from '../types/calendar-type';
 import { eventosGet } from '../backend-endpoints';
 
 
 
 interface UseEventReturn {
-    data: Event[];
+    data: Event2[];
     isLoading: boolean;
     error: string | null;
     refetch: ()=> void
 }
-export const fakeEvents: Event[] = [
+export const fakeEvents: Event2[] = [
         { 
             id: 10, 
             titulo: "Quirofano Movil", 
-            fecha: ["2026-07-21","2026-07-22","2026-07-23","2026-07-24"], 
+            fecha: "2026-07-21", 
             hora: "8:00", 
             tipo: "castracion", 
             responsable: "Salud MGP",
             ubicacion: "Sede Zoonosis y Bienestar animal - Canesa y Guanahani", 
-            contacto: "@saludmgp" 
+            contacto: "https://www.instagram.com/p/Da2qI8UDk-x/?igsh=MTUydXdtd2xrNGFyMA%3D%3D" 
         },
-        { id: 18, titulo: "Vacunacion Antirrabica", fecha: ["2026-07-23"], hora: "10:00", tipo: "consulta", responsable: "Dr. Juan Pérez",contacto: "", ubicacion: "" },
-        { id: 19, titulo: "Revisión General", fecha: ["2026-01-15"], hora: "10:00", tipo: "consulta", responsable: "Dr. Juan Pérez",contacto: "", ubicacion: "" },
-        { id: 17, titulo: "Revisión General", fecha: ["2026-01-15"], hora: "10:00", tipo: "consulta", responsable: "Dr. Juan Pérez",contacto: "", ubicacion: "" },
-        { id: 2, titulo: "Vacuna Antirrábica", fecha: ["2026-02-15"], hora: "11:30", tipo: "vacuna", responsable: "Dra. María González",contacto: "", ubicacion: "" },
-        { id: 3, titulo: "Limpieza Dental", fecha: ["2026-03-20"], hora: "14:00", tipo: "cirujia", responsable: "Dr. Carlos López",contacto: "", ubicacion: "" },
-        { id: 4, titulo: "Chequeo Mensual", fecha: ["2026-04-25"], hora: "09:00", tipo: "consulta", responsable: "Dr. Roberto Sánchez",contacto: "", ubicacion: "" },
+        { 
+            id: 11, 
+            titulo: "Quirofano Movil", 
+            fecha: "2026-07-22", 
+            hora: "8:00", 
+            tipo: "castracion", 
+            responsable: "Salud MGP",
+            ubicacion: "Sede Zoonosis y Bienestar animal - Canesa y Guanahani", 
+            contacto: "https://www.instagram.com/p/Da2qI8UDk-x/?igsh=MTUydXdtd2xrNGFyMA%3D%3D" 
+        },
+        { 
+            id: 12, 
+            titulo: "Quirofano Movil", 
+            fecha: "2026-07-23", 
+            hora: "8:00", 
+            tipo: "castracion", 
+            responsable: "Salud MGP",
+            ubicacion: "Sede Zoonosis y Bienestar animal - Canesa y Guanahani", 
+            contacto: "https://www.instagram.com/p/Da2qI8UDk-x/?igsh=MTUydXdtd2xrNGFyMA%3D%3D" 
+        },
+        { 
+            id: 13, 
+            titulo: "Quirofano Movil", 
+            fecha: "2026-07-24", 
+            hora: "8:00", 
+            tipo: "castracion", 
+            responsable: "Salud MGP",
+            ubicacion: "Sede Zoonosis y Bienestar animal - Canesa y Guanahani", 
+            contacto: "https://www.instagram.com/p/Da2qI8UDk-x/?igsh=MTUydXdtd2xrNGFyMA%3D%3D" 
+        },
+        { id: 17, titulo: "Revisión General", fecha: "2026-08-15", hora: "10:00", tipo: "consulta", responsable: "Dr. Juan Pérez",contacto: "", ubicacion: "" },
+        { id: 2, titulo: "Vacuna Antirrábica", fecha: "2026-09-15", hora: "11:30", tipo: "vacuna", responsable: "Dra. María González",contacto: "", ubicacion: "" },
+        { id: 3, titulo: "Limpieza Dental", fecha: "2026-08-20", hora: "14:00", tipo: "cirujia", responsable: "Dr. Carlos López",contacto: "", ubicacion: "" },
+        { id: 4, titulo: "Chequeo Mensual", fecha: "2026-07-25", hora: "09:00", tipo: "consulta", responsable: "Dr. Roberto Sánchez",contacto: "", ubicacion: "" },
+        { id: 5, titulo: "Chequeo Mensual", fecha: "2026-07-25", hora: "09:00", tipo: "consulta", responsable: "Dr. Roberto Sánchez",contacto: "", ubicacion: "" },
 ]
 
 export const useEvents = (): UseEventReturn =>{
-    const [data, setData] = useState<Event[]>([]);
+    const [data, setData] = useState<Event2[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
             

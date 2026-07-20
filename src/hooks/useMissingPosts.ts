@@ -14,38 +14,38 @@ const fakeMissingPosts: MissingPost[] = [
   {
     id: 1,
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNIeQg4joKUmXRR18S2P-oy6DSzeowr7AyLZ71BiFra78R9WB_YeP8M6JV&s=10",
-    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet"
-
+    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet",
+    tipo: 0
   },
   {
     id: 2,
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNIeQg4joKUmXRR18S2P-oy6DSzeowr7AyLZ71BiFra78R9WB_YeP8M6JV&s=10",
-    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet"
-
+    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet",
+    tipo: 0
   },
   {
     id: 3,
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNIeQg4joKUmXRR18S2P-oy6DSzeowr7AyLZ71BiFra78R9WB_YeP8M6JV&s=10",
-    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet"
-
+    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet",
+    tipo: 0
   },
   {
     id: 4,
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNIeQg4joKUmXRR18S2P-oy6DSzeowr7AyLZ71BiFra78R9WB_YeP8M6JV&s=10",
-    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet"
-
+    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet",
+    tipo: 0
   },
   {
     id: 5,
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNIeQg4joKUmXRR18S2P-oy6DSzeowr7AyLZ71BiFra78R9WB_YeP8M6JV&s=10",
-    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet"
-
+    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet",
+    tipo: 2
   },
   {
     id: 6,
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNIeQg4joKUmXRR18S2P-oy6DSzeowr7AyLZ71BiFra78R9WB_YeP8M6JV&s=10",
-    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet"
-
+    contact: "https://www.instagram.com/p/DY1QAHqkroU/?utm_source=ig_web_button_share_sheet",
+    tipo: 1
   },
 ]
 

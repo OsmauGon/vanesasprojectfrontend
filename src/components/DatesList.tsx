@@ -2,13 +2,13 @@
 import { Col, Card, ListGroup, Badge} from 'react-bootstrap';
 import type { Cita } from '../pages/Calendario';
 import '../styles/dateList.css'
-import type { Event } from '../types/calendar-type';
+import type { Event2 } from '../types/calendar-type';
 
 type Props = {
     citas: Cita[]
 }
 type EventsProps = {
-    eventos: Event[]
+    citas: Event2[]
 }
 
 
@@ -92,46 +92,17 @@ export const DatesList = ({citas}: Props) => {
     </div>
   )
 }
-export const DatesList2 = ({eventos}: EventsProps) => {
-  const hoy = new Date();
-  /* const proximosSiete: Event[] = eventos
-    .filter(evento => new Date(evento.fecha) >= hoy)
-    .sort((a,b)=> {
-      return new Date(a.fecha).getTime() - new Date(b.fecha).getTime()
-    })
-    .slice(0,7)
-  
-  */
+export const DatesList2 = ({citas}: EventsProps) => {//borrar
   const getBadgeColor = (tipo: string) => {
         switch (tipo) {
           case 'consulta': return 'primary';
           case 'vacuna': return 'success';
           case 'cirujia': return 'danger';
+          case 'castracion': return 'warning';
           default: return 'secondary';
         }
       };
-  type fechitas = {
-    evento: string;
-    fecha: string;
-    fechaDate: Date;
-
-  }
-  const proximasFechas = eventos
-  .flatMap(evento => 
-    evento.fecha.map(fecha => ({
-      evento: evento.titulo,
-      fecha,
-      fechaDate: new Date(fecha)
-    }))
-  )
-  .filter((item: fechitas) => item.fechaDate >= hoy)
-  .sort((a,b)=> a.fechaDate.getTime() - b.fechaDate.getTime())
-  .slice(0,7)
-  console.log(proximasFechas)
-
-
-
-
+      
   return (
     <div className="date-list">
       <div className="date-list-title">
@@ -139,8 +110,8 @@ export const DatesList2 = ({eventos}: EventsProps) => {
       </div>
       <div className="date-list-content">
         <ListGroup variant="flush">
-        {eventos.length > 0 ? (
-            eventos.map((cita) => (
+        {citas.length > 0 ? (
+            citas.slice(0,5).map((cita) => (
               <ListGroup.Item key={cita.id} action>
                 <div className="d-flex w-100 justify-content-between align-items-start">
                   <h6 className="mb-1">{cita.titulo}</h6>
@@ -150,7 +121,7 @@ export const DatesList2 = ({eventos}: EventsProps) => {
                   📅 {cita.fecha} a las {cita.hora}
                 </small><br />
                 <small className="text-muted">
-                  👨‍⚕️ {cita.contacto}
+                  👨‍⚕️ {cita.responsable}
                 </small>
               </ListGroup.Item>
             ))

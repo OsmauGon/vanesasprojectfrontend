@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Row, Button} from 'react-bootstrap';
 import { ModalDEcalendario } from '../components/modales/ModalDEcalendario';
-import Calendar from '../components/Calendar';
+import Calendar, { Calendar2 } from '../components/Calendar';
 import DatesList2, {DatesList} from '../components/DatesList';
-import type { Event } from '../types/calendar-type';
+import type { Event2 } from '../types/calendar-type';
 import { useEvents } from '../hooks/useCalendarData';
 
 export interface Cita {
@@ -60,16 +60,19 @@ export const CalendarioOriginal: React.FC = () => {
     </Container>
   );
 };
+
+
 const Calendario: React.FC = () => {
   const { data, error } = useEvents();
-  const [citas] = useState<Cita[]>(citasIniciales);
-  const [selectedEvent,setSelectedEvent] = useState<Event | null>(null)
+  const [selectedEvent,setSelectedEvent] = useState<Event2[] | null>(null)
   const [showModal, setShowModal] = useState(false);
     
   const handleDateClick = (fecha: string) => { //esta funcion debe llamar al modal
-    setSelectedEvent(data[0])
-    const citasDelDia = citas.filter(cita => cita.fecha === fecha);
-    console.log(`📅 Citas para ${fecha}:`, citasDelDia);
+    const eventos = data.filter(i=> i.fecha === fecha)
+    if(eventos.length != 0){
+      setSelectedEvent(eventos)
+      setShowModal(true)
+    }
   };
 
   return (
@@ -87,11 +90,11 @@ const Calendario: React.FC = () => {
 
       <Row>
         {/* Vista de listado de citas próximas */}
-        <DatesList2 eventos={data}/>
+        <DatesList2 citas={data}/>
 
         {/* Calendario Visual (mes de ejemplo) */}
         <div style={{ maxWidth: '500px', margin: '0 auto' }}>
-          <Calendar citas={citas} onDateClick={handleDateClick} />
+          <Calendar2 citas={data} onDateClick={handleDateClick} />
         </div>
       </Row>
 
