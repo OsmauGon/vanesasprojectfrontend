@@ -29,7 +29,7 @@ export interface Establishment {
     horarios?: EstablishmentHours;
   profesionalesVinculados: string[];
   especialidades: string[]; // especialidad medica
-  practicas?: string[];//especies,practicas, conocimientos
+  practicas: string;//especies,practicas, conocimientos
 
     contacto?: EstablishmentContact
   ubicacion: string;//contacto
@@ -39,7 +39,6 @@ export interface Establishment {
   longitud: number;
 
     servicios?: EstablishmentService;
-    serviciosNOfiltrables?: string[]
   tienequirofano?: boolean;// pa servicios
   tienelaboratorio?: boolean;// pa servicios
   tieneinternacion?: boolean;// pa servicios

@@ -13,7 +13,7 @@ import { FaBlog } from "react-icons/fa";
 // Función para abrir Email
   const abrirEmail = () => {
     if (true) {
-      window.open(`mailto:veteri.net.ar@gmail.com`, '_blank');
+      window.open(`mailto:Veteri.net.ar.ar@gmail.com`, '_blank');
     }
   };
 
@@ -24,7 +24,7 @@ const Sidebar: React.FC = () => {
       {/* Logo del Proyecto */}
       <a href="/" className="page-title d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <img src="veterinet-icon.webp" alt="" />
-        <span className="fs-4 fw-bold nav-title">Veteri.net</span>
+        <span className="fs-4 fw-bold nav-title">Veteri.net.ar</span>
       </a>
       <a href="/" className="page-icon d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <img src="veterinet-icon.webp" alt="" />
@@ -93,7 +93,7 @@ const Sidebar: React.FC = () => {
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
           >
             <FaSearch size={20}/>
-            <b>Perdidos / Encontrados</b>
+            <b>Perdidos / Encontrados / En adopcion</b>
           </NavLink>
         </li>
       </ul>
@@ -101,7 +101,7 @@ const Sidebar: React.FC = () => {
       <div className="media-buttons">
       <Link 
           
-          to={'https://www.instagram.com/veteri.net.ar?utm_source=qr&igsh=b29qb3dlbmprYm51'}
+          to={'https://www.instagram.com/Veteri.net.ar.ar?utm_source=qr&igsh=b29qb3dlbmprYm51'}
           target='_blank'
           className="d-flex align-items-center gap-2"
           title='Ir al Instagram'

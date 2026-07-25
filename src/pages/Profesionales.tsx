@@ -142,12 +142,12 @@ export const Profesionales2: React.FC = () => {
   
   const filteredProfesionales = !domicilio ? data.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.especialidad.toLowerCase().includes(busqueda.toLowerCase()) ||
+    p.practicas.toLowerCase().includes(busqueda.toLowerCase()) ||
     p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
     )
                                             : data.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.especialidad.toLowerCase().includes(busqueda.toLowerCase()) ||
+    p.practicas.toLowerCase().includes(busqueda.toLowerCase()) ||
     p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
     ).filter(p => p.hacedomicilio === domicilio);
     

@@ -74,7 +74,7 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
                 {props.obj?.tienepetshop  && <Badge bg="secondary" pill>Tiene Petshop </Badge>}
                 {props.obj?.tienequirofano  && <Badge bg="secondary" pill>Tiene Quirofano </Badge>}
                 </div>
-                {props.obj?.serviciosNOfiltrables && <p>{props.obj?.serviciosNOfiltrables?.join(' - ')}</p>}
+                {props.obj?.practicas && <p>{props.obj?.practicas}</p>}
                 {/* <img src={props.obj.imagen} alt={props.obj.nombre} /> */}
           </Modal.Body>
         <Modal.Footer>

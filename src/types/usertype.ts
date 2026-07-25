@@ -27,7 +27,7 @@ export interface Profesional {
   id: number;
   nombre: string;// nombre del profesional
   especialidad: string; // especialidad medica
-  practicas?: string[];//especies, practicas, conocimientos
+  practicas: string;//especies, practicas, conocimientos
   imagen: string;// url de la foto de perfil
   ubicacion: string;//contacto
   telefono: string;//contacto

@@ -39,7 +39,7 @@ export const ModalDEprofesional = (props: ModalProps) => {
         </Modal.Header>
           <Modal.Body>
                 <Card.Text>
-                  <strong>🐾 Especialidades:</strong> {masEspecialidades ? props.obj?.especialidad : props.obj?.practicas?.join(' - ')} <button onClick={()=> setMasEspecialidades(!masEspecialidades)}>{masEspecialidades ? "ver más" : "ver menos"}</button><br />
+                  <strong>🐾 Especialidades:</strong> {masEspecialidades ? props.obj?.especialidad : props.obj?.practicas} <button onClick={()=> setMasEspecialidades(!masEspecialidades)}>{masEspecialidades ? "ver más" : "ver menos"}</button><br />
                   
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>

@@ -28,14 +28,14 @@ export const fakeEstablishments: Establishment[] = [
     tienepetshop: true,
     tienepeluqueria: true,
     tienequirofano: true,
-    serviciosNOfiltrables: [
+    practicas: [
       "Internacion",
       "Medicina Felina",
       "Clinica quirúrgica de tejidos blandos",
       "Medicina interna de pequeños animales",
       "Castracion",
       "Farmacia veterinaria"
-    ]
+    ].join(' - ')
     //otro atributo
  },
   { 
@@ -55,7 +55,7 @@ export const fakeEstablishments: Establishment[] = [
     tienepetshop: true,
     tienepeluqueria: true,
     tienequirofano: true,
-    serviciosNOfiltrables: [
+    practicas: [
   "Clínica médica",
   "Clinica quirúrgica de tejidos blandos",
   "Cirugia cardiotoraxica",
@@ -65,7 +65,7 @@ export const fakeEstablishments: Establishment[] = [
   "Medicina felina",
   "Banco de Sangre y medicina transfusional",
   "Farmacia veterinaria"
-    ]
+    ].join(' - ')
     //otro atributo
  },
   { 
@@ -85,12 +85,12 @@ export const fakeEstablishments: Establishment[] = [
    tienequirofano: true,
    tienelaboratorio: true,
    tieneinternacion: true,
-    serviciosNOfiltrables: [
+    practicas: [
   "Laboratorio de análisis clinicos",
   "Diagnóstico por imágenes ( rx y ecografía)",
   "Banco de Sangre y medicina transfusional",
   "Farmacia veterinaria"
-    ]
+    ].join(' - ')
    //otro atributo
      },
   { id: 3,
@@ -107,10 +107,10 @@ export const fakeEstablishments: Establishment[] = [
    profesionalesVinculados: ["Juan Perez","Sebastian Stan","Idris Elba"],
    horario: "07 a 18",
    tienepetshop: true,
-    serviciosNOfiltrables: [
+    practicas: [
       "Jugueteria canina",
       "Farmacia veterinaria"
-    ]
+    ].join(' - ')
    //otro atributo
      },
   { id: 4,
@@ -128,11 +128,11 @@ export const fakeEstablishments: Establishment[] = [
    horario: "07 a 18",
    tienepeluqueria: true,
    tienepetshop: true,
-    serviciosNOfiltrables: [
+    practicas: [
     "Clínica médica",
     "Medicina felina",
     "Farmacia veterinaria"
-      ]
+      ].join(' - ')
    //otro atributo
      },
   { id: 5,
@@ -150,7 +150,7 @@ export const fakeEstablishments: Establishment[] = [
    horario: "07 a 18",
    tienelaboratorio: true,
    tienepetshop: true,
-    serviciosNOfiltrables: [
+    practicas: [
   "Clínica médica",
   "Clinica quirúrgica de tejidos blandos",
   "Cirugia cardiotoraxica",
@@ -160,7 +160,7 @@ export const fakeEstablishments: Establishment[] = [
   "Medicina felina",
   "Banco de Sangre y medicina transfusional",
   "Farmacia veterinaria"
-    ]
+    ].join(' - ')
    //otro atributo
      },
   { 
@@ -178,7 +178,7 @@ export const fakeEstablishments: Establishment[] = [
     horario: "07 a 18",
     haceurgencias: true,
     tienelaboratorio: true,
-    serviciosNOfiltrables: [
+    practicas: [
   "Clínica médica",
   "Clinica quirúrgica de tejidos blandos",
   "Cirugia cardiotoraxica",
@@ -188,7 +188,7 @@ export const fakeEstablishments: Establishment[] = [
   "Medicina felina",
   "Banco de Sangre y medicina transfusional",
   "Farmacia veterinaria"
-    ]
+    ].join(' - ')
     //otro atributo
     },
     

@@ -21,7 +21,7 @@ export const fakeProfesionals: Profesional[] =[
       telefono: "2234386829", 
       hacedomicilio: false, 
       email: undefined,
-      practicas: ["Medicina Felina","Medicina interna de pequeños animales","Gatos"],
+      practicas: ["Medicina Felina","Medicina interna de pequeños animales","Gatos"].join('-'),
       horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
     },
     { id: 1, 
@@ -34,7 +34,7 @@ export const fakeProfesionals: Profesional[] =[
       telefono: "1234567891011", 
       hacedomicilio: true, 
       email: "emailfalso@gmail.com",
-      practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"],
+      practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"].join('-'),
       horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
     },
 
@@ -48,7 +48,7 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: true, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Cirugia Veterinaria","Cardiologia","Medicina General","Odontologia","Dermatologia","Perros","Gatos","Loros"],
+    practicas: ["Cirugia Veterinaria","Cardiologia","Medicina General","Odontologia","Dermatologia","Perros","Gatos","Loros"].join('-'),
     horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
   },
 
@@ -62,7 +62,7 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: false, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Medicina General","Perros","Gatos","Loros"],
+    practicas: ["Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Medicina General","Perros","Gatos","Loros"].join('-'),
     horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13" 
   },
 
@@ -76,7 +76,7 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: false, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"],
+    practicas: ["Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"].join('-'),
     horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
   },
 
@@ -90,7 +90,7 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: false, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Dermatologia","Medicina General","Odontologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"],
+    practicas: ["Dermatologia","Medicina General","Odontologia","Cirugia Veterinaria","Cardiologia","Perros","Gatos","Loros"].join('-'),
     horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
   },
 
@@ -104,7 +104,7 @@ export const fakeProfesionals: Profesional[] =[
     telefono: "1234567891011", 
     hacedomicilio: false, 
     email: "emailfalso@gmail.com", 
-    practicas: ["Cardiologia","Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Perros","Gatos","Loros"],
+    practicas: ["Cardiologia","Medicina General","Odontologia","Dermatologia","Cirugia Veterinaria","Perros","Gatos","Loros"].join('-'),
     horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
   },
 

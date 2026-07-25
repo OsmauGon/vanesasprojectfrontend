@@ -176,8 +176,8 @@ export const Veterinarias2: React.FC = () => {
    
   useEffect(()=>{
     const filtradoDEnombres = data.filter(p => p.nombre.toLowerCase().includes(busqueda.toLowerCase()));
-    const filtradoDEubicacion = filtradoDEnombres.filter(p => p.nombre.toLowerCase().includes(busqueda.toLowerCase()));
-    const filtradoDEurgencias = urgencias ? filtradoDEubicacion.filter(p => p.haceurgencias === urgencias) : filtradoDEubicacion
+    const filtradoDEpracticas = filtradoDEnombres.filter(p => p.practicas.toLowerCase().includes(busqueda.toLowerCase()));
+    const filtradoDEurgencias = urgencias ? filtradoDEpracticas.filter(p => p.haceurgencias === urgencias) : filtradoDEpracticas
     const filtradoDElaboratorio = laboratorio ? filtradoDEurgencias.filter(p => p.tienelaboratorio === laboratorio) : filtradoDEurgencias
     const filtradoDEpeluqueria = peluqueria ? filtradoDElaboratorio.filter(p => p.tienepeluqueria === peluqueria) : filtradoDElaboratorio
     const filtradoDEpetshop = petshop ? filtradoDEpeluqueria.filter(p => p.tienepetshop === petshop) : filtradoDEpeluqueria
@@ -189,8 +189,8 @@ export const Veterinarias2: React.FC = () => {
 
   const filteredEstablecimientos = data.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    //p.especialidad.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
+    p.practicas.toLowerCase().includes(busqueda.toLowerCase()) 
+    //p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
   );
 
   return (
