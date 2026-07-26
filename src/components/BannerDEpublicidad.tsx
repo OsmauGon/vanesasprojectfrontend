@@ -1,9 +1,9 @@
-import React from 'react'
+
 import { Carousel } from 'react-bootstrap'
 
-type Props = {}
 
-const BannerDEpublicidad = (props: Props) => {
+
+const BannerDEpublicidad = () => {
   return (
     <Carousel className="m-auto rounded overflow-hidden shadow w-75">
             <Carousel.Item>
