@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Badge, Form, InputGroup, Button } from 'react-bootstrap';
 import { ModalDEprofesional } from '../components/modales/ModalDEprofesional';
-import SwitchExample from '../components/SwitchExample';
 import { fakeProfesionals, useProfesionals } from '../hooks/useProfesionalsData';
 import type { Profesional } from '../types/usertype';
+import BannerDEpublicidad from '../components/BannerDEpublicidad';
+import SwitchExampleOriginal from '../components/SwitchExampleOriginal';
 
 
 
@@ -175,9 +176,9 @@ export const Profesionales2: React.FC = () => {
           🔍
         </Button>
       </InputGroup>
-      
+      <BannerDEpublicidad />
         
-      <SwitchExample switches={switches}/>  
+      <SwitchExampleOriginal switches={switches}/> 
       {/* Grid de Profesionales */}
       {error && <p>Lo siguientes perfiles son falsos e inventados</p>}
       <Row xs={1} md={2} lg={3} className="g-4">

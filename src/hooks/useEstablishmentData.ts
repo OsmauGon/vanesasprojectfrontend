@@ -35,8 +35,12 @@ export const fakeEstablishments: Establishment[] = [
       "Medicina interna de pequeños animales",
       "Castracion",
       "Farmacia veterinaria"
-    ].join(' - ')
+    ].join(' - '),
     //otro atributo
+    badges: ["laboratorio",
+    "petshop",
+    "peluqueria",
+    "quirofano",]
  },
   { 
     id: 1,
@@ -65,8 +69,12 @@ export const fakeEstablishments: Establishment[] = [
   "Medicina felina",
   "Banco de Sangre y medicina transfusional",
   "Farmacia veterinaria"
-    ].join(' - ')
+    ].join(' - '),
     //otro atributo
+    badges: ["laboratorio",
+    "petshop",
+    "peluqueria",
+    "quirofano",]
  },
   { 
     id: 2,
@@ -90,8 +98,11 @@ export const fakeEstablishments: Establishment[] = [
   "Diagnóstico por imágenes ( rx y ecografía)",
   "Banco de Sangre y medicina transfusional",
   "Farmacia veterinaria"
-    ].join(' - ')
+    ].join(' - '),
    //otro atributo
+   badges: ["quirofano",
+   "laboratorio",
+   "internacion",]
      },
   { id: 3,
     nombre: "All Pets",
@@ -110,8 +121,9 @@ export const fakeEstablishments: Establishment[] = [
     practicas: [
       "Jugueteria canina",
       "Farmacia veterinaria"
-    ].join(' - ')
+    ].join(' - '),
    //otro atributo
+   badges: ["petshop"]
      },
   { id: 4,
     nombre: "Kidogo",
@@ -132,8 +144,10 @@ export const fakeEstablishments: Establishment[] = [
     "Clínica médica",
     "Medicina felina",
     "Farmacia veterinaria"
-      ].join(' - ')
+      ].join(' - '),
    //otro atributo
+   badges: ["peluqueria",
+   "petshop",]
      },
   { id: 5,
     nombre: "Maule Sur",
@@ -160,8 +174,10 @@ export const fakeEstablishments: Establishment[] = [
   "Medicina felina",
   "Banco de Sangre y medicina transfusional",
   "Farmacia veterinaria"
-    ].join(' - ')
+    ].join(' - '),
    //otro atributo
+   badges: ["laboratorio",
+   "petshop"]
      },
   { 
     id: 6,
@@ -188,8 +204,10 @@ export const fakeEstablishments: Establishment[] = [
   "Medicina felina",
   "Banco de Sangre y medicina transfusional",
   "Farmacia veterinaria"
-    ].join(' - ')
+    ].join(' - '),
     //otro atributo
+    badges: ["urgencias",
+    "laboratorio",]
     },
     
 ];

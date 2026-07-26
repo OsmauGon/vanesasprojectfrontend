@@ -1,25 +1,33 @@
 import Form from 'react-bootstrap/Form';
 import '../styles/switch-style.css'
 
-type SwitchSettings ={
-    etiqueta: string;
-    estado: boolean;
-    accion: (val: boolean) => void
+type SwitchType = {
+  indice: number;
+  etiqueta: string;
+  valor: string
 }
-type SeveralSwitches = {
-  switches: SwitchSettings[]
+interface SwitchSettings {
+  switches: string[]
+  allswitches: SwitchType[]
+  accion: (val: string[]) => void
 }
 
-function SwitchExample(switches: SeveralSwitches) {
+function SwitchExample({allswitches, accion, switches}: SwitchSettings) {
+  const toggleElement = (val: string) => {
+    if(switches.includes(val)) accion(switches.filter(ele => ele != val))
+    else accion([...switches, val])
+  }
+    
   return (
     <Form className='switches-container'>
-      {switches.switches.map(i=> (
+      {allswitches.map(i=> (
               <Form.Check // prettier-ignore
-              key={i.etiqueta}
+              key={i.indice}
                 type="switch"
                 className="custom-switch"
                 label={i.etiqueta}
-                onChange={()=> {i.accion(!i.estado);}}
+                //onChange={()=> {accion(toggleElement(i.valor));}}
+                onChange={()=> {toggleElement(i.valor)}}
               />
       ))
     }

@@ -47,6 +47,7 @@ export interface Establishment {
   tienepetshop?: boolean;// pa servicios
 
   disponible: boolean;
+  badges: string[]
 }
 // Datos de ejemplo
 /* const establecimiento :Establecimiento = {

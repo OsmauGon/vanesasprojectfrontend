@@ -8,10 +8,13 @@ const Home: React.FC = () => {
     <Container fluid className="p-4">
       {/* Bienvenido */}
       <div className="mb-5">
-        <h1 className="display-4 fw-bold ">Bienvenido a Veteri.net.ar</h1>
+        <h1 className="display-4 fw-bold text-center ">Bienvenido a Veteri.net.ar</h1>
         <p className="lead text-muted">
-          Conectando a amantes de mascotas con los mejores profesionales y veterinarias.
+          Todo lo que tu mascota necesita, en un solo lugar
         </p>
+        <small className="lead text-muted">
+          Encontrá veterinarias, profesionales y servicios de forma rápida y gratuita
+        </small>
       </div>
 
       {/* Carrusel de imágenes decorativo */}

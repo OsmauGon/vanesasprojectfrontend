@@ -52,7 +52,7 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
         </Modal.Header>
          <Modal.Body>
                 <Card.Text>
-                  <strong>🐾 Especialidad:</strong> {props.obj?.especialidades?.join(' - ')}<br />
+                  <strong>🐾 Especialidades:</strong> {props.obj?.especialidades?.join(' - ')}<br />
                 </Card.Text>
                 <Card.Text>
                   <strong>🐾 Teléfono:</strong> {props.obj?.telefono.join(' - ')}<br />

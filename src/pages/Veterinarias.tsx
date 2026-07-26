@@ -134,63 +134,61 @@ const EstablishmentCard = (info: EstablishmentCardType)=>{
           </Col>
   )
 }
-export const Veterinarias2: React.FC = () => {
+
+export const Veterinarias3: React.FC = () => {
     const { data, error} = useEstablishments();
     const [establecimientos,setEstablecimientos] = useState<Establishment[]>([])
   const [busqueda, setBusqueda] = useState("");
+  const [switches, setSwitches] = useState<string[]>([]);
   const [selectedPlace,setSelectedPlace] = useState<Establishment | null>(null)
   const [showModal, setShowModal] = useState(false);
-  const [urgencias,seturgencias] = useState<boolean>(false)
-  const [laboratorio,setLaboratorio] = useState<boolean>(false)
-  const [quirofano,setQuirofano] = useState<boolean>(false)
-  const [peluqueria,setPeluqueria] = useState<boolean>(false)
-  const [petshop,setPetshop] = useState<boolean>(false)
   
-  const switches = [ 
+  const allswitches = [ 
   {
+    indice: 1,
     etiqueta: "Urgencias",
-    estado: urgencias,
-    accion: seturgencias
+    valor: "urgencias",
   }, 
   {
+    indice: 2,
     etiqueta: "Laboratorio",
-    estado: laboratorio,
-    accion: setLaboratorio
+    valor: "laboratorio",
   }, 
   {
+    indice: 3,
     etiqueta: "Quirofano",
-    estado: quirofano,
-    accion: setQuirofano
+    valor: "quirofano",
   }, 
   {
+    indice: 4,
     etiqueta: "Peluqueria",
-    estado: peluqueria,
-    accion: setPeluqueria
+    valor: "peluqueria",
   }, 
   {
+    indice: 5,
     etiqueta: "Petshop",
-    estado: petshop,
-    accion: setPetshop
+    valor: "petshop"
   },
   ]
-   
   useEffect(()=>{
-    const filtradoDEnombres = data.filter(p => p.nombre.toLowerCase().includes(busqueda.toLowerCase()));
-    const filtradoDEpracticas = filtradoDEnombres.filter(p => p.practicas.toLowerCase().includes(busqueda.toLowerCase()));
-    const filtradoDEurgencias = urgencias ? filtradoDEpracticas.filter(p => p.haceurgencias === urgencias) : filtradoDEpracticas
-    const filtradoDElaboratorio = laboratorio ? filtradoDEurgencias.filter(p => p.tienelaboratorio === laboratorio) : filtradoDEurgencias
-    const filtradoDEpeluqueria = peluqueria ? filtradoDElaboratorio.filter(p => p.tienepeluqueria === peluqueria) : filtradoDElaboratorio
-    const filtradoDEpetshop = petshop ? filtradoDEpeluqueria.filter(p => p.tienepetshop === petshop) : filtradoDEpeluqueria
-    const filtradoDEquirofano = quirofano ? filtradoDEpetshop.filter(p => p.tienequirofano === quirofano) : filtradoDEpetshop
+    console.log("cambiaron los switches: ",switches)
+      const resultado = data.filter(producto =>
+      producto.badges.some(badge =>
+        switches.includes(badge)
+        )
+      );
+    console.log(switches)
+    if(switches.length == 0) setEstablecimientos(data)
     
-    setEstablecimientos(filtradoDEquirofano)
+    else setEstablecimientos(resultado)
+    
 
-  },[data,busqueda,urgencias,laboratorio,peluqueria,petshop,quirofano])
+  },[data,switches])
 
-  const filteredEstablecimientos = data.filter(p => 
-    p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.practicas.toLowerCase().includes(busqueda.toLowerCase()) 
-    //p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
+  const filteredEstablecimientos = establecimientos.filter(p => 
+    p.nombre.toLowerCase().includes(busqueda.toLowerCase()) 
+    || p.practicas.toLowerCase().includes(busqueda.toLowerCase()) 
+    //|| p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
   );
 
   return (
@@ -203,7 +201,7 @@ export const Veterinarias2: React.FC = () => {
       {/* Buscador */}
       <InputGroup className="mb-4">
         <Form.Control
-          placeholder="Buscar por nombre, ubicación..."
+          placeholder="Buscar por nombre, practicas..."
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
         />
@@ -211,16 +209,12 @@ export const Veterinarias2: React.FC = () => {
           🔍
         </Button>
       </InputGroup>
-        <SwitchExample switches={switches}/>
-        {/* <SwitchExample etiqueta={'Hace urgencias'} activo={urgencias} setActivo={seturgencias} />
-        <SwitchExample etiqueta={'Tiene laboratorio'} activo={laboratorio} setActivo={setLaboratorio} />
-        <SwitchExample etiqueta={'Tiene peluqueria'} activo={peluqueria} setActivo={setPeluqueria} />
-        <SwitchExample etiqueta={'Tiene petshop'} activo={petshop} setActivo={setPetshop} /> */}
+        <SwitchExample allswitches={allswitches} switches={switches} accion={setSwitches}/> 
 
       {/* Grid de Veterinarias */}
             {error && <p>Lo siguientes perfiles son falsos e inventados</p>}
       <Row xs={1} md={2} lg={3} className="g-4">
-        {establecimientos.map((establecimiento) => (
+        {filteredEstablecimientos.map((establecimiento) => (
           <EstablishmentCard key={establecimiento.id} info={establecimiento} setShowModal={setShowModal} setSelectedProf={setSelectedPlace}/>
         ))}
       </Row>
@@ -235,5 +229,3 @@ export const Veterinarias2: React.FC = () => {
     </Container>
   );
 };
-
-export default Veterinarias2;
