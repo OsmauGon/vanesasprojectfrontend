@@ -33,7 +33,7 @@ export const fakeProfesionals: Profesional[] =[
       ubicacion: undefined, 
       rating: 4.8, 
       disponible: true, 
-      imagen: "https://randomuser.me/api/portraits/women/2.jpg", 
+      imagen: "img/silveron.png", 
       telefono: "2234387371", 
       hacedomicilio: true, 
       email: undefined,
