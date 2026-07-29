@@ -1,0 +1,27 @@
+[
+  { 
+      "id": 100, 
+      "nombre": "Dra Ana Paula Carou", 
+      "especialidad": "Medicina Felina", 
+      "ubicacion": "San Juan 2684", 
+      "disponible": true, 
+      "imagen": "img/anapaula.jpeg", 
+      "telefono": "2234386829", 
+      "hacedomicilio": false, 
+      "practicas": "Medicina Felina - Medicina interna de pequeños animales - Gatos",
+      "horarioDEcontacto": "Lunes a Viernes de 10 a 17, Sabados de 10 a 13",
+      "redsocial": "@medicinafelinamdp"
+    },
+  { 
+      "id": 101, 
+      "nombre": "Dra Veron Silvana", 
+      "especialidad": "Medicina del comportamiento", 
+      "disponible": true, 
+      "imagen": "img/silveron.png", 
+      "telefono": "2234387371", 
+      "hacedomicilio": true, 
+      "practicas": "Medicina del comportamiento - Terapias Complementarias - Familias Multiespecie - Flores de Bach - Aromaterapia - Consultas online - Consultas presenciales",
+      
+      "redsocial": "@silveron.vet"
+    }
+]

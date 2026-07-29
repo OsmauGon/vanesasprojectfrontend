@@ -47,7 +47,7 @@ export interface Establishment {
   tienepetshop?: boolean;// pa servicios
 
   disponible: boolean;
-  badges: string[];
+  insignias:string[];
   redsocial?: string;//red social para contacto
 }
 // Datos de ejemplo

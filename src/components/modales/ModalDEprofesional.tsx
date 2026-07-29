@@ -64,7 +64,10 @@ export const ModalDEprofesional = (props: ModalProps) => {
           </Modal.Body>
         <Modal.Footer>
           <Button 
-          variant="success" 
+          disabled={props.obj?.telefono ? true : false}
+          variant={props.obj?.telefono ? "primary" : "secondary"} 
+          title={props.obj?.telefono ? "Enviar Correo" : "No disponible"}
+          
           onClick={abrirWhatsApp}
           className="d-flex align-items-center gap-2"
         >

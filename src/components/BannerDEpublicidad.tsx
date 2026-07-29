@@ -9,7 +9,7 @@ const BannerDEpublicidad = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=900"
+                src="img/publicidad2.jpg"
                 alt="Perros jugando"
                 style={{ height: '100px', objectFit: 'cover' }}
               />
@@ -18,10 +18,11 @@ const BannerDEpublicidad = () => {
                 <p>Profesionales especializados a tu disposición.</p>
               </Carousel.Caption> */}
             </Carousel.Item>
+
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=900"
+                src="img/publicidad3.jpg"
                 alt="Gato en el veterinaria"
                 style={{ height: '100px', objectFit: 'cover' }}
               />
@@ -30,7 +31,21 @@ const BannerDEpublicidad = () => {
                 <p>Las mejores clínicas cerca de ti.</p>
               </Carousel.Caption> */}
             </Carousel.Item>
-          </Carousel>
+
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="img/publicidad4.jpg"
+                alt="Perros jugando"
+                style={{ height: '100px', objectFit: 'cover' }}
+              />
+              {/* <Carousel.Caption>
+                <h3>Encuentra el mejor cuidado</h3>
+                <p>Profesionales especializados a tu disposición.</p>
+              </Carousel.Caption> */}
+            </Carousel.Item>
+            
+    </Carousel>
   )
 }
 

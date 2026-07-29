@@ -78,6 +78,7 @@ import { useMissingPosts } from '../hooks/useMissingPosts';
 import type { MissingPost } from '../types/missingpost-type';
 import { useState } from 'react';
 import { ProjectSelect } from '../components/SelectComps';
+import BannerDEpublicidad from '../components/BannerDEpublicidad';
 
 const explicaciones :string[] = [
   "Acontinuacion se mostraran los posteos de mascotas que se encuentran extraviadas",
@@ -93,6 +94,7 @@ const MissingPostsPage = () => {
   return (
     <Container className="py-4">
       <h1 className="mb-4">📢 Página de extraviados</h1>
+      <BannerDEpublicidad />
         {error && <p>Lo siguientes posteos son falsos</p>}
         
       <ProjectSelect setPage={setPage} explicacion={explicaciones[page / 3]}/>

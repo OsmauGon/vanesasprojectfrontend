@@ -4,6 +4,7 @@ import { ModalDEestablecimiento } from '../components/modales/ModalDEestablecimi
 import SwitchExample from '../components/SwitchExample';
 import type { Establishment } from '../types/establishment-type';
 import { useEstablishments } from '../hooks/useEstablishmentData';
+import BannerDEpublicidad from '../components/BannerDEpublicidad';
 
 
 
@@ -171,13 +172,11 @@ export const Veterinarias3: React.FC = () => {
   },
   ]
   useEffect(()=>{
-    console.log("cambiaron los switches: ",switches)
       const resultado = data.filter(producto =>
-      producto.badges.some(badge =>
+      producto.insignias.some(badge =>
         switches.includes(badge)
         )
       );
-    console.log(switches)
     if(switches.length == 0) setEstablecimientos(data)
     
     else setEstablecimientos(resultado)
@@ -197,7 +196,7 @@ export const Veterinarias3: React.FC = () => {
         <h1 >Veterinarias</h1>
         <Badge bg="secondary" pill>{filteredEstablecimientos.length} disponibles</Badge>
       </div>
-
+      <BannerDEpublicidad />
       {/* Buscador */}
       <InputGroup className="mb-4">
         <Form.Control

@@ -5,6 +5,7 @@ import Calendar, { Calendar2 } from '../components/Calendar';
 import DatesList2, {DatesList} from '../components/DatesList';
 import type { Event2 } from '../types/calendar-type';
 import { useEvents } from '../hooks/useCalendarData';
+import BannerDEpublicidad from '../components/BannerDEpublicidad';
 
 export interface Cita {
   id: number;
@@ -36,14 +37,9 @@ export const CalendarioOriginal: React.FC = () => {
     <Container className="py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1 >Calendario de Citas</h1>
-        {false && <Button variant="primary" 
-                    className='boton1' 
-                    onClick={() => setShowModal(true)}>
-                    + Nueva Cita
-                  </Button>
-        }
+        
       </div>
-
+      <BannerDEpublicidad />
       <Row>
         {/* Vista de listado de citas próximas */}
         <DatesList citas={citas}/>

@@ -9,93 +9,6 @@ type Blog ={
     videoUrl?: string,//Porque puede o no tener para ver
     state: "able"  | "disable" | "standby" 
 }
-const blogsExample :Blog[] = [
-    {
-    id: 1,
-    idOwner: 1,
-    title: "string",
-    description: "string",
-    documentUrl: "string",
-    imageUrl: "string",
-    videoUrl: "string",
-    state: "able"
-     },
-    {
-    id: 12,
-    idOwner: 12,
-    title: "string",
-    description: "string",
-    documentUrl: "string",
-    imageUrl: "string",
-    videoUrl: "string",
-    state: "able"
-     },
-    {
-    id: 13,
-    idOwner: 13,
-    title: "string",
-    description: "string",
-    documentUrl: "string",
-    imageUrl: "string",
-    videoUrl: "string",
-    state: "able"
-     },
-    {
-    id: 14,
-    idOwner: 14,
-    title: "string",
-    description: "string",
-    documentUrl: "string",
-    imageUrl: "string",
-    videoUrl: "string",
-    state: "able"
-     },
-    {
-    id: 15,
-    idOwner: 15,
-    title: "string",
-    description: "string",
-    documentUrl: "string",
-    imageUrl: "string",
-    videoUrl: "string",
-    state: "able"
-     },
-    {
-    id: 16,
-    idOwner: 16,
-    title: "string",
-    description: "string",
-    documentUrl: "string",
-    imageUrl: "string",
-    videoUrl: "string",
-    state: "able"
-     },
-    {
-    id: 17,
-    idOwner: 17,
-    title: "string",
-    description: "string",
-    documentUrl: "string",
-    imageUrl: "string",
-    videoUrl: "string",
-    state: "able"
-     },
-    {
-    id: 18,
-    idOwner: 18,
-    title: "string",
-    description: "string",
-    documentUrl: "string",
-    imageUrl: "string",
-    videoUrl: "string",
-    state: "able"
-     }
-]
-export const BlogPage = () => {
-  return (
-    <div>BlogPage <br />{blogsExample.map((item)=> JSON.stringify(item))}</div>
-  )
-}
 
 
 
@@ -137,6 +50,7 @@ import {
   FaUserMd
 } from 'react-icons/fa';
 import '../styles/blogPage.css';
+import BannerDEpublicidad from '../components/BannerDEpublicidad';
 
 type Blogg = {
   id: number;
@@ -268,6 +182,7 @@ const BlogPagee: React.FC = () => {
             Descubre artículos, guías y recursos compartidos por profesionales del sector
           </p>
         </div>
+        <BannerDEpublicidad />
 
         {/* Filtros y búsqueda */}
         <Row className="mb-5">
