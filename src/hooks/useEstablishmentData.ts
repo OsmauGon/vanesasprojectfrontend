@@ -12,7 +12,7 @@ interface UseEstablishmentReturn {
 
 export const fakeEstablishments: Establishment[] = [
   { 
-    id: 100,
+    id: 101,
     nombre: "Animal care",
     especialidades: ["Medicina Felina"],
     ubicacion: "San Juan 2684",
@@ -22,8 +22,59 @@ export const fakeEstablishments: Establishment[] = [
     email: undefined,
     latitud: -37.999198,
     longitud: -57.569344,
-    profesionalesVinculados: ["Ana Paula Carou"],
-    horario: "07 a 18",
+    profesionalesVinculados: ["Ana Paula Carou", "Dr. Sebastian"],
+    horario: "Lunes a Viernes de 10 a 17. Sabados de 10 a 13",
+    tienelaboratorio: true,
+    tienepetshop: true,
+    tienepeluqueria: true,
+    tienequirofano: true,
+    practicas: ["Internacion", "Farmacia Veterinaria"
+    ].join(' - '),
+    //otro atributo
+    badges: ["laboratorio",
+    "petshop",
+    "peluqueria",
+    "quirofano",],
+    redsocial: "@medicinafelinamdp"
+ },
+  { 
+    id: 102,
+    nombre: "Sigismondi",
+    especialidades: ["Clinica Medica"],
+    ubicacion: "Avenida Constitucion 7124",
+    disponible: true,
+    imagen: "img/localandres.jepg",
+    telefono:["2236204857"],
+    email: undefined,
+    latitud: -37.95493016915975,
+    longitud: -57.57505541138986,
+    profesionalesVinculados: ["Dr. Andres Sigismondi","Dra. Berenice Cebrian", "Dra. Julia"],
+    horario: "lunes a Viernes de 9 a 16. Sabados de 9 a 14",
+    tienelaboratorio: true,
+    tienepetshop: false,
+    tienepeluqueria: false,
+    tienequirofano: true,
+    practicas: [
+      "Clinica Medica", "Clinica Quirurgica de alta complejidad","Medicina transfusional de pequeños animales","Clinica quirurgica de tejidos blandos", "Cirugia cardiotoraxica"," Cirugia laparoscopica","Medicina felina", "Diagnostico por imagenes: rx y ecografia", "Farmacia Veterinaria"
+    ].join(' - '),
+    //otro atributo
+    badges: ["laboratorio",
+    "quirofano",],
+    redsocial: "@hemovetmdp"
+ },
+  { 
+    id: 103,
+    nombre: "Hemovet",
+    especialidades: ["Banco de Sangre","Medicina transfusional"],
+    ubicacion: "Avenida Constitucion 7124",
+    disponible: true,
+    imagen: "img/localandres.jepg",
+    telefono:["2234233441"],
+    email: undefined,
+    latitud: -37.95493016915975,
+    longitud: -57.57505541138986,
+    profesionalesVinculados: ["Dr. Andres Sigismondi"],
+    horario: undefined,
     tienelaboratorio: true,
     tienepetshop: true,
     tienepeluqueria: true,
@@ -40,7 +91,33 @@ export const fakeEstablishments: Establishment[] = [
     badges: ["laboratorio",
     "petshop",
     "peluqueria",
-    "quirofano",]
+    "quirofano",],
+    redsocial: "@hemovetmdp"
+ },
+  { 
+    id: 104,
+    nombre: "Suyai",
+    especialidades: ["Clinica general"],
+    ubicacion: "Avenida Fortunato de la Plaza 6465",
+    disponible: true,
+    imagen: "img/localsuyai.png",
+    telefono:["2236861447"],
+    email: undefined,
+    latitud: -38.032766099800526,
+    longitud:  -57.58708624955606,
+    profesionalesVinculados: ["Dra. Inda Dambolena"],
+    horario: "Lunes a Viernes de 9 a 19. Sabados de 9 a 13",
+    tienelaboratorio: false,
+    tienepetshop: false,
+    tienepeluqueria: false,
+    tienequirofano: true,
+    practicas: [
+      "Nutricion", "Oftalmologia", "Odontologia","Cardiologia","Cirugia en general", "Consultas online", "Colocacion de chip", "Ecografia", "Radiologia digital", "Ozonoterapia", "Magnetoterapia"
+    ].join(' - '),
+    //otro atributo
+    badges: [
+    "quirofano",],
+    redsocial: "@suyaiveterinaria"
  },
   { 
     id: 1,

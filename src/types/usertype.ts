@@ -29,13 +29,15 @@ export interface Profesional {
   especialidad: string; // especialidad medica
   practicas: string;//especies, practicas, conocimientos
   imagen: string;// url de la foto de perfil
-  ubicacion: string;//contacto
+  ubicacion?: string;//contacto
   telefono: string;//contacto
   email?: string;//contacto
   hacedomicilio: boolean;// para filtrar si hace visitas a domicilio
-  horarioDEcontacto: string;
+  horarioDEcontacto?: string;
 
   contacto?: UserContact;
   rating?: number;
   disponible?: boolean;
+  
+  redsocial?: string;
 }

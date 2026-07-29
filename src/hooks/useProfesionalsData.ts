@@ -22,7 +22,24 @@ export const fakeProfesionals: Profesional[] =[
       hacedomicilio: false, 
       email: undefined,
       practicas: ["Medicina Felina","Medicina interna de pequeños animales","Gatos"].join('-'),
-      horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
+      horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13",
+      
+    redsocial: "@medicinafelinamdp"
+    },
+  { 
+      id: 101, 
+      nombre: "Dra Veron Silvana", 
+      especialidad: "Medicina del comportamiento", 
+      ubicacion: undefined, 
+      rating: 4.8, 
+      disponible: true, 
+      imagen: "https://randomuser.me/api/portraits/women/2.jpg", 
+      telefono: "2234387371", 
+      hacedomicilio: true, 
+      email: undefined,
+      practicas: ["Medicina del comportamiento","Terapias Complementarias","Familias Multiespecie", "Flores de Bach", "Aromaterapia", "Consultas online", "Consultas presenciales"].join('-'),
+      horarioDEcontacto: undefined,
+    redsocial: "@silveron.vet"
     },
     { id: 1, 
       nombre: "Dr. Juan Pérez", 

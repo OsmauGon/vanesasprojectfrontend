@@ -24,8 +24,8 @@ type EstablishmentHours = {
 export interface Establishment {
     id: number;
   nombre: string;// nombre del profesional
-  imagen: string;// url de la foto de perfil
-  horario: string;
+  imagen?: string;// url de la foto de perfil
+  horario?: string;
     horarios?: EstablishmentHours;
   profesionalesVinculados: string[];
   especialidades: string[]; // especialidad medica
@@ -47,7 +47,8 @@ export interface Establishment {
   tienepetshop?: boolean;// pa servicios
 
   disponible: boolean;
-  badges: string[]
+  badges: string[];
+  redsocial?: string;//red social para contacto
 }
 // Datos de ejemplo
 /* const establecimiento :Establecimiento = {
