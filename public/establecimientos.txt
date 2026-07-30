@@ -34,7 +34,7 @@
   { 
     "id": 103,
     "nombre": "Hemovet",
-    "especialidades": ["Banco de Sangre","Medicina transfusional"],
+    "especialidades": ["Banco de Sangre"],
     "ubicacion": "Avenida Constitucion 7124",
     "disponible": true,
     "imagen": "img/hemovetlogo.png",
@@ -42,7 +42,7 @@
     "latitud": -37.95493016915975,
     "longitud": -57.57505541138986,
     "profesionalesVinculados": ["Dr. Andres Sigismondi"],
-    "practicas": "Internacion - Medicina Felina - Clinica quirúrgica de tejidos blandos - Medicina interna de pequeños animales - Castracion - Farmacia veterinaria",
+    "practicas": "Banco de Sangre - Medicina transfusional",
     "insignias": ["laboratorio","petshop","peluqueria","quirofano"],
     "redsocial": "@hemovetmdp"
  },
