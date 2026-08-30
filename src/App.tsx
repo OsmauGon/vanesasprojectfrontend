@@ -26,7 +26,7 @@ function App() {
         {/* Contenido Principal */}
         <div className="contenido flex-grow-1">
           <Routes>
-            <Route path="/" element={<Home publis={data}/>} />
+            <Route path="/" element={<Home/>} />
             <Route path="/veterinarias" element={<Veterinarias3 publis={data}/>} />
             <Route path="/profesionales" element={<Profesionales2 publis={data}/>} />
             <Route path="/calendario" element={<Calendario publis={data}/>} />
