@@ -5,6 +5,7 @@ import { fakeProfesionals, useProfesionals } from '../hooks/useProfesionalsData'
 import type { Profesional } from '../types/usertype';
 import BannerDEpublicidad from '../components/BannerDEpublicidad';
 import SwitchExampleOriginal from '../components/SwitchExampleOriginal';
+import type { Publicidad } from '../types/publicidad-type';
 
 
 
@@ -15,8 +16,8 @@ export const ProfesionalesOriginal: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   
   const filteredProfesionales = fakeProfesionals.filter(p => 
-    p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.especialidad.toLowerCase().includes(busqueda.toLowerCase())
+    p.nombre.toLowerCase().includes(busqueda.toLowerCase()) 
+    //|| p.especialidad.toLowerCase().includes(busqueda.toLowerCase())
   );
 
   return (
@@ -53,7 +54,7 @@ export const ProfesionalesOriginal: React.FC = () => {
                   />
                   <div>
                     <Card.Title className="mb-0">{prof.nombre}</Card.Title>
-                    <small className="text-muted">{prof.especialidad}</small>
+                    <small className="text-muted">{prof.servicios[0]}</small>
                   </div>
                 </div>
                 
@@ -88,7 +89,9 @@ export const ProfesionalesOriginal: React.FC = () => {
     </Container>
   );
 };
-
+type Props = {
+  publis: Publicidad[] |null
+}
 type ProfesionalCardType = {
   info: Profesional, 
   setShowModal: (val :boolean) => void, 
@@ -98,29 +101,28 @@ const ProfesionalCard = (info: ProfesionalCardType)=>{
   return (
     <Col key={info.info.id}>
             <Card className="h-100 shadow-sm hover-card">
-              <Card.Body>
+              <Card.Body >
                 <div className="d-flex align-items-center mb-3">
                   <img 
-                    src={info.info.imagen} 
+                    src={`${info.info.imagen ? info.info.imagen : "img/imagenRecurrente.jpg"}`} 
                     alt={info.info.nombre}
                     className="rounded-circle me-3"
                     style={{ width: '60px', height: '60px', objectFit: 'cover' }}
                   />
                   <div>
                     <Card.Title className="mb-0">{info.info.nombre}</Card.Title>
-                    <small className="text-muted">{info.info.especialidad}</small>
+                    <small className="text-muted">{info.info.servicios[0]}</small>
                   </div>
                 </div>
                 
 
                 <div className="d-grid gap-2">
                   <Button 
-                    variant={info.info.disponible ? "primary" : "secondary"}
-                    disabled={!info.info.disponible}
+                    variant={"primary"}
                     className='boton1'
                     onClick={() => {info.setShowModal(true); info.setSelectedProf(info.info)}}
                   >
-                    {info.info.disponible ? "Ver Contacto" : "No Disponible"}
+                    Ver Contacto
                   </Button>
                 </div>
               </Card.Body>
@@ -128,7 +130,7 @@ const ProfesionalCard = (info: ProfesionalCardType)=>{
           </Col>
   )
 }
-export const Profesionales2: React.FC = () => {
+export const Profesionales2: React.FC<Props> = ({publis}: Props) => {
   
   const { data, error } = useProfesionals();
   const [busqueda, setBusqueda] = useState("");
@@ -173,7 +175,7 @@ export const Profesionales2: React.FC = () => {
           🔍
         </Button>
       </InputGroup>
-      <BannerDEpublicidad />
+      <BannerDEpublicidad publis={publis}/>
         
       <SwitchExampleOriginal switches={switches}/> 
       {/* Grid de Profesionales */}

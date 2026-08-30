@@ -1,11 +1,28 @@
 
 import { Carousel } from 'react-bootstrap'
+import type { Publicidad } from '../types/publicidad-type'
+type Props = {
+  publis: Publicidad[] | null
+}
 
 
-
-const BannerDEpublicidad = () => {
+const BannerDEpublicidad = ({publis}: Props) => {
   return (
     <Carousel className="m-auto rounded overflow-hidden shadow w-75">
+      {publis && publis.map(publi => (
+        <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={publi.imageUrlChico}
+                alt={publi.titulo}
+                style={{ height: '100px', objectFit: 'cover' }}
+              />
+              {/* <Carousel.Caption>
+                <h3>Encuentra el mejor cuidado</h3>
+                <p>Profesionales especializados a tu disposición.</p>
+              </Carousel.Caption> */}
+            </Carousel.Item>
+      ))}
             <Carousel.Item>
               <img
                 className="d-block w-100"

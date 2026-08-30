@@ -140,12 +140,13 @@ export const useProfesionals = (): UseProfesionalReturn =>{
           // 👇 Cambiá esta URL por tu endpoint real
           const response = await fetch(profesionalesGet);
           
-          if (!response.ok) {
+          if (!response.ok ) {
             throw new Error(`Error ${response.status}: ${response.statusText}`);
           }
           
           const result = await response.json();
-          setData(result);
+          setData(result.data);
+          console.log(data)
         } catch (err) {
           setError(err instanceof Error ? err.message : 'Error al cargar los carteles');
           console.error('Error fetching missing posts:', err);
@@ -157,8 +158,7 @@ export const useProfesionals = (): UseProfesionalReturn =>{
     
       useEffect(() => {
         fetchPosts();
- 
- horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"     },[]);
+      },[]);
     
       return { data, isLoading, error, refetch: fetchPosts };
     };

@@ -6,6 +6,7 @@ import DatesList2, {DatesList} from '../components/DatesList';
 import type { Event2 } from '../types/calendar-type';
 import { useEvents } from '../hooks/useCalendarData';
 import BannerDEpublicidad from '../components/BannerDEpublicidad';
+import type { Publicidad } from '../types/publicidad-type';
 
 export interface Cita {
   id: number;
@@ -39,7 +40,6 @@ export const CalendarioOriginal: React.FC = () => {
         <h1 >Calendario de Citas</h1>
         
       </div>
-      <BannerDEpublicidad />
       <Row>
         {/* Vista de listado de citas próximas */}
         <DatesList citas={citas}/>
@@ -58,7 +58,12 @@ export const CalendarioOriginal: React.FC = () => {
 };
 
 
-const Calendario: React.FC = () => {
+
+type Props = {
+  publis: Publicidad[] | null
+}
+
+const Calendario: React.FC<Props> = ({publis}: Props) => {
   const { data, error } = useEvents();
   const [selectedEvent,setSelectedEvent] = useState<Event2[] | null>(null)
   const [showModal, setShowModal] = useState(false);
@@ -83,7 +88,8 @@ const Calendario: React.FC = () => {
                   </Button>
         }
       </div>
-
+        
+      <BannerDEpublicidad publis={publis}/>
       <Row>
         {/* Vista de listado de citas próximas */}
         <DatesList2 citas={data}/>

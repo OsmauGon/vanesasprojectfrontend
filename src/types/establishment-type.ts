@@ -28,7 +28,7 @@ export interface Establishment {
   horario?: string;
     horarios?: EstablishmentHours;
   profesionalesVinculados: string[];
-  especialidades: string[]; // especialidad medica
+  servicios: string[]; // especialidad medica y demas servicios
   practicas: string;//especies,practicas, conocimientos
 
     contacto?: EstablishmentContact
@@ -37,8 +37,8 @@ export interface Establishment {
   email?: string;//contacto
   latitud: number;
   longitud: number;
-
-    servicios?: EstablishmentService;
+  
+    serviciosTodos?: EstablishmentService;
   tienequirofano?: boolean;// pa servicios
   tienelaboratorio?: boolean;// pa servicios
   tieneinternacion?: boolean;// pa servicios
@@ -48,7 +48,8 @@ export interface Establishment {
 
   disponible: boolean;
   insignias:string[];
-  redsocial?: string;//red social para contacto
+  redSocial?: string;//red social para contacto
+  notas: string[]
 }
 // Datos de ejemplo
 /* const establecimiento :Establecimiento = {

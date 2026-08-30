@@ -34,17 +34,14 @@ const handleShareOrDownload = async (imageUrl: string, postId: number) => {
     document.body.removeChild(link);
   }
 };
-export const Extraviados = () => {
-  return (
-    <div>Extraviados</div>
-  )
+
+
+
+
+
+type Props = {
+  publis: Publicidad[] | null
 }
-
-
-
-
-
-
 // MissingPostCard.tsx
 const MissingPostCard = ({ post }: { post: MissingPost }) => {
   const canShare = "share" in navigator;//esto es para comprobar si el navegador posee la funcion de compartir
@@ -79,13 +76,14 @@ import type { MissingPost } from '../types/missingpost-type';
 import { useState } from 'react';
 import { ProjectSelect } from '../components/SelectComps';
 import BannerDEpublicidad from '../components/BannerDEpublicidad';
+import type { Publicidad } from '../types/publicidad-type';
 
 const explicaciones :string[] = [
   "Acontinuacion se mostraran los posteos de mascotas que se encuentran extraviadas",
   "Acontinuacion se mostraran los posteos de mascotas que han siso encontradas",
   "Acontinuacion se mostraran los posteos de mascotas que necesitan una familia",
 ]
-const MissingPostsPage = () => {
+const MissingPostsPage = ({publis}: Props) => {
   const { data, isLoading, error } = useMissingPosts();
   const [page,setPage] = useState<number >(0)
   if (isLoading) return <Spinner animation="border" />;
@@ -94,7 +92,7 @@ const MissingPostsPage = () => {
   return (
     <Container className="py-4">
       <h1 className="mb-4">📢 Página de extraviados</h1>
-      <BannerDEpublicidad />
+      <BannerDEpublicidad publis={publis}/>
         {error && <p>Lo siguientes posteos son falsos</p>}
         
       <ProjectSelect setPage={setPage} explicacion={explicaciones[page / 3]}/>

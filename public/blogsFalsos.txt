@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "idOwner": 101,
+    "title": "Avances en Odontología Veterinaria 2024",
+    "description": "Descubre las últimas técnicas en cuidado dental para mascotas. Incluye guía práctica para limpieza dental profesional.",
+    "documentUrl": "/docs/dental-guide.pdf",
+    "imageUrl": "https://picsum.photos/id/20/400/300",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "state": "ABLE"
+  },
+  {
+    "id": 2,
+    "idOwner": 102,
+    "title": "Nutrición Especializada para Animales Senior",
+    "description": "Guía completa sobre alimentación para perros y gatos de edad avanzada. Recomendaciones de especialistas.",
+    "documentUrl": "/docs/senior-nutrition.pdf",
+    "imageUrl": "https://picsum.photos/id/169/400/300",
+    "state": "ABLE"
+  },
+  {
+    "id": 3,
+    "idOwner": 103,
+    "title": "Protocolos de Emergencia en Cirugía",
+    "description": "Video tutorial sobre procedimientos de urgencia en quirófano veterinario. Casos prácticos incluidos.",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "imageUrl": "https://picsum.photos/id/107/400/300",
+    "state": "ABLE"
+  },
+  {
+    "id": 4,
+    "idOwner": 104,
+    "title": "Fisioterapia y Rehabilitación Equina",
+    "description": "Técnicas modernas de rehabilitación para caballos. Incluye ejercicios prácticos y casos de éxito.",
+    "documentUrl": "/docs/equine-rehab.pdf",
+    "imageUrl": "https://picsum.photos/id/135/400/300",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "state": "standby"
+  },
+  {
+    "id": 5,
+    "idOwner": 105,
+    "title": "Prevención de Zoonosis en Clínicas",
+    "description": "Manual de buenas prácticas para prevenir enfermedades transmisibles entre animales y humanos.",
+    "documentUrl": "/docs/zoonosis-prevention.pdf",
+    "imageUrl": "https://picsum.photos/id/220/400/300",
+    "state": "ABLE"
+  },
+  {
+    "id": 6,
+    "idOwner": 106,
+    "title": "Ultrasonografía Avanzada",
+    "description": "Webinar sobre técnicas de diagnóstico por imagen. Casos clínicos y mejores prácticas.",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "imageUrl": "https://picsum.photos/id/124/400/300",
+    "state": "ABLE"
+  }
+];

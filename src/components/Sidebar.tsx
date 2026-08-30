@@ -6,6 +6,7 @@ import { FaEnvelope, FaInstagram, FaUserDoctor } from "react-icons/fa6";
 import { FaHome, FaSearch } from "react-icons/fa";
 import { FaHospitalAlt } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { MdProductionQuantityLimits } from "react-icons/md";
 //import { FaRegNewspaper } from "react-icons/fa6";
 import { FaBlog } from "react-icons/fa";  
 
@@ -23,7 +24,7 @@ const Sidebar: React.FC = () => {
     <div className="sidebar p-3  bg-dark">
       {/* Logo del Proyecto */}
       <a href="/" className="page-title d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <img src="veterinet-icon.webp" alt="" />
+        <img src="img/Recurso 13-8.png" alt="" />
         <span className="fs-4 fw-bold nav-title">Veteri.net.ar</span>
       </a>
       <a href="/" className="page-icon d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -60,7 +61,7 @@ const Sidebar: React.FC = () => {
             <b>Profesionales</b>
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nav-item d-none">
           <NavLink 
             to="/calendario" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
@@ -78,7 +79,7 @@ const Sidebar: React.FC = () => {
             <b>Noticias</b>
           </NavLink>
         </li> */}
-        <li className="nav-item">
+        <li className="nav-item d-none">
           <NavLink 
             to="/blogs" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
@@ -87,7 +88,7 @@ const Sidebar: React.FC = () => {
             <b>Blog</b>
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nav-item d-none">
           <NavLink 
             to="/extraviados" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
@@ -96,12 +97,21 @@ const Sidebar: React.FC = () => {
             <b>Perdidos / Encontrados / En adopcion</b>
           </NavLink>
         </li>
+        <li className="nav-item ">
+          <NavLink 
+            to="/servicios" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
+          >
+            <MdProductionQuantityLimits size={20}/>
+            <b>Servicios / Productos</b>
+          </NavLink>
+        </li>
       </ul>
       {loginButton && <UserZone />}
       <div className="media-buttons">
       <Link 
           
-          to={'https://www.instagram.com/Veteri.net.ar.ar?utm_source=qr&igsh=b29qb3dlbmprYm51'}
+          to={'https://www.instagram.com/Veteri.net.ar?utm_source=qr&igsh=b29qb3dlbmprYm51'}
           target='_blank'
           className="d-flex align-items-center gap-2"
           title='Ir al Instagram'

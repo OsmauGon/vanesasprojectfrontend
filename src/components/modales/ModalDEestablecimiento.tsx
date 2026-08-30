@@ -1,6 +1,7 @@
 
 import { Badge, Button, Card, Modal} from 'react-bootstrap';
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaShareAlt } from "react-icons/fa";
 import type { Establishment } from '../../types/establishment-type';
 type ModalProps = {
     obj: Establishment | null;
@@ -9,6 +10,11 @@ type ModalProps = {
 }
 
 export const ModalDEestablecimiento = (props: ModalProps) => {
+  const abrirRed =()=> {
+    if (props.obj?.redSocial) {
+      window.open(props.obj.redSocial, '_blank');
+    }
+  }
   const abrirWhatsApp = () => {
     if (props.obj?.telefono) {
       const telefonoLimpio = props.obj.telefono[0].replace(/\s/g, '').replace(/-/g, '');
@@ -44,7 +50,7 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
     
     window.open(url, '_blank');
   };
-
+  console.log(props)
   return (
     <Modal show={props.show} onHide={() => props.hide(false)}>
         <Modal.Header closeButton>
@@ -52,32 +58,35 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
         </Modal.Header>
          <Modal.Body>
                 <Card.Text>
-                  <strong>🐾 Especialidades:</strong> {props.obj?.especialidades?.join(' - ')}<br />
+                  <strong><img src="img/Recurso 16-8.png" alt="" /> Especialidades:</strong> {props.obj?.servicios?.join(' - ')}<br />
+                </Card.Text>
+                <Card.Text  className={`${(props.obj && props.obj?.notas.length > 0) ? "" : "d-none"}`}>
+                  <strong><img src="img/Recurso 16-8.png" alt="" /> Teléfono:</strong> {props.obj?.telefono.join(' - ')}<br />
                 </Card.Text>
                 <Card.Text>
-                  <strong>🐾 Teléfono:</strong> {props.obj?.telefono.join(' - ')}<br />
+                  <strong><img src="img/Recurso 16-8.png" alt="" /> Ubicación:</strong> {props.obj?.ubicacion}<br />
                 </Card.Text>
                 <Card.Text>
-                  <strong>🐾 Ubicación:</strong> {props.obj?.ubicacion}<br />
+                  <strong><img src="img/Recurso 16-8.png" alt="" /> Horario:</strong> {props.obj?.horario}<br />
                 </Card.Text>
-                <Card.Text>
-                  <strong>🐾 Horario:</strong> {props.obj?.horario}<br />
+                <Card.Text className={`${(props.obj && props.obj?.profesionalesVinculados.length > 0) ? "" : "d-none"}`}>
+                  <strong><img src="img/Recurso 16-8.png" alt="" /> Profesionales:</strong> {props.obj?.profesionalesVinculados.join(' - ')}<br />
                 </Card.Text>
-                <Card.Text>
-                  <strong>🐾 Profesionales:</strong> {props.obj?.profesionalesVinculados.join(' - ')}<br />
+                <Card.Text className={`${(props.obj && props.obj?.notas.length > 0) ? "" : "d-none"}`}>
+                  <strong><img src="img/Recurso 16-8.png" alt="" /> Notas:</strong> {props.obj?.notas.join(' - ')}<br />
                 </Card.Text>
-                {(props.obj?.haceurgencias  || props.obj?.tienelaboratorio || props.obj?.tienequirofano  || props.obj?.tienepeluqueria || props.obj?.tienepetshop   ) && <h5>Servicios</h5>}
+                {(props.obj && props.obj.insignias.length > 0) && <h5>Servicios</h5>}
                 <div className="d-flex justify-content-center gap-2 flex-wrap">
-                {props.obj?.haceurgencias  && <Badge bg="secondary" pill>Atiende Urgenicas </Badge>}
-                {props.obj?.tienelaboratorio  && <Badge bg="secondary" pill>Tiene Laboratorio </Badge>}
-                {props.obj?.tienepeluqueria  && <Badge bg="secondary" pill>Tiene Peluqueria </Badge>}
-                {props.obj?.tienepetshop  && <Badge bg="secondary" pill>Tiene Petshop </Badge>}
-                {props.obj?.tienequirofano  && <Badge bg="secondary" pill>Tiene Quirofano </Badge>}
+                {props.obj?.insignias.includes("haceurgencias") && <Badge bg="secondary" pill>Atiende Urgenicas </Badge>}
+                {props.obj?.insignias.includes("tienelaboratorio")  && <Badge bg="secondary" pill>Tiene Laboratorio </Badge>}
+                {props.obj?.insignias.includes("tienepeluqueria")  && <Badge bg="secondary" pill>Tiene Peluqueria </Badge>}
+                {props.obj?.insignias.includes("tienepetshop")  && <Badge bg="secondary" pill>Tiene Petshop </Badge>}
+                {props.obj?.insignias.includes("tienequirofano")  && <Badge bg="secondary" pill>Tiene Quirofano </Badge>}
                 </div>
-                {props.obj?.practicas && <p>{props.obj?.practicas}</p>}
                 {/* <img src={props.obj.imagen} alt={props.obj.nombre} /> */}
           </Modal.Body>
         <Modal.Footer>
+            {/* Whatsap */}
             <Button 
             variant="success" 
             onClick={abrirWhatsApp}
@@ -93,7 +102,7 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
             variant="primary" 
             onClick={abrirEmail}
             disabled={!props.obj?.email}
-            className="d-flex align-items-center gap-2"
+            className={`${(props.obj && props.obj?.email) ? "d-flex align-items-center gap-2" : "d-none"}`}
           >
             <FaEnvelope size={20} />
             Email
@@ -104,10 +113,19 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
             variant="danger" 
             onClick={abrirUbicacion}
             disabled={!props.obj?.ubicacion && !props.obj?.latitud && !props.obj?.longitud}
-            className="d-flex align-items-center gap-2"
+            className={`${(props.obj && props.obj?.latitud && props.obj?.longitud) ? "d-flex align-items-center gap-2" : "d-none"}`}
           >
             <FaMapMarkerAlt size={20} />
             Ubicación
+          </Button>
+          {/* Botón Red Social */}
+          <Button 
+            variant="warning" 
+            onClick={abrirRed}
+            className={`${(props.obj && props.obj?.redSocial) ? "d-flex align-items-center gap-2" : "d-none"}`}
+          >
+            <FaShareAlt size={20} />
+            Red Social
           </Button>
         </Modal.Footer>
       </Modal>

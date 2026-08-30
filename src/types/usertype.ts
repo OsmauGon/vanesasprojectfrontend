@@ -26,18 +26,19 @@ export const posiblesservicios: string[] = [
 export interface Profesional {
   id: number;
   nombre: string;// nombre del profesional
-  especialidad: string; // especialidad medica
+  servicios: string[]; // especialidad medica mas otros
   practicas: string;//especies, practicas, conocimientos
   imagen: string;// url de la foto de perfil
   ubicacion?: string;//contacto
   telefono: string;//contacto
   email?: string;//contacto
   hacedomicilio: boolean;// para filtrar si hace visitas a domicilio
+  horario: string;
   horarioDEcontacto?: string;
-
+  insignias: string[];
   contacto?: UserContact;
   rating?: number;
   disponible?: boolean;
-  
-  redsocial?: string;
+  notas: string[];
+  redSocial?: string;
 }

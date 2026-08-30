@@ -5,6 +5,7 @@ import SwitchExample from '../components/SwitchExample';
 import type { Establishment } from '../types/establishment-type';
 import { useEstablishments } from '../hooks/useEstablishmentData';
 import BannerDEpublicidad from '../components/BannerDEpublicidad';
+import type { Publicidad } from '../types/publicidad-type';
 
 
 
@@ -17,7 +18,7 @@ export const VeterinariasOriginal: React.FC = () => {
   
   const filteredEstablecimientos = data.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.especialidades.includes(busqueda.toLowerCase()) ||
+    p.servicios.includes(busqueda.toLowerCase()) ||
     p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
   );
 
@@ -55,7 +56,7 @@ export const VeterinariasOriginal: React.FC = () => {
                   />
                   <div>
                     <Card.Title className="mb-0">{prof.nombre}</Card.Title>
-                    <small className="text-muted">{prof.especialidades[0]}</small>
+                    <small className="text-muted">{prof.servicios[0]}</small>
                   </div>
                 </div>
                 
@@ -95,13 +96,17 @@ export const VeterinariasOriginal: React.FC = () => {
 
 
 
-
+type Props = {
+  publis: Publicidad[] | null
+}
 type EstablishmentCardType = {
   info: Establishment, 
   setShowModal: (val :boolean) => void, 
   setSelectedProf: (establecimiento: Establishment) => void
 }
 const EstablishmentCard = (info: EstablishmentCardType)=>{
+  console.clear()
+  console.log(info)
   return (
     <Col key={info.info.id}>
             <Card className="h-100 shadow-sm hover-card">
@@ -115,19 +120,18 @@ const EstablishmentCard = (info: EstablishmentCardType)=>{
                   />
                   <div>
                     <Card.Title className="mb-0">{info.info.nombre}</Card.Title>
-                    <small className="text-muted">{info.info.especialidades[0]}</small>
+                    <small className="text-muted">{info.info.servicios[0]}</small>
                   </div>
                 </div>
                 
 
                 <div className="d-grid gap-2">
                   <Button 
-                    variant={info.info.disponible ? "primary" : "secondary"}
-                    disabled={!info.info.disponible}
+                    variant={"primary"}
+                    
                     className='boton1'
                     onClick={() => {info.setShowModal(true); info.setSelectedProf(info.info)}}
-                  >
-                    {info.info.disponible ? "Ver Contacto" : "No Disponible"}
+                  > Ver
                   </Button>
                 </div>
               </Card.Body>
@@ -136,7 +140,7 @@ const EstablishmentCard = (info: EstablishmentCardType)=>{
   )
 }
 
-export const Veterinarias3: React.FC = () => {
+export const Veterinarias3: React.FC<Props> = ({publis}: Props) => {
     const { data, error} = useEstablishments();
     const [establecimientos,setEstablecimientos] = useState<Establishment[]>([])
   const [busqueda, setBusqueda] = useState("");
@@ -172,6 +176,7 @@ export const Veterinarias3: React.FC = () => {
   },
   ]
   useEffect(()=>{
+    console.log(data)
       const resultado = data.filter(producto =>
       producto.insignias.some(badge =>
         switches.includes(badge)
@@ -196,7 +201,7 @@ export const Veterinarias3: React.FC = () => {
         <h1 >Veterinarias</h1>
         <Badge bg="secondary" pill>{filteredEstablecimientos.length} disponibles</Badge>
       </div>
-      <BannerDEpublicidad />
+      <BannerDEpublicidad publis={publis}/>
       {/* Buscador */}
       <InputGroup className="mb-4">
         <Form.Control
