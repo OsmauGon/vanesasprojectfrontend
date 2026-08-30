@@ -9,7 +9,7 @@ interface UseProfesionalReturn {
     refetch: ()=> void
 }
 
-export const fakeProfesionals: Profesional[] =[
+/* export const fakeProfesionals: Profesional[] =[
   { 
       id: 100, 
       nombre: "Dra Ana Paula Carou", 
@@ -125,7 +125,7 @@ export const fakeProfesionals: Profesional[] =[
     horarioDEcontacto: "Lunes a Viernes de 10 a 17, Sabados de 10 a 13"
   },
 
-];
+]; */
 
 export const useProfesionals = (): UseProfesionalReturn =>{
     const [data, setData] = useState<Profesional[]>([]);
@@ -150,7 +150,7 @@ export const useProfesionals = (): UseProfesionalReturn =>{
         } catch (err) {
           setError(err instanceof Error ? err.message : 'Error al cargar los carteles');
           console.error('Error fetching missing posts:', err);
-          setData(fakeProfesionals)
+          //setData(fakeProfesionals)
         } finally {
           setIsLoading(false);
         }

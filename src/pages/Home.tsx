@@ -1,12 +1,10 @@
 import React from 'react';
 import {  useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card, Carousel, Button } from 'react-bootstrap';
-import type { Publicidad } from '../types/publicidad-type';
 
-type Props = {
-  publis: Publicidad[] | null
-}
-const Home: React.FC<Props> = ({publis}: Props) => {
+
+
+const Home: React.FC = () => {
   const navigate = useNavigate()
   return (
     <Container fluid className="p-4">

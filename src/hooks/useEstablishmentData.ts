@@ -10,7 +10,7 @@ interface UseEstablishmentReturn {
 }
 
 
-export const fakeEstablishments: Establishment[] = [
+/* export const fakeEstablishments: Establishment[] = [
   { 
     id: 1,
     nombre: "El club de las mascotas",
@@ -179,7 +179,7 @@ export const fakeEstablishments: Establishment[] = [
     "laboratorio",]
     },
     
-];
+]; */
 
 export const useEstablishments =(): UseEstablishmentReturn => {
     const [data, setData] = useState<Establishment[]>([]);
@@ -204,7 +204,7 @@ export const useEstablishments =(): UseEstablishmentReturn => {
             } catch (err) {
               setError(err instanceof Error ? err.message : 'Error al cargar los carteles');
               console.error('Error fetching missing posts:', err);
-              setData(fakeEstablishments)
+              //setData(fakeEstablishments)
             } finally {
               setIsLoading(false);
             }
