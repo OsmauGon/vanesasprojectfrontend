@@ -8,4 +8,5 @@ export interface Service {
     contacto: string;
     telefono?: string;
     redSocial?: string;
+    notas: string[];
 }
