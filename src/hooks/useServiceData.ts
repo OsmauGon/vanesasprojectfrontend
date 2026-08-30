@@ -9,7 +9,7 @@ interface UseServiceReturn {
     refetch: ()=> void
 }
 
-export const fakeServices: Service[] =[
+/* export const fakeServices: Service[] =[
   { 
       id: 100, 
       nombre: "Universidad Canon", 
@@ -32,7 +32,7 @@ export const fakeServices: Service[] =[
     descripcion: "Entrenamiento calistenico para perros que sirvan en las fuerzas policiacas",
     clase: "PRODUCTO"
     },
-];
+]; */
 
 export const useServices = (): UseServiceReturn =>{
     const [data, setData] = useState<Service[]>([]);
@@ -56,7 +56,7 @@ export const useServices = (): UseServiceReturn =>{
         } catch (err) {
           setError(err instanceof Error ? err.message : 'Error al cargar los carteles');
           console.error('Error fetching missing posts:', err);
-          setData(fakeServices)
+          //setData(fakeServices)
         } finally {
           setIsLoading(false);
         }
