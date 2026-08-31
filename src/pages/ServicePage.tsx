@@ -5,7 +5,6 @@ import type { Service } from '../types/service-type'
 import { Container, Row, Col, Card, Badge, Form, InputGroup, Button } from 'react-bootstrap';
 import { useServices } from '../hooks/useServiceData';
 import { useMemo, useState } from 'react';
-import SwitchExampleOriginal from '../components/SwitchExampleOriginal';
 import { ModalDEService } from '../components/modales/ModalDEservicio';
 
 type Props = {
