@@ -4,7 +4,7 @@ export interface Service {
     topico: string;
     descripcion: string;
     clase: "SERVICIO" | "PRODUCTO"
-    imagenLogo: string;
+    imagenLogo?: string;
     contacto: string;
     telefono?: string;
     redSocial?: string;

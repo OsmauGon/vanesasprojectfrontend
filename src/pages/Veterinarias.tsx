@@ -113,7 +113,7 @@ const EstablishmentCard = (info: EstablishmentCardType)=>{
               <Card.Body>
                 <div className="d-flex align-items-center mb-3">
                   <img 
-                    src={info.info.imagen} 
+                    src={`${info.info.imagen ? info.info.imagen : "img/imagenRecurrente.jpg"}`} 
                     alt={info.info.nombre}
                     className="rounded-circle me-3"
                     style={{ width: '60px', height: '60px', objectFit: 'cover' }}
