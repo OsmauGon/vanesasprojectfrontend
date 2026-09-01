@@ -72,7 +72,7 @@ export const ModalDEService = (props: ModalProps) => {
           </Modal.Body>
         <Modal.Footer>
           <Button 
-          disabled={props.obj?.telefono ? true : false}
+          
           variant={props.obj?.telefono ? "primary" : "secondary"} 
           title={props.obj?.telefono ? "Enviar Correo" : "No disponible"}
           
