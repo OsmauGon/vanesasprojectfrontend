@@ -65,9 +65,12 @@ export const ModalDEService = (props: ModalProps) => {
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
                 
-                <Card.Text className={`${(props.obj && props.obj?.notas && props.obj?.notas.length > 0) ? "" : "d-none"}`}>
-                  <strong><img src="img/Recurso 16-8.png" alt="" /> Notas:</strong> {props.obj?.notas}<br />
+                
+                {(props.obj && props.obj.notas.length > 0) && 
+                <Card.Text className={`${(props.obj && props.obj?.notas.length > 0) ? "" : "d-none"}`}>
+                  <strong><img src="img/Recurso 16-8.png" alt="" /> Notas:</strong> {props.obj?.notas.join(' - ')}<br />
                 </Card.Text>
+                }
                 
           </Modal.Body>
         <Modal.Footer>

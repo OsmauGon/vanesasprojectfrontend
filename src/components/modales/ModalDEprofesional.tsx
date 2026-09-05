@@ -66,14 +66,17 @@ export const ModalDEprofesional = (props: ModalProps) => {
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
                 
+                
+                {(props.obj && props.obj.notas.length > 0) && 
                 <Card.Text className={`${(props.obj && props.obj?.notas.length > 0) ? "" : "d-none"}`}>
                   <strong><img src="img/Recurso 16-8.png" alt="" /> Notas:</strong> {props.obj?.notas.join(' - ')}<br />
                 </Card.Text>
+                }
                 
                 {(props.obj && props.obj.insignias.length > 0) && <h5>Servicios</h5>}
                 <div className="d-flex justify-content-center gap-2 flex-wrap">
                   {props.obj?.insignias.includes("haceurgencias") && <Badge bg="secondary" pill>Atiende Urgenicas </Badge>}
-                  {props.obj?.insignias.includes("hacevicinas")  && <Badge bg="secondary" pill>Tiene Laboratorio </Badge>}
+                  {props.obj?.insignias.includes("hacevicitas")  && <Badge bg="secondary" pill>Tiene Laboratorio </Badge>}
                 </div>
           </Modal.Body>
         <Modal.Footer>

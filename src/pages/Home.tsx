@@ -75,20 +75,20 @@ const Home: React.FC = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col>{/* //noticias */}
+        <Col>{/* //servicios */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
-              <Card.Title>📰<br></br> Perdidos/Encontrados</Card.Title>
+              <Card.Title>📰<br></br> Servicios y Productos</Card.Title>
               <Card.Text>
                 Publicaciónes de mascostas extraviadas.
               </Card.Text>
-              <Button variant="primary" className='boton1' onClick={()=>{navigate("/extraviados")}}>
-                Ver <br/>Perdidos / Encontrados
+              <Button variant="primary" className='boton1' onClick={()=>{navigate("/servicios")}}>
+                Ver <br/>Servicios / Productos
               </Button>
             </Card.Body>
           </Card>
         </Col>
-        <Col>{/* //calendario */}
+        { false && <Col>{/* //calendario */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
               <Card.Title>📅 Calendario</Card.Title>
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
               </Button>
             </Card.Body>
           </Card>
-        </Col>
+        </Col>}
       </Row>
     </Container>
   );
