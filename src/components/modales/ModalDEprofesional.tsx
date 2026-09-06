@@ -12,7 +12,6 @@ type ModalProps = {
 
 
 export const ModalDEprofesional = (props: ModalProps) => {
-  console.log(props)
   const [masEspecialidades,setMasEspecialidades] = useState<boolean>(true)
   const abrirWhatsApp = () => {
     if (props.obj?.telefono) {
@@ -38,7 +37,7 @@ export const ModalDEprofesional = (props: ModalProps) => {
       window.open(props.obj.redSocial, '_blank');
     }
   }
-
+  console.log()
   return (
     <Modal show={props.show} onHide={() => props.hide(false)}>
         <Modal.Header closeButton>
@@ -55,14 +54,15 @@ export const ModalDEprofesional = (props: ModalProps) => {
                   <strong><img src="img/Recurso 16-8.png" alt="" /> Teléfono:</strong> {props.obj?.telefono}<br />
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
-                
+                {(props.obj && props.obj.ubicacion && props.obj.ubicacion.length > 0) && 
                 <Card.Text>
                   <strong><img src="img/Recurso 16-8.png" alt="" /> Ubicación:</strong> {props.obj?.ubicacion}<br />
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
+                }
                 
                 <Card.Text>
-                  <strong><img src="img/Recurso 16-8.png" alt="" /> Atencion:</strong> {props.obj?.horario}<br />
+                  <strong><img src="img/Recurso 16-8.png" alt="" />Horaio de atención:</strong> {props.obj?.horario}<br />
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
                 
@@ -76,24 +76,22 @@ export const ModalDEprofesional = (props: ModalProps) => {
                 {(props.obj && props.obj.insignias.length > 0) && <h5>Servicios</h5>}
                 <div className="d-flex justify-content-center gap-2 flex-wrap">
                   {props.obj?.insignias.includes("haceurgencias") && <Badge bg="secondary" pill>Atiende Urgenicas </Badge>}
-                  {props.obj?.insignias.includes("hacevicitas")  && <Badge bg="secondary" pill>Tiene Laboratorio </Badge>}
+                  {props.obj?.insignias.includes("hacedomicilio")  && <Badge bg="secondary" pill>Visita domicilios </Badge>}
                 </div>
           </Modal.Body>
         <Modal.Footer>
           <Button 
-          disabled={props.obj?.telefono ? true : false}
           variant={props.obj?.telefono ? "primary" : "secondary"} 
           title={props.obj?.telefono ? "Enviar Correo" : "No disponible"}
           
           onClick={abrirWhatsApp}
-          className="d-flex align-items-center gap-2"
+          className={`${(props.obj && props.obj?.telefono) ? "d-flex align-items-center gap-2" : "d-none"}`}
         >
           <FaWhatsapp size={20} />
           WhatsApp
         </Button>
         
         <Button 
-          disabled={props.obj?.email ? true : false}
           variant={props.obj?.email ? "primary" : "secondary"} 
           title={props.obj?.email ? "Enviar Correo" : "No disponible"}
           onClick={abrirEmail}

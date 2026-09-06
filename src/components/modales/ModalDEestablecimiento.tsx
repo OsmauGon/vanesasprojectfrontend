@@ -50,7 +50,6 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
     
     window.open(url, '_blank');
   };
-  console.log(props)
   return (
     <Modal show={props.show} onHide={() => props.hide(false)}>
         <Modal.Header closeButton>

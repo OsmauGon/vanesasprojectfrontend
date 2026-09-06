@@ -105,8 +105,6 @@ type EstablishmentCardType = {
   setSelectedProf: (establecimiento: Establishment) => void
 }
 const EstablishmentCard = (info: EstablishmentCardType)=>{
-  console.clear()
-  console.log(info)
   return (
     <Col key={info.info.id}>
             <Card className="h-100 shadow-sm hover-card">
@@ -152,31 +150,30 @@ export const Veterinarias3: React.FC<Props> = ({publis}: Props) => {
   {
     indice: 1,
     etiqueta: "Urgencias",
-    valor: "urgencias",
+    valor: "haceurgencias",
   }, 
   {
     indice: 2,
     etiqueta: "Laboratorio",
-    valor: "laboratorio",
+    valor: "tienelaboratorio",
   }, 
   {
     indice: 3,
     etiqueta: "Quirofano",
-    valor: "quirofano",
+    valor: "tienequirofano",
   }, 
   {
     indice: 4,
     etiqueta: "Peluqueria",
-    valor: "peluqueria",
+    valor: "tienepeluqueria",
   }, 
   {
     indice: 5,
     etiqueta: "Petshop",
-    valor: "petshop"
+    valor: "tienepetshop"
   },
   ]
   useEffect(()=>{
-    console.log(data)
       const resultado = data.filter(producto =>
       producto.insignias.some(badge =>
         switches.includes(badge)
@@ -188,10 +185,9 @@ export const Veterinarias3: React.FC<Props> = ({publis}: Props) => {
     
 
   },[data,switches])
-
   const filteredEstablecimientos = establecimientos.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) 
-    || p.practicas.toLowerCase().includes(busqueda.toLowerCase()) 
+    || p.servicios.join(" ").toLowerCase().includes(busqueda.toLowerCase()) 
     //|| p.ubicacion.toLowerCase().includes(busqueda.toLowerCase())
   );
 

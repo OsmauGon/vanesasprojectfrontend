@@ -11,7 +11,6 @@ type ModalProps = {
 
 
 export const ModalDEService = (props: ModalProps) => {
-  console.log(props)
   //const [masEspecialidades,setMasEspecialidades] = useState<boolean>(true)
   const abrirWhatsApp = () => {
     if (props.obj?.telefono) {
@@ -66,7 +65,7 @@ export const ModalDEService = (props: ModalProps) => {
                 </Card.Text>
                 
                 
-                {(props.obj && props.obj.notas.length > 0) && 
+                {(props.obj && props.obj.notas && props.obj.notas.length > 0) && 
                 <Card.Text className={`${(props.obj && props.obj?.notas.length > 0) ? "" : "d-none"}`}>
                   <strong><img src="img/Recurso 16-8.png" alt="" /> Notas:</strong> {props.obj?.notas.join(' - ')}<br />
                 </Card.Text>

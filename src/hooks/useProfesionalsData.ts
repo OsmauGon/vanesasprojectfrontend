@@ -146,7 +146,6 @@ export const useProfesionals = (): UseProfesionalReturn =>{
           
           const result = await response.json();
           setData(result.data);
-          console.log(data)
         } catch (err) {
           setError(err instanceof Error ? err.message : 'Error al cargar los carteles');
           console.error('Error fetching missing posts:', err);

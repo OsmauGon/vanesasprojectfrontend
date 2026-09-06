@@ -60,17 +60,14 @@ export const Profesionales2: React.FC<Props> = ({publis}: Props) => {
   const [showModal, setShowModal] = useState(false);
   const [domicilio,setDomicilio] = useState<boolean>(false)
   
-  useEffect(()=>{//borrar
-    console.log("el useState camibio a ", "cargamos a los profesionales")
-  },[domicilio])
   
   const filteredProfesionales = !domicilio ? data.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.practicas.toLowerCase().includes(busqueda.toLowerCase()) 
+    p.servicios.join(" ").toLowerCase().includes(busqueda.toLowerCase()) 
     )
                                             : data.filter(p => 
     p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-    p.practicas.toLowerCase().includes(busqueda.toLowerCase()) 
+    p.servicios.join(" ").toLowerCase().includes(busqueda.toLowerCase()) 
     ).filter(p => p.hacedomicilio === domicilio);
     
     const switches = [{
@@ -89,7 +86,7 @@ export const Profesionales2: React.FC<Props> = ({publis}: Props) => {
       {/* Buscador */}
       <InputGroup className="mb-4">
         <Form.Control
-          placeholder="Buscar por nombre o ubicación..."
+          placeholder="Buscar por nombre o practica"
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
         />
