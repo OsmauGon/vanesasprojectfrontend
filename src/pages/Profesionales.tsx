@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card, Badge, Form, InputGroup, Button } from 'react-bootstrap';
 import { ModalDEprofesional } from '../components/modales/ModalDEprofesional';
 import { useProfesionals } from '../hooks/useProfesionalsData';
