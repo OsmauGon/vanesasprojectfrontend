@@ -78,7 +78,7 @@ export const useEvents = (): UseEventReturn =>{
                   }
                   
                   const result = await response.json();
-                  setData(result);
+                  setData(result.data);
                 } catch (err) {
                   setError(err instanceof Error ? err.message : 'Error al cargar los carteles');
                   console.error('Error fetching missing posts:', err);

@@ -61,7 +61,7 @@ const Sidebar: React.FC = () => {
             <b>Profesionales</b>
           </NavLink>
         </li>
-        <li className="nav-item d-none">
+        <li className="nav-item">
           <NavLink 
             to="/calendario" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
@@ -79,7 +79,7 @@ const Sidebar: React.FC = () => {
             <b>Noticias</b>
           </NavLink>
         </li> */}
-        <li className="nav-item d-none">
+        <li className="nav-item ">
           <NavLink 
             to="/blogs" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
@@ -88,7 +88,7 @@ const Sidebar: React.FC = () => {
             <b>Blog</b>
           </NavLink>
         </li>
-        <li className="nav-item d-none">
+        <li className="nav-item">
           <NavLink 
             to="/extraviados" 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}

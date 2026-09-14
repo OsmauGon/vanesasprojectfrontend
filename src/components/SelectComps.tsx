@@ -6,12 +6,12 @@ export const ProjectSelect =({setPage, explicacion} :SelectSettings)=>{
 
     return (
         <>
-        <div className="selectp">
+        <div className="selectp  my-4">
                 <select className="form-select form-select-lg mb-3" 
                         aria-label="Large select example"
                         onChange={(e)=>{setPage(Number(e.target.value))}}
                         >
-                        <option  selected value="0">Perdidos</option>
+                        <option  defaultValue="0">Perdidos</option>
                         <option value="3">Encontrados</option>
                         <option value="6">En adopcion</option>
                 </select>

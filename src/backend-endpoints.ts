@@ -10,5 +10,5 @@ export const noticiasGet: string = "urlparasolicitaralasnoticias";
 export const blogsGet: string = backendUrl + "blogs";
 export const servicesGet: string = backendUrl + "servis";
 //export const servicesGet: string = "servicesFalsos.txt";
-export const eventosGet: string = "urlparasolicitaraloseventos";
-export const extraviadosGet: string = "urlparasolicitaralasmacotasextraviadas";
+export const eventosGet: string = backendUrl + "events";
+export const extraviadosGet: string = backendUrl + "missings";

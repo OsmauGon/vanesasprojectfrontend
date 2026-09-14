@@ -112,7 +112,7 @@ const ServicePage = ({publis}: Props) => {
                       >
                         Productos
                       </Button>
-                    </div>
+      </div>
       {/* Grid de Profesionales */}
       {error && <p>Lo siguientes perfiles son falsos e inventados</p>}
       <Row xs={1} md={2} lg={3} className="g-4">
@@ -123,7 +123,7 @@ const ServicePage = ({publis}: Props) => {
 
       {filteredBlogs.length === 0 && (
         <div className="text-center py-5">
-          <h3 className="text-muted">No se encontraron profesionales</h3>
+          <h3 className="text-muted">No se encontraron servicios ni productos</h3>
         </div>
       )}
       <ModalDEService show={showModal} hide={() => setShowModal(false)} obj={selectedProf} />

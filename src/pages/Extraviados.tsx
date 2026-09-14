@@ -1,5 +1,5 @@
 
-import { Container, Row, Col, Card, Button, Spinner} from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Spinner, Badge} from 'react-bootstrap';
 
 
 
@@ -73,7 +73,7 @@ const MissingPostCard = ({ post }: { post: MissingPost }) => {
 // MissingPostsPage.tsx
 import { useMissingPosts } from '../hooks/useMissingPosts';
 import type { MissingPost } from '../types/missingpost-type';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { ProjectSelect } from '../components/SelectComps';
 import BannerDEpublicidad from '../components/BannerDEpublicidad';
 import type { Publicidad } from '../types/publicidad-type';
@@ -88,7 +88,6 @@ const MissingPostsPage = ({publis}: Props) => {
   const [page,setPage] = useState<number >(0)
   if (isLoading) return <Spinner animation="border" />;
   /* if (error) return <Alert variant="danger">Error al cargar</Alert>; */
-
   return (
     <Container className="py-4">
       <h1 className="mb-4">📢 Página de extraviados</h1>
@@ -97,7 +96,7 @@ const MissingPostsPage = ({publis}: Props) => {
         
       <ProjectSelect setPage={setPage} explicacion={explicaciones[page / 3]}/>
       <Row xs={1} sm={2} md={3} lg={4} className="g-4">
-        {data?.filter(item => item.tipo === page/3).map((post: MissingPost) => (
+        {data?.filter(item => item.tipo === "EXTRAVIADO").map((post: MissingPost) => (
           <Col key={post.id}>
             <MissingPostCard post={post} />
           </Col>
@@ -106,6 +105,79 @@ const MissingPostsPage = ({publis}: Props) => {
     </Container>
   );
 };
+
+export const ExtraviadosPage = ({publis}: Props)=>{
+  const { data, error, isLoading } = useMissingPosts();
+  const [stateFilter, setStateFilter] = useState<"all" | "EXTRAVIADO" | "ENCONTRADO" | "ADOPCION">('all');
+  const filteredMissings = useMemo(() => {
+        return data?.filter((serv: MissingPost) => {
+          const matchesSearch = serv.tipo.toLowerCase().includes("o")
+          const matchesClass = stateFilter === "all" || serv.tipo === stateFilter
+          return matchesSearch && matchesClass 
+        });
+      }, [data, stateFilter]);
+
+  if (isLoading) return <Spinner animation="border" />;
+  /* if (error) return <Alert variant="danger">Error al cargar</Alert>; */
+  return (
+    
+    <Container className="py-4">
+      
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h1>📢 Página de extraviados</h1>
+        {data && <Badge bg="secondary" pill>{data.length} disponibles</Badge>}
+      </div>
+      <BannerDEpublicidad publis={publis}/>
+      <div className="state-filter m-3 d-flex justify-content-center gap-2">
+                            <Button
+                              variant={stateFilter === 'all' ? 'primaty' : 'outline-primaty'}
+                              className={stateFilter === 'all' ? 'boton1' : 'boton2'}
+                              size="sm"
+                              onClick={() => setStateFilter('all')}
+                            >
+                              Todos
+                            </Button>
+                            <Button
+                              variant={stateFilter === 'EXTRAVIADO' ? 'primaty' : 'outline-primaty'}
+                              className={stateFilter === 'EXTRAVIADO' ? 'boton1' : 'boton2'}
+                              size="sm"
+                              onClick={() => setStateFilter('EXTRAVIADO')}
+                            >
+                              Extraviados
+                            </Button>
+                            <Button
+                              variant={stateFilter === 'ENCONTRADO' ? 'primaty' : 'outline-primaty'}
+                              className={stateFilter === 'ENCONTRADO' ? 'boton1' : 'boton2'}
+                              size="sm"
+                              onClick={() => setStateFilter('ENCONTRADO')}
+                            >
+                              Encontrados
+                            </Button>
+                            <Button
+                              variant={stateFilter === 'ADOPCION' ? 'primaty' : 'outline-primaty'}
+                              className={stateFilter === 'ADOPCION' ? 'boton1' : 'boton2'}
+                              size="sm"
+                              onClick={() => setStateFilter('ADOPCION')}
+                            >
+                              En Adopcion
+                            </Button>
+      </div>
+      {error && <p>Lo siguientes perfiles son falsos e inventados</p>}
+      <Row xs={1} sm={2} md={3} lg={4} className="g-4">
+              {filteredMissings?.map((post) => (
+                <Col key={post.id}>
+                  <MissingPostCard post={post} />
+                </Col>
+              ))}
+            </Row>
+      {filteredMissings?.length === 0 && (
+        <div className="text-center py-5">
+          <h3 className="text-muted">No se encontraron publicaciones</h3>
+        </div>
+      )}
+    </Container>
+  )
+}
 
 
 

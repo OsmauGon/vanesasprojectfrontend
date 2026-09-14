@@ -54,11 +54,11 @@ const BlogPagee: React.FC<Props> = ({publis}: Props) => {
             alt={blog.title}
             className="blog-image"
           />
-          {blog.videoUrl && (
+          {/* {blog.videoUrl && (
             <div className="media-overlay">
               <FaPlay className="play-icon" />
             </div>
-          )}
+          )} */}
         </div>
       );
     }
@@ -134,13 +134,13 @@ const BlogPagee: React.FC<Props> = ({publis}: Props) => {
                   {renderMedia(blog)}
                   
                   <Card.Body>
-                    <div className="d-flex justify-content-between align-items-start mb-3">
+                    { blog.idOwner && <div className="d-flex justify-content-between align-items-start mb-3">
                       {getStateBadge(blog.state)}
                       <small className="text-muted">
                         <FaUserMd className="me-1" />
                         Dr. ID: {blog.idOwner}
                       </small>
-                    </div>
+                    </div>}
 
                     <Card.Title className="blog-title h5 fw-bold mb-3">
                       {blog.title}

@@ -77,7 +77,7 @@ const Calendario: React.FC<Props> = ({publis}: Props) => {
   };
 
   return (
-    <Container className="py-4">
+    <Container className="py-4 ">
       {error && <p>Lo siguientes perfiles son falsos e inventados</p>}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1 >Calendario de Citas</h1>
@@ -90,7 +90,7 @@ const Calendario: React.FC<Props> = ({publis}: Props) => {
       </div>
         
       <BannerDEpublicidad publis={publis}/>
-      <Row>
+      <Row className='my-4'>
         {/* Vista de listado de citas próximas */}
         <DatesList2 citas={data}/>
 

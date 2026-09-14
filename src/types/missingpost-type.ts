@@ -2,7 +2,7 @@
 export interface MissingPost {
   id: number;
   imageUrl: string;
-  tipo: 0 | 1 | 2// 0:"extraviado" 1:"encontrado" 2:"adopcion"
+  tipo: "EXTRAVIADO" | "ENCONTRADO" | "ADOPCION"
   title?: string;
   description?: string;
   location?: string;

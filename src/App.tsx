@@ -11,7 +11,7 @@ import Calendario from './pages/Calendario';
 //import EditPage from './pages/EditPage';
 //import Logreg from './pages/Logreg';
 import BlogPagee from './pages/BlogPage';
-import MissingPostsPage from './pages/Extraviados';
+import { ExtraviadosPage } from './pages/Extraviados';
 import { usePublicidads } from './hooks/usePublicidadData';
 import ServicePage from './pages/ServicePage';
 
@@ -34,7 +34,7 @@ function App() {
             <Route path="/blogs" element={<BlogPagee publis={data}/>} />
             {/* <Route path="/edit" element={<EditPage publis={data}/>} /> */}
             {/* <Route path="/logreg" element={<Logreg publis={data}/>} /> */}
-            <Route path="/extraviados" element={<MissingPostsPage publis={data}/>} />
+            <Route path="/extraviados" element={<ExtraviadosPage publis={data}/>} />
             <Route path="/servicios" element={<ServicePage publis={data}/>} />
           </Routes>
         </div>
