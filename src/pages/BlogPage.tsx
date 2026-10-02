@@ -12,6 +12,8 @@ import BannerDEpublicidad from '../components/BannerDEpublicidad';
 import type { Blog } from '../types/blog-type';
 import { useBlogs } from '../hooks/useBlogData';
 import type { Publicidad } from '../types/publicidad-type';
+import { ModalDEBlog } from '../components/modales/ModalDEblog';
+import { MdOutlineDescription } from 'react-icons/md';
 
 type Props = {
   publis: Publicidad[] | null
@@ -21,6 +23,9 @@ const BlogPagee: React.FC<Props> = ({publis}: Props) => {
   const [stateFilter, setStateFilter] = useState<string>('all');
   //const [blogs] = useState<Blog[]>(mockBlogs);
   const { data, error } = useBlogs();
+  const [selectedProf,setSelectedProf] = useState<Blog | null>(null)
+  const [showModal, setShowModal] = useState(false);
+    
 
   // Filtrar blogs según búsqueda y estado
   const filteredBlogs = useMemo(() => {
@@ -151,6 +156,13 @@ const BlogPagee: React.FC<Props> = ({publis}: Props) => {
                     </Card.Text>
 
                     <div className="blog-actions mt-3">
+                      {blog.bigdescription && (
+                            <Button variant="outline-primary" size="sm" className="me-2" onClick={()=>{setShowModal(true); setSelectedProf(blog)}}>
+                                <MdOutlineDescription  className="me-1" />
+                                Leer más
+                            </Button>
+                            
+                        )}
                       {blog.documentUrl && (
                             <a 
                             href={blog.documentUrl}
@@ -197,6 +209,8 @@ const BlogPagee: React.FC<Props> = ({publis}: Props) => {
           </small>
         </div>
       </Container>
+      <ModalDEBlog show={showModal} hide={() => setShowModal(false)} obj={selectedProf} />
+                
     </Container>
   );
 };

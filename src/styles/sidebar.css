@@ -93,6 +93,23 @@
 }
 }
 */
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 650px) {
+  .sidebar{
+    display: none;
+  }
+}
+/*
 @media (max-width: 600px) {
   .sidebar{
     width: 160px;
@@ -127,3 +144,4 @@
     flex-direction: column;
   }
 }
+  */

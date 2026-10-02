@@ -1,0 +1,59 @@
+@import './mainStyles.css';
+
+.minisidebar{
+    width: 100%;
+    padding:5px 20px;
+    background-color: red;
+    width: 100%;
+    display: none;
+    position: absolute;
+
+}
+
+.minisidebar-a {
+    display:flex;
+    align-items: center;
+    margin: 0;
+    text-decoration: none;
+}
+.minisidebar-a img{
+    width: 50px;
+}
+
+.minisidebar-ul{
+    margin: auto 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 650px) {
+    .minisidebar{
+        
+    display: flex;
+    justify-content: space-between;
+    }
+    .minisidebar .nav-link{
+        padding: 6px;
+    }
+}
+@media (max-width: 398px) {
+    .minisidebar-a{
+        display: none;
+    }
+}

@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/mainStyles.css'
-import Sidebar from './components/Sidebar';
+import Sidebar, { Minisidebar } from './components/Sidebar';
 import Home from './pages/Home'; // Assumiendo que tienes una página de inicio
 import { Veterinarias3 } from './pages/Veterinarias';
 import { Profesionales2 } from './pages/Profesionales';
@@ -22,7 +22,7 @@ function App() {
       <div className="d-flex">
         {/* Sidebar / Header Lateral */}
         <Sidebar />
-
+        <Minisidebar></Minisidebar>
         {/* Contenido Principal */}
         <div className="contenido flex-grow-1">
           <Routes>

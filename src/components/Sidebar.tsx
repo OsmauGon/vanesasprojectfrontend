@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, type ReactElement } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { UserZone } from './UserZone';
 import '../styles/sidebar.css'
+import '../styles/minisidebar.css'
 import { FaEnvelope, FaInstagram, FaUserDoctor } from "react-icons/fa6";
 import { FaHome, FaSearch } from "react-icons/fa";
 import { FaHospitalAlt } from "react-icons/fa";
@@ -130,5 +131,84 @@ const Sidebar: React.FC = () => {
     </div>
   );
 };
+type Enlace ={
+  name?:string;
+  dir: string;
+  func?: ()=>void;
+  icon: ReactElement
+}
+
+export const Minisidebar: React.FC =()=>{
+  const enlaces: Enlace[] = [
+    {
+      dir: "/",
+      icon: <FaHome size={20}/>
+    },
+    {
+      dir: "/veterinarias",
+      icon: <FaHospitalAlt size={20}/>
+    },
+    {
+      dir: "/profesionales",
+      icon: <FaUserDoctor size={20}/>
+    },
+    {
+      dir: "/calendario",
+      icon: <FaRegCalendarAlt size={20}/>
+    },
+    {
+      dir: "/blogs",
+      icon: <FaBlog size={20}/>
+    },
+    {
+      dir: "/extraviados",
+      icon: <FaSearch size={20}/>
+    },
+    {
+      dir: "/servicios",
+      icon: <MdProductionQuantityLimits size={20}/>
+    },
+  ]
+  return (
+    
+      <div className="minisidebar bg-dark">
+      <a href="/" className="minisidebar-a">
+        <img src="logoPaginaChica.png" alt="" />
+      </a>
+        <ul className="minisidebar-ul link-buttons nav nav-pills ">
+        {enlaces.map(item => (
+          <li key={item.dir} className="nav-item ">
+          <NavLink 
+            to={item.dir} 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
+          >
+            {item.icon}
+            
+          </NavLink>
+        </li>
+        ))}
+      </ul>
+      <div className="media-buttons">
+      <Link 
+          
+          to={'https://www.instagram.com/Veteri.net.ar?utm_source=qr&igsh=b29qb3dlbmprYm51'}
+          target='_blank'
+          className="d-flex align-items-center gap-2"
+          title='Ir al Instagram'
+        >
+        <FaInstagram size={30} color='rgb(127,105,154)'/>
+        </Link>
+      <Link 
+          to={'#'}
+          onClick={abrirEmail}
+          className="d-flex align-items-center gap-2"
+          title='Enviar correo'
+        >
+          <FaEnvelope size={30} color='rgb(127,105,154)'/>
+        </Link>
+      </div>
+      </div>
+  )
+}
 
 export default Sidebar;

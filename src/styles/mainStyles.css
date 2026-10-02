@@ -91,14 +91,10 @@ h1,h2,.nav-title{
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .contenido{
-    margin-left: 165px;
+    margin-left: 0;
+    margin-top: 55px;
   }
   
-}
-@media (max-width: 450px) {
-  .contenido{
-    margin-left: 100px;
-  }
 }
