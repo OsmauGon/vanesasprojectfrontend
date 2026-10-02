@@ -59,7 +59,7 @@ export const ModalDEestablecimiento = (props: ModalProps) => {
                 <Card.Text>
                   <strong><img src="img/Recurso 16-8.png" alt="" /> Especialidades:</strong> {props.obj?.servicios?.join(' - ')}<br />
                 </Card.Text>
-                <Card.Text  className={`${(props.obj && props.obj?.notas.length > 0) ? "" : "d-none"}`}>
+                <Card.Text  className={`${(props.obj && props.obj?.telefono.length > 0) ? "" : "d-none"}`}>
                   <strong><img src="img/Recurso 16-8.png" alt="" /> Teléfono:</strong> {props.obj?.telefono.join(' - ')}<br />
                 </Card.Text>
                 <Card.Text>

@@ -62,7 +62,7 @@ export const ModalDEprofesional = (props: ModalProps) => {
                 }
                 
                 <Card.Text>
-                  <strong><img src="img/Recurso 16-8.png" alt="" />Horaio de atención:</strong> {props.obj?.horario}<br />
+                  <strong><img src="img/Recurso 16-8.png" alt="" /> Horaio de atención:</strong> {props.obj?.horario}<br />
                   {/* <strong>⭐ Rating:</strong> {prof.rating}/5 */}
                 </Card.Text>
                 

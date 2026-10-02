@@ -19,6 +19,50 @@ import { FaBlog } from "react-icons/fa";
     }
   };
 
+  
+  type Enlace ={
+    name?:string;
+    dir: string;
+    func?: ()=>void;
+    icon: ReactElement
+  }
+  const enlaces: Enlace[] = [
+    {
+      name: "Inicio",
+      dir: "/",
+      icon: <FaHome size={20}/>
+    },
+    {
+      name: "Veterinarias",
+      dir: "/veterinarias",
+      icon: <FaHospitalAlt size={20}/>
+    },
+    {
+      name: "Profesionales",
+      dir: "/profesionales",
+      icon: <FaUserDoctor size={20}/>
+    },
+    {
+      name: "Servicios / Productos",
+      dir: "/servicios",
+      icon: <MdProductionQuantityLimits size={20}/>
+    },
+    {
+      name: "Calendario",
+      dir: "/calendario",
+      icon: <FaRegCalendarAlt size={20}/>
+    },
+    {
+      name: "Blogs",
+      dir: "/blogs",
+      icon: <FaBlog size={20}/>
+    },
+    {
+      name: "Perdidos / Encontrados / En adopcion",
+      dir: "/extraviados",
+      icon: <FaSearch size={20}/>
+    },
+  ]
 const Sidebar: React.FC = () => {
   const [loginButton] = useState<boolean>(false)
   return (
@@ -34,43 +78,18 @@ const Sidebar: React.FC = () => {
 
       {/* Links de Navegación */}
       <ul className="link-buttons nav nav-pills flex-column">
-        <li className="nav-item">
+        {enlaces.map(item => (
+          <li key={item.dir} className="nav-item ">
           <NavLink 
-            to="/" 
+            to={item.dir} 
             className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
             end
           >
-            <FaHome size={20}/>
-            <b>Inicio</b>
+            {item.icon}
+            <b>{item.name}</b>
           </NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink 
-            to="/veterinarias" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
-          >
-            <FaHospitalAlt size={20}/>
-            <b>Veterinarias</b>
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink 
-            to="/profesionales" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
-          >
-            <FaUserDoctor size={20}/>
-            <b>Profesionales</b>
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink 
-            to="/calendario" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
-          >
-            <FaRegCalendarAlt size={20}/>
-            <b>Calendario</b>
-          </NavLink>
-        </li>
+        ))}
         {/* <li className="nav-item">
           <NavLink 
             to="/noticias" 
@@ -80,33 +99,6 @@ const Sidebar: React.FC = () => {
             <b>Noticias</b>
           </NavLink>
         </li> */}
-        <li className="nav-item ">
-          <NavLink 
-            to="/blogs" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
-          >
-            <FaBlog size={20}/>
-            <b>Blog</b>
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink 
-            to="/extraviados" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
-          >
-            <FaSearch size={20}/>
-            <b>Perdidos / Encontrados / En adopcion</b>
-          </NavLink>
-        </li>
-        <li className="nav-item ">
-          <NavLink 
-            to="/servicios" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : 'text-white'}`}
-          >
-            <MdProductionQuantityLimits size={20}/>
-            <b>Servicios / Productos</b>
-          </NavLink>
-        </li>
       </ul>
       {loginButton && <UserZone />}
       <div className="media-buttons">
@@ -131,44 +123,9 @@ const Sidebar: React.FC = () => {
     </div>
   );
 };
-type Enlace ={
-  name?:string;
-  dir: string;
-  func?: ()=>void;
-  icon: ReactElement
-}
 
 export const Minisidebar: React.FC =()=>{
-  const enlaces: Enlace[] = [
-    {
-      dir: "/",
-      icon: <FaHome size={20}/>
-    },
-    {
-      dir: "/veterinarias",
-      icon: <FaHospitalAlt size={20}/>
-    },
-    {
-      dir: "/profesionales",
-      icon: <FaUserDoctor size={20}/>
-    },
-    {
-      dir: "/calendario",
-      icon: <FaRegCalendarAlt size={20}/>
-    },
-    {
-      dir: "/blogs",
-      icon: <FaBlog size={20}/>
-    },
-    {
-      dir: "/extraviados",
-      icon: <FaSearch size={20}/>
-    },
-    {
-      dir: "/servicios",
-      icon: <MdProductionQuantityLimits size={20}/>
-    },
-  ]
+  
   return (
     
       <div className="minisidebar bg-dark">
