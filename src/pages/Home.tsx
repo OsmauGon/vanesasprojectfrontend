@@ -48,7 +48,7 @@ const Home: React.FC = () => {
       </Carousel>
 
       {/* Tarjetas de Acceso Rápido */}
-      <Row xs={1} md={2} lg={4} className="g-4">
+      <Row xs={1} md={2} lg={4} className="g-4 display-flex">
         <Col>{/* //profesionales */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
@@ -56,7 +56,7 @@ const Home: React.FC = () => {
               <Card.Text>
                 Profesionales especializados cerca de ti.
               </Card.Text>
-              <Button variant="primary" className='boton1' onClick={()=>{navigate("/profesioanles")}}>
+              <Button variant="primary" className='boton1' onClick={()=>{navigate("/profesionales")}}>
                 Ver Profesionales
               </Button>
             </Card.Body>
@@ -78,9 +78,9 @@ const Home: React.FC = () => {
         <Col>{/* //servicios */}
           <Card className="h-100 shadow-sm hover-effect">
             <Card.Body className="text-center">
-              <Card.Title>📰<br></br> Servicios y Productos</Card.Title>
+              <Card.Title>🛒<br></br> Servicios y Productos</Card.Title>
               <Card.Text>
-                Publicaciónes de mascostas extraviadas.
+                Publicaciónes de servicios y productos de petlovers.
               </Card.Text>
               <Button variant="primary" className='boton1' onClick={()=>{navigate("/servicios")}}>
                 Ver <br/>Servicios / Productos
