@@ -18,7 +18,7 @@ export const ModalDEBlog = (props: ModalProps) => {
           <Modal.Title>{props.obj?.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body >
-
+        {props.obj?.bigdescription}
 
         </Modal.Body>
         <Modal.Footer>
